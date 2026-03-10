@@ -1,0 +1,101 @@
+# Ralph Progress Log
+Started: 2026-03-10 00:00:00
+Last Updated: 2026-03-10 23:52:13 UTC
+
+## Codebase Patterns
+- Project lives in `/workspace/` - all paths relative to that
+- All commands must be run from `/workspace/`
+- Portfolio is PRD-driven: `prd.json` is the source of truth for story order, story status (`passes`), branch target, and scope
+- Implement exactly one story per iteration
+- Only set `passes: true` in `prd.json` after implementation is complete and all relevant checks pass
+- Append to `progress.txt`; never rewrite previous history
+- Add reusable patterns here only when they are general enough to help future iterations
+- Keep sections modular; prefer one component per major section instead of very large page files
+- All content should come from JSON files in `data/`, not be duplicated across components
+- Use `next/font` for display/body fonts and expose them as CSS variables for consistent Tailwind usage
+- Theme tokens should be defined centrally and reused consistently across components
+- Maintain the dark editorial premium aesthetic: burgundy-dominant backgrounds, cream/light surfaces, strong serif headings, disciplined spacing
+- Projects must be presented as selected work/case-study style cards, not as a generic image gallery
+- Use Framer Motion for section entrances and scroll-driven effects; keep hover states in CSS/Tailwind
+- Respect `prefers-reduced-motion` for all non-essential animations
+- Prefer `transform` and `opacity` for motion; avoid layout-triggering animation properties
+- Before committing, inspect `git status` and avoid including unrelated changes
+- If checks fail, do not commit; record the failure and blocker in the progress log
+- Do not expand scope beyond the selected story; log follow-up ideas instead of implementing them immediately
+
+## Project Snapshot
+- Project: Jordano personal portfolio
+- Primary goal: present Jordano as a premium software engineer / full-stack developer focused on web products, automation, and applied AI
+- Product type: single-page portfolio with commercial positioning and trust-building narrative
+- Visual direction: dark editorial premium, modular sections, strong typography, restrained motion
+- Execution model: one story per iteration, validate, commit, update PRD, append progress
+
+## PRD Sync Notes
+- `prd.json` defines:
+  - branch name
+  - story order
+  - story completion via `passes`
+  - design direction
+  - required content/data structure
+  - acceptance criteria
+- Priority should follow the order of `userStories` unless explicit dependency issues block a story
+- If a story is blocked by missing prerequisite, ambiguity, or environment issue, record it clearly before moving on
+- Design inspiration should guide tone and structure, not literal copying of another portfolio
+
+## Current Delivery Status
+- No stories completed yet
+- Awaiting first implementation pass on highest-priority incomplete story
+- Expected first target: `US-001 - Project scaffolding and layout`
+
+## Validation Rules
+- Run relevant project-native checks before marking a story complete
+- Typical validation flow should include, when available:
+  - install
+  - lint
+  - typecheck
+  - test
+  - build
+- Baseline local validation for this repo is `npm run lint`, `npm run typecheck`, and `npm run build`
+- Use the ESLint CLI via `npm run lint`; do not reintroduce deprecated `next lint`
+- For UI changes, verify the affected section visually in browser if browser tooling is available
+- If browser verification is not available, note that manual browser verification is required
+- Do not mark a story complete if required checks fail
+
+## Active Risks / Known Issues
+- Branch creation may fail if the repository base branch is not `main`
+- Story order may become ambiguous if later stories implicitly depend on scaffolding or shared tokens not yet created
+- Visual polish work can expand scope if section ownership is not kept strict
+- Motion/performance tradeoffs must be watched carefully because the design depends on premium feel without becoming heavy
+
+---
+
+## 2026-03-10 00:00:00 - INIT
+- Initialized progress log for autonomous PRD-driven execution
+- Established baseline codebase patterns, validation expectations, and delivery rules
+- No implementation performed in this entry
+- Files changed:
+  - progress.txt
+- **Learnings for future iterations:**
+  - `prd.json` is the single source of truth for story order and completion
+  - Reusable implementation patterns belong in `## Codebase Patterns`
+  - Story-specific notes should be appended as dated entries, never merged into previous history
+---
+
+## 2026-03-10 23:52:13 UTC - US-001
+- Implemented the Next.js 15 App Router scaffold at the repo root with TypeScript, Tailwind CSS, PostCSS, static export, and placeholder `data/` and `public/images/` directories
+- Added the responsive layout shell: fixed transparent navbar with scroll state, animated mobile menu, semantic anchored sections, and a footer with social and navigation links
+- Applied the PRD theme foundation with burgundy/cream CSS tokens in `app/globals.css`, mirrored them in `tailwind.config.ts`, and loaded Playfair Display plus DM Sans through `next/font` CSS variables
+- Validation run: `npm install --no-fund --no-audit`, `npm run lint`, `npm run typecheck`, `npm run build`
+- Current status: `US-001` is complete and passing locally
+- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
+- Files changed:
+  - `.gitignore`, `.eslintignore`, `.eslintrc.json`, `package.json`, `package-lock.json`, `tsconfig.json`, `next-env.d.ts`, `next.config.ts`, `postcss.config.mjs`, `tailwind.config.ts`
+  - `app/layout.tsx`, `app/page.tsx`, `app/globals.css`
+  - `components/Navbar.tsx`, `components/Footer.tsx`, `components/site-links.ts`
+  - `data/.gitkeep`, `public/images/.gitkeep`
+  - `prd.json`, `progress.txt`
+- **Learnings for future iterations:**
+  - The actual app root is `/workspace`; earlier bootstrap notes that pointed to `/workspace/jordano-portfolio/` were incorrect
+  - The scaffold already provides anchor IDs for `#home`, `#about`, `#projects`, and `#contact`, so later section stories should attach to those IDs instead of creating competing anchors
+  - The nav/footer chrome is centralized through `components/site-links.ts`; update that shared file if global navigation labels or URLs change
+---
