@@ -1,0 +1,30 @@
+{
+  "sectionLabel": "Proof",
+  "heading": "Sinais de profundidade e execução",
+  "stats": [
+    {
+      "value": "4+",
+      "label": "Linguagens em uso real"
+    },
+    {
+      "value": "10+",
+      "label": "Frentes técnicas estudadas em profundidade"
+    },
+    {
+      "value": "3",
+      "label": "Áreas principais de entrega"
+    },
+    {
+      "value": "1",
+      "label": "Objetivo claro: transformar habilidade em produto"
+    }
+  ],
+  "signals": [
+    "Produtos web",
+    "Backend e arquitetura",
+    "Integrações",
+    "Infra e DevOps",
+    "IA aplicada",
+    "Aprendizado contínuo"
+  ]
+}

@@ -1,6 +1,6 @@
 # Ralph Progress Log
 Started: 2026-03-10 00:00:00
-Last Updated: 2026-03-11 00:07:39 UTC
+Last Updated: 2026-03-11 00:28:01 UTC
 
 ## Codebase Patterns
 - Project lives in `/workspace/` - all paths relative to that
@@ -20,6 +20,8 @@ Last Updated: 2026-03-11 00:07:39 UTC
 - Use Framer Motion for section entrances and scroll-driven effects; keep hover states in CSS/Tailwind
 - Respect `prefers-reduced-motion` for all non-essential animations
 - Prefer `transform` and `opacity` for motion; avoid layout-triggering animation properties
+- Editorial content sections should usually reuse the split layout with an eyebrow rail on the left and main content on the right (`lg:grid-cols-[0.32fr_1fr]`) unless the story requires a different composition
+- Do not run `npm run typecheck` in parallel with `npm run build`; both rely on `.next/types`, and the standalone typecheck is safest after a successful build
 - Before committing, inspect `git status` and avoid including unrelated changes
 - If checks fail, do not commit; record the failure and blocker in the progress log
 - Do not expand scope beyond the selected story; log follow-up ideas instead of implementing them immediately
@@ -44,19 +46,19 @@ Last Updated: 2026-03-11 00:07:39 UTC
 - Design inspiration should guide tone and structure, not literal copying of another portfolio
 
 ## Current Delivery Status
-- No stories completed yet
-- Awaiting first implementation pass on highest-priority incomplete story
-- Expected first target: `US-001 - Project scaffolding and layout`
+- Stories completed through `US-004`
+- Next highest-priority incomplete story is `US-005 - About section`
+- Manual browser QA is still pending for completed UI stories because browser tooling is unavailable in this environment
 
 ## Validation Rules
 - Run relevant project-native checks before marking a story complete
 - Typical validation flow should include, when available:
   - install
   - lint
+  - build
   - typecheck
   - test
-  - build
-- Baseline local validation for this repo is `npm run lint`, `npm run typecheck`, and `npm run build`
+- Baseline local validation for this repo is `npm run lint`, `npm run build`, and `npm run typecheck`
 - Use the ESLint CLI via `npm run lint`; do not reintroduce deprecated `next lint`
 - For UI changes, verify the affected section visually in browser if browser tooling is available
 - If browser verification is not available, note that manual browser verification is required
@@ -134,4 +136,22 @@ Last Updated: 2026-03-11 00:07:39 UTC
 - **Learnings for future iterations:**
   - Light-surface cards need `text-text-on-light` copy plus muted cream badge styling to preserve contrast against the dark overall page theme
   - New section stories can slot into `app/page.tsx` as standalone imports without forcing unfinished placeholder sections to be rewritten early
+---
+## 2026-03-11 00:28:01 UTC - US-004
+- Implemented a dedicated proof section with one featured editorial stat card, three supporting stat cards, and a signal badge rail rendered entirely from `data/proof.json`
+- Wired the new section into `app/page.tsx` directly after services so the credibility block lands before the unfinished About and Projects placeholders
+- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
+- Current status: `US-004` is complete and passing locally
+- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
+- Files changed:
+  - `AGENTS.md`
+  - `app/page.tsx`
+  - `components/Proof.tsx`
+  - `data/proof.json`
+  - `prd.json`, `progress.txt`
+- **Learnings for future iterations:**
+  - Reusing the shared editorial split grid keeps new sections visually aligned with earlier modules without forcing a generic page template
+  - When a PRD-defined data file is missing from `data/`, create that file from the PRD payload first so the section can stay data-driven from the start
+  - `tsconfig.json` includes `.next/types`, so local validation must not parallelize `npm run build` and `npm run typecheck`
+  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
 ---

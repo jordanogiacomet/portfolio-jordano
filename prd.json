@@ -441,7 +441,7 @@
     {
       "id": "US-004",
       "title": "Proof and credibility section",
-      "passes": false,
+      "passes": true,
       "description": "Create a section with stats and trust signals to communicate seriousness, breadth, and execution depth.",
       "acceptanceCriteria": [
         "Section includes stat cards and signal badges rendered from data/proof.json",

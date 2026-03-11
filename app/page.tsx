@@ -1,6 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
+import { Proof } from "@/components/Proof";
 import { Services } from "@/components/Services";
 
 const sections = [
@@ -35,6 +36,7 @@ export default function HomePage() {
       <main className="overflow-hidden">
         <Hero />
         <Services />
+        <Proof />
 
         {sections.map((section) => (
           <section
