@@ -1,26 +1,39 @@
 {
-  "sectionLabel": "Services",
-  "heading": "O que eu construo",
-  "description": "Soluções digitais com profundidade técnica e foco prático em negócio.",
+  "sectionLabel": "Serviços",
+  "heading": "Software com estrutura para operação, produto e presença digital.",
+  "description": "Atuo em projetos em que clareza de negócio e profundidade técnica precisam andar juntas, sem empilhar solução genérica.",
+  "framing": {
+    "label": "Como eu penso",
+    "title": "O foco está em resolver a parte crítica do fluxo com software claro, sólido e usável.",
+    "items": [
+      "Escopo com recorte de negócio e prioridade de entrega.",
+      "Implementação com atenção em performance, legibilidade e manutenção.",
+      "Integrações, automações e IA entram quando reduzem fricção operacional de verdade."
+    ]
+  },
   "items": [
     {
-      "title": "Landing Pages & Sites Comerciais",
-      "description": "Páginas e sites com foco em clareza, performance, SEO e geração de contato qualificado.",
-      "tags": ["Next.js", "SEO", "Conversão"]
-    },
-    {
-      "title": "Sistemas Web Sob Medida",
-      "description": "Produtos internos e externos com frontend, backend, autenticação, painéis e integração entre fluxos.",
+      "eyebrow": "Plataformas sob medida",
+      "title": "Sistemas web sob medida",
+      "description": "Aplicações internas ou externas com frontend, backend, autenticação, painéis e fluxos conectados.",
       "tags": ["TypeScript", "APIs", "Arquitetura"]
     },
     {
-      "title": "Automações & Integrações",
+      "eyebrow": "Presença comercial",
+      "title": "Landing pages e sites comerciais",
+      "description": "Páginas e sites com estrutura clara, performance, SEO e foco em conversão qualificada.",
+      "tags": ["Next.js", "SEO", "Conversão"]
+    },
+    {
+      "eyebrow": "Operação conectada",
+      "title": "Automações e integrações",
       "description": "Conexão entre formulários, e-mail, WhatsApp, planilhas, CMS, filas e serviços externos.",
       "tags": ["Integrações", "Workflows", "Produtividade"]
     },
     {
-      "title": "IA Aplicada a Operação",
-      "description": "Assistentes, classificação, geração de relatórios, extração de dados e suporte a tomada de decisão.",
+      "eyebrow": "Camada de IA",
+      "title": "IA aplicada à operação",
+      "description": "Assistentes, classificação, extração de dados, relatórios e suporte a decisão quando isso melhora um processo existente.",
       "tags": ["LLMs", "RAG", "Automação"]
     }
   ]

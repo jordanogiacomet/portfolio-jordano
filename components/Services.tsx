@@ -1,15 +1,23 @@
 import servicesContent from "@/data/services.json";
 
 type ServiceItem = {
+  eyebrow: string;
   title: string;
   description: string;
   tags: string[];
+};
+
+type ServiceFraming = {
+  label: string;
+  title: string;
+  items: string[];
 };
 
 type ServicesContent = {
   sectionLabel: string;
   heading: string;
   description: string;
+  framing: ServiceFraming;
   items: ServiceItem[];
 };
 
@@ -27,12 +35,43 @@ export function Services() {
         className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.08),_transparent_70%)]"
       />
 
+      <div
+        aria-hidden="true"
+        className="absolute left-[10%] top-28 h-48 w-48 rounded-full bg-accent/10 blur-3xl"
+      />
+
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.32fr_1fr] lg:gap-12">
-          <div>
+        <div className="grid gap-8 lg:grid-cols-[0.4fr_1fr] lg:gap-12">
+          <div className="self-start lg:sticky lg:top-28">
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
             </p>
+
+            <div className="mt-6 rounded-[2.2rem] border border-white/10 bg-white/[0.04] p-6 shadow-panel backdrop-blur-sm sm:p-7">
+              <p className="text-xs uppercase tracking-[0.28em] text-text-secondary">
+                {content.framing.label}
+              </p>
+              <p className="mt-4 font-display text-[2rem] leading-[1.02] text-text-primary sm:text-[2.35rem]">
+                {content.framing.title}
+              </p>
+
+              <ul className="mt-6 space-y-4" aria-label={content.framing.label}>
+                {content.framing.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-4 border-t border-white/10 pt-4 first:border-t-0 first:pt-0"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-3 h-1.5 w-1.5 rounded-full bg-text-primary/80"
+                    />
+                    <span className="text-sm leading-7 text-text-secondary sm:text-base">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div>
@@ -48,36 +87,69 @@ export function Services() {
               </p>
             </header>
 
-            <div className="mt-10 grid gap-5 md:grid-cols-2">
+            <div className="mt-12 space-y-4">
               {content.items.map((item, index) => (
                 <article
                   key={item.title}
-                  className="group rounded-[2rem] border border-[#d7c7bc]/35 bg-bg-surface p-7 text-text-on-light shadow-[0_24px_80px_rgba(9,2,4,0.18)] transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(9,2,4,0.24)]"
+                  className={`group rounded-[2rem] border p-6 transition duration-300 ease-out hover:-translate-y-1 sm:p-8 ${
+                    index === 0
+                      ? "border-[#d7c7bc]/35 bg-bg-surface text-text-on-light shadow-[0_24px_80px_rgba(9,2,4,0.18)] hover:shadow-[0_30px_90px_rgba(9,2,4,0.24)]"
+                      : "border-white/10 bg-white/[0.04] text-text-primary shadow-panel backdrop-blur-sm hover:bg-white/[0.06]"
+                  }`}
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <p className="text-xs uppercase tracking-[0.3em] text-text-on-light/55">
-                      0{index + 1}
-                    </p>
-                    <div className="h-px flex-1 translate-y-2 bg-text-on-light/12 transition-colors duration-300 group-hover:bg-text-on-light/20" />
-                  </div>
-
-                  <h3 className="mt-6 font-display text-3xl leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-text-on-light/78 sm:text-base">
-                    {item.description}
-                  </p>
-
-                  <ul className="mt-8 flex flex-wrap gap-2" aria-label={`${item.title} tags`}>
-                    {item.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="rounded-full border border-badge-border bg-bg-surface-muted/55 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-text-on-light/80"
+                  <div className="grid gap-6 lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-8">
+                    <div className="flex items-start justify-between gap-4 lg:block">
+                      <p
+                        className={`text-xs uppercase tracking-[0.3em] ${
+                          index === 0 ? "text-text-on-light/55" : "text-text-secondary"
+                        }`}
                       >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
+                        0{index + 1}
+                      </p>
+                      <p
+                        className={`text-xs uppercase tracking-[0.24em] lg:mt-6 ${
+                          index === 0 ? "text-text-on-light/65" : "text-text-secondary"
+                        }`}
+                      >
+                        {item.eyebrow}
+                      </p>
+                    </div>
+
+                    <div
+                      className={`border-t pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 ${
+                        index === 0 ? "border-text-on-light/12" : "border-white/10"
+                      }`}
+                    >
+                      <h3 className="font-display text-[2rem] leading-[1.02] sm:text-[2.35rem]">
+                        {item.title}
+                      </h3>
+                      <p
+                        className={`mt-4 max-w-2xl text-sm leading-7 sm:text-base ${
+                          index === 0 ? "text-text-on-light/78" : "text-text-secondary"
+                        }`}
+                      >
+                        {item.description}
+                      </p>
+
+                      <ul
+                        className="mt-6 flex flex-wrap gap-2"
+                        aria-label={`${item.title} tecnologias e focos`}
+                      >
+                        {item.tags.map((tag) => (
+                          <li
+                            key={tag}
+                            className={`rounded-full px-3 py-1.5 text-xs font-medium uppercase tracking-[0.16em] ${
+                              index === 0
+                                ? "border border-badge-border bg-bg-surface-muted/55 text-text-on-light/80"
+                                : "border border-white/10 bg-white/[0.05] text-text-primary/88"
+                            }`}
+                          >
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </article>
               ))}
             </div>
