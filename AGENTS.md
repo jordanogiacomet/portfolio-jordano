@@ -108,4 +108,5 @@ If there are still stories with `passes: false`, end your response normally (ano
 - For cream or light surface cards, switch copy to `text-text-on-light` and use `border-badge-border` with `bg-bg-surface-muted` for tags/chips; the default dark-theme text tokens are only for dark section backgrounds.
 - Editorial content sections should usually keep the established split layout: eyebrow rail on the left and main content column on the right via `lg:grid-cols-[0.32fr_1fr]`, unless a story explicitly calls for a different composition.
 - When a section pairs long-form copy with one supporting visual, keep the shared outer eyebrow rail and build the text/image split as a nested grid inside the main content column so the section still aligns with the rest of the page rhythm.
+- Selected-work sections should avoid uniform gallery grids; lead with one featured split card and place the remaining projects in supporting cards so the module reads like curated case studies.
 - Do not run `npm run typecheck` in parallel with `npm run build`; both rely on `.next/types`, and the standalone typecheck is safest after a successful build has generated those files.

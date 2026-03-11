@@ -1,6 +1,6 @@
 # Ralph Progress Log
 Started: 2026-03-10 00:00:00
-Last Updated: 2026-03-11 00:45:42 UTC
+Last Updated: 2026-03-11 00:58:53 UTC
 
 ## Codebase Patterns
 - Project lives in `/workspace/` - all paths relative to that
@@ -17,6 +17,7 @@ Last Updated: 2026-03-11 00:45:42 UTC
 - For cream or light surface cards, switch copy to `text-text-on-light` and use `border-badge-border` plus `bg-bg-surface-muted` for badges to preserve contrast
 - Maintain the dark editorial premium aesthetic: burgundy-dominant backgrounds, cream/light surfaces, strong serif headings, disciplined spacing
 - Projects must be presented as selected work/case-study style cards, not as a generic image gallery
+- For selected-work modules, feature the lead project in a wide split card and keep remaining projects as supporting cards below to preserve the curated case-study feel
 - Use Framer Motion for section entrances and scroll-driven effects; keep hover states in CSS/Tailwind
 - Respect `prefers-reduced-motion` for all non-essential animations
 - Prefer `transform` and `opacity` for motion; avoid layout-triggering animation properties
@@ -47,8 +48,8 @@ Last Updated: 2026-03-11 00:45:42 UTC
 - Design inspiration should guide tone and structure, not literal copying of another portfolio
 
 ## Current Delivery Status
-- Stories completed through `US-005`
-- Next highest-priority incomplete story is `US-006 - Process section`
+- Stories completed through `US-007`
+- Next highest-priority incomplete story is `US-008 - Stack and areas of expertise section`
 - Manual browser QA is still pending for completed UI stories because browser tooling is unavailable in this environment
 
 ## Validation Rules
@@ -188,5 +189,26 @@ Last Updated: 2026-03-11 00:45:42 UTC
 - **Learnings for future iterations:**
   - When a section keeps the shared editorial rail but its PRD payload does not include a dedicated eyebrow label, a concise data-derived rail label can preserve the layout without inventing new authored copy
   - Process-style sections read more clearly when each step gets explicit card framing instead of collapsing the sequence into plain paragraphs
+  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
+---
+## 2026-03-11 00:58:53 UTC - US-007
+- Implemented a dedicated Projects section with a featured case-study card, two supporting project cards, local placeholder visuals, and data-driven content sourced from `data/projects.json`
+- Added a reusable `ProjectCard` component and replaced the temporary projects placeholder in `app/page.tsx` with the new `Projects` module
+- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
+- Current status: `US-007` is complete and passing locally
+- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
+- Files changed:
+  - `AGENTS.md`
+  - `app/page.tsx`
+  - `components/ProjectCard.tsx`
+  - `components/Projects.tsx`
+  - `data/projects.json`
+  - `public/images/project-placeholder-1.svg`
+  - `public/images/project-placeholder-2.svg`
+  - `public/images/project-placeholder-3.svg`
+  - `prd.json`, `progress.txt`
+- **Learnings for future iterations:**
+  - Selected-work sections land better when one project gets a wide split layout and the rest support it from a secondary grid, instead of giving every card equal weight
+  - Keeping project assets as local SVG placeholders preserves the static export flow and gives the cards consistent editorial framing until real visuals are available
   - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
 ---

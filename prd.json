@@ -480,7 +480,7 @@
     {
       "id": "US-007",
       "title": "Projects section",
-      "passes": false,
+      "passes": true,
       "description": "Create a featured projects section where each project is presented as a case-study style card.",
       "acceptanceCriteria": [
         "Section label, heading, and description sourced from data/projects.json",

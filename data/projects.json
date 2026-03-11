@@ -1,0 +1,37 @@
+{
+  "sectionLabel": "Projects",
+  "heading": "Projetos em destaque",
+  "description": "Alguns dos projetos e frentes que melhor representam minha forma de pensar e construir software.",
+  "items": [
+    {
+      "title": "Validator & Markdown Reporter",
+      "description": "Ecossistema para validacao de dados, ingestao CSV/XLSX e geracao de relatorios dinamicos em Markdown/PDF.",
+      "tags": ["FastAPI", "Python", "Templates", "Relatorios"],
+      "image": "/images/project-placeholder-1.svg",
+      "links": {
+        "live": "#",
+        "github": "#"
+      }
+    },
+    {
+      "title": "Pipeline com Kafka / NiFi / Microservices",
+      "description": "Arquitetura orientada a eventos para integracao entre servicos, orquestracao de fluxos e processamento operacional.",
+      "tags": ["Kafka", "NiFi", "Microservices", "Infra"],
+      "image": "/images/project-placeholder-2.svg",
+      "links": {
+        "live": "#",
+        "github": "#"
+      }
+    },
+    {
+      "title": "Portfolio & Presenca Comercial",
+      "description": "Base para vender servicos de sites, landing pages, automacoes e IA aplicada com posicionamento premium.",
+      "tags": ["Next.js", "Design System", "Conversao"],
+      "image": "/images/project-placeholder-3.svg",
+      "links": {
+        "live": "#",
+        "github": "#"
+      }
+    }
+  ]
+}

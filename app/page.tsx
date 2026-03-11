@@ -4,16 +4,10 @@ import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { Process } from "@/components/Process";
 import { Proof } from "@/components/Proof";
+import { Projects } from "@/components/Projects";
 import { Services } from "@/components/Services";
 
 const sections = [
-  {
-    id: "projects",
-    eyebrow: "Selected Work",
-    title: "A case-study-ready projects area.",
-    description:
-      "Projects will drop into a dedicated section with room for outcome-driven cards, visual assets, and supporting technical context."
-  },
   {
     id: "contact",
     eyebrow: "Conversation",
@@ -34,6 +28,7 @@ export default function HomePage() {
         <Proof />
         <About />
         <Process />
+        <Projects />
 
         {sections.map((section) => (
           <section
