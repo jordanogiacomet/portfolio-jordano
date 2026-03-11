@@ -1,0 +1,42 @@
+{
+  "name": "Jordano Giacomet Tomazoni",
+  "greeting": "Olá, eu sou o Jordano,",
+  "titleLines": [
+    "Desenvolvedor",
+    "Full-Stack",
+    "& Software Engineer"
+  ],
+  "description": "Construo sites, sistemas e automações com IA para transformar operação, conteúdo e geração de leads em produtos reais.",
+  "cta": {
+    "text": "Vamos conversar",
+    "link": "#contact"
+  },
+  "secondaryCta": {
+    "text": "Ver projetos",
+    "link": "#projects"
+  },
+  "highlights": [
+    {
+      "label": "Sites que geram lead",
+      "description": "Landing pages e sites comerciais com foco em conversão"
+    },
+    {
+      "label": "Sistemas web sob medida",
+      "description": "Produtos completos com backend, frontend e arquitetura pensada"
+    },
+    {
+      "label": "Automações e integrações",
+      "description": "Fluxos que reduzem trabalho manual e conectam ferramentas"
+    },
+    {
+      "label": "IA aplicada",
+      "description": "Assistentes, classificação, extração e inteligência operacional"
+    }
+  ],
+  "visual": {
+    "src": "/images/hero-placeholder.svg",
+    "alt": "Editorial portrait placeholder for Jordano Giacomet Tomazoni",
+    "eyebrow": "Engenharia com direção de produto",
+    "caption": "Web products, automations, and applied AI shaped into business-ready systems."
+  }
+}

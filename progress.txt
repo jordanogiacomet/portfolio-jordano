@@ -1,6 +1,6 @@
 # Ralph Progress Log
 Started: 2026-03-10 00:00:00
-Last Updated: 2026-03-10 23:52:13 UTC
+Last Updated: 2026-03-11 00:07:39 UTC
 
 ## Codebase Patterns
 - Project lives in `/workspace/` - all paths relative to that
@@ -97,5 +97,25 @@ Last Updated: 2026-03-10 23:52:13 UTC
 - **Learnings for future iterations:**
   - The actual app root is `/workspace`; earlier bootstrap notes that pointed to `/workspace/jordano-portfolio/` were incorrect
   - The scaffold already provides anchor IDs for `#home`, `#about`, `#projects`, and `#contact`, so later section stories should attach to those IDs instead of creating competing anchors
-  - The nav/footer chrome is centralized through `components/site-links.ts`; update that shared file if global navigation labels or URLs change
+- The nav/footer chrome is centralized through `components/site-links.ts`; update that shared file if global navigation labels or URLs change
+- Keep `app/page.tsx` as a composition shell; each major section should live in `components/` and import its own matching JSON payload from `data/`
+- Local SVG placeholders in `public/images/` work well with the existing static export setup because `next.config.ts` already enables `images.unoptimized`
+
+## 2026-03-11 00:07:39 UTC - US-002
+- Implemented a data-driven hero section with Jordano's greeting, multi-line editorial heading, supporting copy, dual CTAs, a framed visual placeholder, and four highlight cards
+- Added `data/hero.json` as the source of truth for hero copy, CTA targets, highlight content, and placeholder visual metadata
+- Replaced the scaffold hero in `app/page.tsx`, added subtle CSS-only entrance animation with reduced-motion fallback, and introduced a local SVG placeholder in `public/images/`
+- Validation run: `npm run lint`, `npm run typecheck`, `npm run build`
+- Current status: `US-002` is complete and passing locally
+- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
+- Files changed:
+  - `app/globals.css`, `app/page.tsx`
+  - `components/Hero.tsx`
+  - `data/hero.json`
+  - `public/images/hero-placeholder.svg`
+  - `prd.json`, `progress.txt`
+- **Learnings for future iterations:**
+  - The page shell now expects section modules to own their data import and markup, which keeps `app/page.tsx` thin as more PRD stories land
+  - For placeholder visuals, a local SVG plus `next/image` is enough to preserve layout fidelity without introducing remote asset configuration
+---
 ---

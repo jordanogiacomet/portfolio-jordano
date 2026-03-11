@@ -408,11 +408,11 @@
         "Static export configured"
       ]
     },
-    {
-      "id": "US-002",
-      "title": "Hero section",
-      "passes": false,
-      "description": "Create a premium hero section with greeting, large editorial title, supporting copy, CTAs, image placeholder, and 4 highlight cards.",
+  {
+    "id": "US-002",
+    "title": "Hero section",
+    "passes": true,
+    "description": "Create a premium hero section with greeting, large editorial title, supporting copy, CTAs, image placeholder, and 4 highlight cards.",
       "acceptanceCriteria": [
         "Hero uses dark burgundy background and cream typography",
         "Large serif multi-line title with strong hierarchy",

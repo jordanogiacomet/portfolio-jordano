@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 
 const sections = [
@@ -33,62 +32,7 @@ export default function HomePage() {
       <Navbar />
 
       <main className="overflow-hidden">
-        <section
-          id="home"
-          className="relative isolate min-h-screen border-b border-white/10 bg-hero-radial px-4 pb-16 pt-32 sm:px-6 lg:px-10 lg:pt-36"
-        >
-          <div className="mx-auto flex max-w-7xl flex-col gap-14 lg:min-h-[80vh] lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl space-y-8">
-              <p className="text-sm uppercase tracking-[0.32em] text-text-secondary">
-                Project Scaffold
-              </p>
-              <div className="space-y-5">
-                <h1 className="max-w-4xl font-display text-5xl leading-tight text-text-primary sm:text-6xl lg:text-7xl">
-                  Dark editorial foundations for a serious portfolio.
-                </h1>
-                <p className="max-w-2xl text-base leading-8 text-text-secondary sm:text-lg">
-                  The layout shell includes the fixed navigation, footer, theme system,
-                  smooth scrolling, and responsive section anchors required for the next
-                  stories.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href="#projects"
-                  className="inline-flex items-center justify-center rounded-full bg-bg-surface px-6 py-3 text-sm font-medium text-text-on-light transition-transform duration-200 hover:-translate-y-0.5"
-                >
-                  Browse Structure
-                </Link>
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-text-primary transition-colors duration-200 hover:bg-white/5"
-                >
-                  Jump to Contact
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid max-w-xl gap-4 sm:grid-cols-2">
-              {[
-                "Responsive shell",
-                "Premium theme tokens",
-                "Fixed navigation",
-                "Static export ready"
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
-                >
-                  <p className="text-sm uppercase tracking-[0.22em] text-text-secondary">
-                    Ready
-                  </p>
-                  <p className="mt-4 font-display text-2xl text-text-primary">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Hero />
 
         {sections.map((section) => (
           <section
