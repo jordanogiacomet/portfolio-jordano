@@ -1,6 +1,6 @@
 # Ralph Progress Log
 Started: 2026-03-10 00:00:00
-Last Updated: 2026-03-11 22:27:40 UTC
+Last Updated: 2026-03-11 22:34:47 UTC
 
 ## Codebase Patterns
 - Project lives in `/workspace/` - all paths relative to that
@@ -27,6 +27,7 @@ Last Updated: 2026-03-11 22:27:40 UTC
 - For narrative sections that combine long-form copy with one supporting visual, keep the shared outer eyebrow rail and create the text/image split as a nested grid inside the main content column
 - Do not run `npm run typecheck` in parallel with `npm run build`; both rely on `.next/types`, and the standalone typecheck is safest after a successful build
 - Before committing, inspect `git status` and avoid including unrelated changes
+- If a story's implementation is already present in `HEAD` while `prd.json` still shows `passes: false`, re-validate the existing code and sync the PRD/progress trail instead of rewriting the same section
 - If checks fail, do not commit; record the failure and blocker in the progress log
 - Do not expand scope beyond the selected story; log follow-up ideas instead of implementing them immediately
 
@@ -50,8 +51,8 @@ Last Updated: 2026-03-11 22:27:40 UTC
 - Design inspiration should guide tone and structure, not literal copying of another portfolio
 
 ## Current Delivery Status
-- Stories completed through `US-009`
-- Next highest-priority incomplete story is `US-010 - Studies section`
+- Stories completed through `US-010`
+- Next highest-priority incomplete story is `US-011 - FAQ section`
 - Manual browser QA is still pending for completed UI stories because browser tooling is unavailable in this environment
 
 ## Validation Rules
@@ -247,5 +248,19 @@ Last Updated: 2026-03-11 22:27:40 UTC
 - **Learnings for future iterations:**
   - Experience or timeline modules work best when the JSON order already reflects recency, letting the first entry carry the visual emphasis without extra sort logic or duplicate intro copy
   - A vertical rail with offset cards keeps chronology readable on desktop while still degrading cleanly to stacked cards on mobile
+  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
+---
+
+## 2026-03-11 22:34:47 UTC - US-010
+- Validated the already-present Studies section implementation in `HEAD`, then synced the story bookkeeping after confirming the section passes the repo validation flow
+- Confirmed the module uses the shared editorial rail, a restrained header/count treatment, and an ordered two-column list of learning areas sourced from `data/studies.json`
+- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
+- Current status: `US-010` is complete and passing locally
+- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
+- Files changed:
+  - `prd.json`, `progress.txt`
+- **Learnings for future iterations:**
+  - If code for the next story already exists in the branch, validate that exact implementation before updating `passes` so the PRD stays tied to working code rather than assumptions
+  - Flat list sections read as curated editorial content when the items are ordered and lightly framed, instead of being scattered into unstructured badges or paragraphs
   - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
 ---

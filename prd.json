@@ -520,7 +520,7 @@
     {
       "id": "US-010",
       "title": "Studies section",
-      "passes": false,
+      "passes": true,
       "description": "Create a compact studies and learning section to reinforce technical seriousness and breadth of ongoing development.",
       "acceptanceCriteria": [
         "Section heading and list items sourced from data/studies.json",
