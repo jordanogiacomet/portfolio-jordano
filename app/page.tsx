@@ -8,6 +8,7 @@ import { Proof } from "@/components/Proof";
 import { Projects } from "@/components/Projects";
 import { Services } from "@/components/Services";
 import { Stack } from "@/components/Stack";
+import { Studies } from "@/components/Studies";
 
 const sections = [
   {
@@ -33,6 +34,7 @@ export default function HomePage() {
         <Projects />
         <Stack />
         <Experience />
+        <Studies />
 
         {sections.map((section) => (
           <section
