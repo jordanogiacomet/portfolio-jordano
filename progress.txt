@@ -1,6 +1,6 @@
 # Ralph Progress Log
 Started: 2026-03-10 00:00:00
-Last Updated: 2026-03-11 22:21:33 UTC
+Last Updated: 2026-03-11 22:27:40 UTC
 
 ## Codebase Patterns
 - Project lives in `/workspace/` - all paths relative to that
@@ -19,6 +19,7 @@ Last Updated: 2026-03-11 22:21:33 UTC
 - Projects must be presented as selected work/case-study style cards, not as a generic image gallery
 - For selected-work modules, feature the lead project in a wide split card and keep remaining projects as supporting cards below to preserve the curated case-study feel
 - Stack or skills sections should communicate breadth through categorized cards or grouped lists rather than logo grids or uncontrolled badge clouds
+- Timeline-style sections should keep items ordered most-recent-first in JSON and emphasize the first entry visually instead of introducing extra sort logic or duplicate intro copy
 - Use Framer Motion for section entrances and scroll-driven effects; keep hover states in CSS/Tailwind
 - Respect `prefers-reduced-motion` for all non-essential animations
 - Prefer `transform` and `opacity` for motion; avoid layout-triggering animation properties
@@ -49,8 +50,8 @@ Last Updated: 2026-03-11 22:21:33 UTC
 - Design inspiration should guide tone and structure, not literal copying of another portfolio
 
 ## Current Delivery Status
-- Stories completed through `US-008`
-- Next highest-priority incomplete story is `US-009 - Experience section`
+- Stories completed through `US-009`
+- Next highest-priority incomplete story is `US-010 - Studies section`
 - Manual browser QA is still pending for completed UI stories because browser tooling is unavailable in this environment
 
 ## Validation Rules
@@ -228,5 +229,23 @@ Last Updated: 2026-03-11 22:21:33 UTC
 - **Learnings for future iterations:**
   - Stack or skills sections read better as categorized cards with compact grouped lists than as logo-heavy grids, which preserves the editorial tone and mobile readability
   - When a section payload only provides a heading plus structured items, derive hierarchy from counts and grouping rather than inventing extra marketing copy
+  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
+---
+## 2026-03-11 22:27:40 UTC - US-009
+- Implemented a dedicated Experience section with a connected timeline rail, a featured current-role card, and supporting stacked entry cards rendered entirely from `data/experience.json`
+- Added reusable `Experience` and `ExperienceEntry` components, then wired the new section into `app/page.tsx` after Stack to preserve story order
+- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
+- Current status: `US-009` is complete and passing locally
+- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
+- Files changed:
+  - `AGENTS.md`
+  - `app/page.tsx`
+  - `components/Experience.tsx`
+  - `components/ExperienceEntry.tsx`
+  - `data/experience.json`
+  - `prd.json`, `progress.txt`
+- **Learnings for future iterations:**
+  - Experience or timeline modules work best when the JSON order already reflects recency, letting the first entry carry the visual emphasis without extra sort logic or duplicate intro copy
+  - A vertical rail with offset cards keeps chronology readable on desktop while still degrading cleanly to stacked cards on mobile
   - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
 ---

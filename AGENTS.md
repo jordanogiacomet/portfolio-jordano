@@ -110,4 +110,5 @@ If there are still stories with `passes: false`, end your response normally (ano
 - When a section pairs long-form copy with one supporting visual, keep the shared outer eyebrow rail and build the text/image split as a nested grid inside the main content column so the section still aligns with the rest of the page rhythm.
 - Selected-work sections should avoid uniform gallery grids; lead with one featured split card and place the remaining projects in supporting cards so the module reads like curated case studies.
 - Stack or skills sections should show breadth through categorized cards or compact grouped lists; avoid logo grids and uncontrolled badge clouds so the page keeps its editorial rhythm.
+- Timeline-style sections should keep items ordered most-recent-first in JSON and emphasize the first entry visually instead of introducing extra sort logic or duplicate intro copy.
 - Do not run `npm run typecheck` in parallel with `npm run build`; both rely on `.next/types`, and the standalone typecheck is safest after a successful build has generated those files.

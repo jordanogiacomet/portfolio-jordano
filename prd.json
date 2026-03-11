@@ -507,7 +507,7 @@
     {
       "id": "US-009",
       "title": "Experience section",
-      "passes": false,
+      "passes": true,
       "description": "Create an experience timeline or stacked card list showing work context and roles.",
       "acceptanceCriteria": [
         "Section content sourced from data/experience.json",

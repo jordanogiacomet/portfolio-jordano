@@ -1,0 +1,17 @@
+{
+  "sectionLabel": "Experience",
+  "items": [
+    {
+      "company": "Apollo Gestão",
+      "role": "Desenvolvimento de software e soluções internas",
+      "period": "Atual",
+      "description": "Atuação em validação de dados, geração de relatórios, integrações, automações, infraestrutura e experimentos com IA aplicada."
+    },
+    {
+      "company": "Projetos próprios e freelance",
+      "role": "Desenvolvedor full-stack",
+      "period": "Em evolução",
+      "description": "Construção de portfólios, ideias SaaS, automações, ferramentas web e posicionamento comercial."
+    }
+  ]
+}
