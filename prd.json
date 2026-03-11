@@ -467,7 +467,7 @@
     {
       "id": "US-006",
       "title": "Process section",
-      "passes": false,
+      "passes": true,
       "description": "Create a process section showing a three-step working model centered around discovery, architecture, and implementation.",
       "acceptanceCriteria": [
         "Section heading sourced from data/process.json",

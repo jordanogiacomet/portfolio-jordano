@@ -174,3 +174,19 @@ Last Updated: 2026-03-11 00:45:42 UTC
   - If a PRD image placeholder points to an asset format that does not exist yet, switching the data payload to a local SVG placeholder keeps the section lightweight and export-friendly
   - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
 ---
+## 2026-03-11 00:52:24 UTC - US-006
+- Implemented a dedicated Process section with the shared editorial split layout, a data-driven heading, and three framed process cards for discovery, architecture, and implementation
+- Replaced the temporary gap after About in `app/page.tsx` with the new `Process` component and added `data/process.json` from the PRD as the source of truth for the step content
+- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
+- Current status: `US-006` is complete and passing locally
+- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
+- Files changed:
+  - `app/page.tsx`
+  - `components/Process.tsx`
+  - `data/process.json`
+  - `prd.json`, `progress.txt`
+- **Learnings for future iterations:**
+  - When a section keeps the shared editorial rail but its PRD payload does not include a dedicated eyebrow label, a concise data-derived rail label can preserve the layout without inventing new authored copy
+  - Process-style sections read more clearly when each step gets explicit card framing instead of collapsing the sequence into plain paragraphs
+  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
+---

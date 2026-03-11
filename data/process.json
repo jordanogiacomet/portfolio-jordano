@@ -1,0 +1,20 @@
+{
+  "heading": "Um processo enxuto para construir com clareza",
+  "steps": [
+    {
+      "number": "01",
+      "title": "Descoberta & PRD",
+      "description": "Entendimento do problema, objetivo, público, escopo e critérios de aceitação antes de sair codando."
+    },
+    {
+      "number": "02",
+      "title": "Arquitetura & Interface",
+      "description": "Estruturação das páginas, componentes, dados, integrações e experiência do usuário."
+    },
+    {
+      "number": "03",
+      "title": "Implementação & Validação",
+      "description": "Entrega incremental com verificação técnica, refinamento visual e foco no resultado esperado."
+    }
+  ]
+}

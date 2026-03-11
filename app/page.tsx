@@ -2,6 +2,7 @@ import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
+import { Process } from "@/components/Process";
 import { Proof } from "@/components/Proof";
 import { Services } from "@/components/Services";
 
@@ -32,6 +33,7 @@ export default function HomePage() {
         <Services />
         <Proof />
         <About />
+        <Process />
 
         {sections.map((section) => (
           <section
