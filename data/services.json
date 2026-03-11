@@ -1,0 +1,27 @@
+{
+  "sectionLabel": "Services",
+  "heading": "O que eu construo",
+  "description": "Soluções digitais com profundidade técnica e foco prático em negócio.",
+  "items": [
+    {
+      "title": "Landing Pages & Sites Comerciais",
+      "description": "Páginas e sites com foco em clareza, performance, SEO e geração de contato qualificado.",
+      "tags": ["Next.js", "SEO", "Conversão"]
+    },
+    {
+      "title": "Sistemas Web Sob Medida",
+      "description": "Produtos internos e externos com frontend, backend, autenticação, painéis e integração entre fluxos.",
+      "tags": ["TypeScript", "APIs", "Arquitetura"]
+    },
+    {
+      "title": "Automações & Integrações",
+      "description": "Conexão entre formulários, e-mail, WhatsApp, planilhas, CMS, filas e serviços externos.",
+      "tags": ["Integrações", "Workflows", "Produtividade"]
+    },
+    {
+      "title": "IA Aplicada a Operação",
+      "description": "Assistentes, classificação, geração de relatórios, extração de dados e suporte a tomada de decisão.",
+      "tags": ["LLMs", "RAG", "Automação"]
+    }
+  ]
+}

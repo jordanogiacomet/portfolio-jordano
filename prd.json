@@ -424,11 +424,11 @@
         "Entrance animation on page load is subtle and refined"
       ]
     },
-    {
-      "id": "US-003",
-      "title": "Services section",
-      "passes": false,
-      "description": "Create a services section presenting the main commercial offers: websites, systems, automations, and applied AI.",
+  {
+    "id": "US-003",
+    "title": "Services section",
+    "passes": true,
+    "description": "Create a services section presenting the main commercial offers: websites, systems, automations, and applied AI.",
       "acceptanceCriteria": [
         "Section heading and description are sourced from data/services.json",
         "Four service cards rendered from JSON data",

@@ -102,3 +102,7 @@ If there are still stories with `passes: false`, end your response normally (ano
 - Commit frequently
 - Keep CI green
 - Read the Codebase Patterns section in progress.txt before starting
+
+## Repo-Specific Patterns
+
+- For cream or light surface cards, switch copy to `text-text-on-light` and use `border-badge-border` with `bg-bg-surface-muted` for tags/chips; the default dark-theme text tokens are only for dark section backgrounds.
