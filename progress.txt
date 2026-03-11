@@ -1,6 +1,6 @@
 # Ralph Progress Log
 Started: 2026-03-10 00:00:00
-Last Updated: 2026-03-11 00:28:01 UTC
+Last Updated: 2026-03-11 00:45:42 UTC
 
 ## Codebase Patterns
 - Project lives in `/workspace/` - all paths relative to that
@@ -21,6 +21,7 @@ Last Updated: 2026-03-11 00:28:01 UTC
 - Respect `prefers-reduced-motion` for all non-essential animations
 - Prefer `transform` and `opacity` for motion; avoid layout-triggering animation properties
 - Editorial content sections should usually reuse the split layout with an eyebrow rail on the left and main content on the right (`lg:grid-cols-[0.32fr_1fr]`) unless the story requires a different composition
+- For narrative sections that combine long-form copy with one supporting visual, keep the shared outer eyebrow rail and create the text/image split as a nested grid inside the main content column
 - Do not run `npm run typecheck` in parallel with `npm run build`; both rely on `.next/types`, and the standalone typecheck is safest after a successful build
 - Before committing, inspect `git status` and avoid including unrelated changes
 - If checks fail, do not commit; record the failure and blocker in the progress log
@@ -46,8 +47,8 @@ Last Updated: 2026-03-11 00:28:01 UTC
 - Design inspiration should guide tone and structure, not literal copying of another portfolio
 
 ## Current Delivery Status
-- Stories completed through `US-004`
-- Next highest-priority incomplete story is `US-005 - About section`
+- Stories completed through `US-005`
+- Next highest-priority incomplete story is `US-006 - Process section`
 - Manual browser QA is still pending for completed UI stories because browser tooling is unavailable in this environment
 
 ## Validation Rules
@@ -153,5 +154,23 @@ Last Updated: 2026-03-11 00:28:01 UTC
   - Reusing the shared editorial split grid keeps new sections visually aligned with earlier modules without forcing a generic page template
   - When a PRD-defined data file is missing from `data/`, create that file from the PRD payload first so the section can stay data-driven from the start
   - `tsconfig.json` includes `.next/types`, so local validation must not parallelize `npm run build` and `npm run typecheck`
+  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
+---
+## 2026-03-11 00:45:42 UTC - US-005
+- Implemented a dedicated About section with the shared editorial rail, a large headline, three bio paragraphs, and a supporting profile placeholder image sourced from `data/about.json`
+- Replaced the temporary About placeholder in `app/page.tsx` with the new `About` component and added a matching local SVG asset in `public/images/`
+- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
+- Current status: `US-005` is complete and passing locally
+- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
+- Files changed:
+  - `AGENTS.md`
+  - `app/page.tsx`
+  - `components/About.tsx`
+  - `data/about.json`
+  - `public/images/profile-placeholder.svg`
+  - `prd.json`, `progress.txt`
+- **Learnings for future iterations:**
+  - Narrative sections that pair long-form copy with a single supporting visual should keep the shared outer eyebrow rail and use a nested grid inside the main column to preserve the page rhythm
+  - If a PRD image placeholder points to an asset format that does not exist yet, switching the data payload to a local SVG placeholder keeps the section lightweight and export-friendly
   - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
 ---

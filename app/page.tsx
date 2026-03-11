@@ -1,3 +1,4 @@
+import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
@@ -5,13 +6,6 @@ import { Proof } from "@/components/Proof";
 import { Services } from "@/components/Services";
 
 const sections = [
-  {
-    id: "about",
-    eyebrow: "Foundations",
-    title: "Structure first, content next.",
-    description:
-      "The portfolio scaffold is now in place with semantic anchors, premium spacing, and a responsive shell ready for section-specific content."
-  },
   {
     id: "projects",
     eyebrow: "Selected Work",
@@ -37,6 +31,7 @@ export default function HomePage() {
         <Hero />
         <Services />
         <Proof />
+        <About />
 
         {sections.map((section) => (
           <section

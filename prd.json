@@ -199,7 +199,7 @@
         "Gosto de trabalhar na interseção entre profundidade técnica e resultado prático: interfaces claras, arquitetura consistente, integrações úteis e software que realmente melhora algum fluxo.",
         "Meu trabalho combina engenharia, curiosidade técnica e visão de produto. Estudo backend, frontend, infraestrutura, sistemas e computação de forma séria, e transformo isso em entregas concretas."
       ],
-      "profileImage": "/images/profile-placeholder.jpg"
+      "profileImage": "/images/profile-placeholder.svg"
     },
     "process.json": {
       "heading": "Um processo enxuto para construir com clareza",
@@ -454,7 +454,7 @@
     {
       "id": "US-005",
       "title": "About section",
-      "passes": false,
+      "passes": true,
       "description": "Build a two-column about section with large heading, bio paragraphs, and visual support image.",
       "acceptanceCriteria": [
         "Section heading and bio text sourced from data/about.json",
