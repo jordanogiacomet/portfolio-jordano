@@ -1,6 +1,6 @@
 # Ralph Progress Log
 Started: 2026-03-10 00:00:00
-Last Updated: 2026-03-11 22:34:47 UTC
+Last Updated: 2026-03-11 22:41:31 UTC
 
 ## Codebase Patterns
 - Project lives in `/workspace/` - all paths relative to that
@@ -23,6 +23,7 @@ Last Updated: 2026-03-11 22:34:47 UTC
 - Use Framer Motion for section entrances and scroll-driven effects; keep hover states in CSS/Tailwind
 - Respect `prefers-reduced-motion` for all non-essential animations
 - Prefer `transform` and `opacity` for motion; avoid layout-triggering animation properties
+- For disclosure UI, keep the client boundary local to the interactive section and prefer `aria-expanded`/`aria-controls` plus CSS grid-row transitions instead of JS height measurement
 - Editorial content sections should usually reuse the split layout with an eyebrow rail on the left and main content on the right (`lg:grid-cols-[0.32fr_1fr]`) unless the story requires a different composition
 - For narrative sections that combine long-form copy with one supporting visual, keep the shared outer eyebrow rail and create the text/image split as a nested grid inside the main content column
 - Do not run `npm run typecheck` in parallel with `npm run build`; both rely on `.next/types`, and the standalone typecheck is safest after a successful build
@@ -51,8 +52,8 @@ Last Updated: 2026-03-11 22:34:47 UTC
 - Design inspiration should guide tone and structure, not literal copying of another portfolio
 
 ## Current Delivery Status
-- Stories completed through `US-010`
-- Next highest-priority incomplete story is `US-011 - FAQ section`
+- Stories completed through `US-011`
+- Next highest-priority incomplete story is `US-012 - Contact section`
 - Manual browser QA is still pending for completed UI stories because browser tooling is unavailable in this environment
 
 ## Validation Rules
@@ -262,5 +263,22 @@ Last Updated: 2026-03-11 22:34:47 UTC
 - **Learnings for future iterations:**
   - If code for the next story already exists in the branch, validate that exact implementation before updating `passes` so the PRD stays tied to working code rather than assumptions
   - Flat list sections read as curated editorial content when the items are ordered and lightly framed, instead of being scattered into unstructured badges or paragraphs
+  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
+---
+## 2026-03-11 22:41:31 UTC - US-011
+- Implemented a dedicated FAQ section with a single-open accordion, editorial framing, explicit open/close state treatment, and smooth CSS-driven expansion sourced entirely from `data/faq.json`
+- Wired the new `FAQ` component into `app/page.tsx` ahead of the contact placeholder so the single-page story order stays aligned with the PRD
+- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
+- Current status: `US-011` is complete and passing locally
+- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
+- Files changed:
+  - `AGENTS.md`
+  - `app/page.tsx`
+  - `components/FAQ.tsx`
+  - `data/faq.json`
+  - `prd.json`, `progress.txt`
+- **Learnings for future iterations:**
+  - Disclosure interactions fit this codebase best when the client boundary stays local to the section and the expansion animation uses CSS grid rows instead of measured heights
+  - Accessible accordion controls should expose both visible state text and `aria-expanded`/`aria-controls` so the interaction remains clear without relying on motion alone
   - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
 ---

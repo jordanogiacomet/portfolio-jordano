@@ -1,5 +1,6 @@
 import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
+import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
@@ -35,6 +36,7 @@ export default function HomePage() {
         <Stack />
         <Experience />
         <Studies />
+        <FAQ />
 
         {sections.map((section) => (
           <section

@@ -532,7 +532,7 @@
     {
       "id": "US-011",
       "title": "FAQ section",
-      "passes": false,
+      "passes": true,
       "description": "Build an accordion-style FAQ that addresses the most common questions about project types, stack, and workflow.",
       "acceptanceCriteria": [
         "Section heading sourced from data/faq.json",

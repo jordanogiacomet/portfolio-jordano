@@ -1,0 +1,21 @@
+{
+  "heading": "Perguntas frequentes",
+  "items": [
+    {
+      "question": "Que tipo de projeto você atende?",
+      "answer": "Principalmente sites, landing pages, sistemas web, automações e integrações com foco em resultado prático."
+    },
+    {
+      "question": "Você trabalha com IA?",
+      "answer": "Sim. Sobretudo em fluxos aplicados: extração, classificação, geração de conteúdo estruturado, assistentes e suporte operacional."
+    },
+    {
+      "question": "Você faz só frontend?",
+      "answer": "Não. Meu foco é full-stack, com atenção tanto para interface quanto para backend, arquitetura e entrega completa."
+    },
+    {
+      "question": "Como normalmente começa um projeto?",
+      "answer": "Começa por entendimento do problema, definição do escopo e um PRD enxuto para transformar necessidade em execução clara."
+    }
+  ]
+}
