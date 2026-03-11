@@ -1,0 +1,22 @@
+{
+  "sectionLabel": "Stack",
+  "heading": "Áreas de domínio e estudo",
+  "categories": [
+    {
+      "name": "Web",
+      "items": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Payload CMS"]
+    },
+    {
+      "name": "Backend",
+      "items": ["Python", "FastAPI", "Go", "Rust", "APIs", "Workers"]
+    },
+    {
+      "name": "Data & IA",
+      "items": ["Pandas", "LLMs", "RAG", "LangChain", "Agentes", "Templates"]
+    },
+    {
+      "name": "Infra",
+      "items": ["Docker", "Kubernetes", "Kafka", "NiFi", "CI/CD", "Linux"]
+    }
+  ]
+}

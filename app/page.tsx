@@ -6,6 +6,7 @@ import { Process } from "@/components/Process";
 import { Proof } from "@/components/Proof";
 import { Projects } from "@/components/Projects";
 import { Services } from "@/components/Services";
+import { Stack } from "@/components/Stack";
 
 const sections = [
   {
@@ -29,6 +30,7 @@ export default function HomePage() {
         <About />
         <Process />
         <Projects />
+        <Stack />
 
         {sections.map((section) => (
           <section
