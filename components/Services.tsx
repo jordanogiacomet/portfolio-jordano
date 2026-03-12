@@ -28,7 +28,7 @@ export function Services() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="relative border-b border-white/10 px-4 py-20 sm:px-6 lg:px-10"
+      className="page-section"
     >
       <div
         aria-hidden="true"
@@ -101,7 +101,7 @@ export function Services() {
                     <div className="flex items-start justify-between gap-4 lg:block">
                       <p
                         className={`text-xs uppercase tracking-[0.3em] ${
-                          index === 0 ? "text-text-on-light/55" : "text-text-secondary"
+                          index === 0 ? "text-text-on-light/62" : "text-text-secondary"
                         }`}
                       >
                         0{index + 1}

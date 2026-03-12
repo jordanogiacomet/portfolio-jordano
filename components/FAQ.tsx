@@ -11,6 +11,7 @@ type FAQItem = {
 
 type FAQContent = {
   heading: string;
+  description: string;
   items: FAQItem[];
 };
 
@@ -29,7 +30,7 @@ export function FAQ() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="relative border-b border-white/10 px-4 py-20 sm:px-6 lg:px-10"
+      className="page-section"
     >
       <div
         aria-hidden="true"
@@ -47,13 +48,16 @@ export function FAQ() {
           </div>
 
           <div>
-            <header className="max-w-3xl border-b border-white/10 pb-8">
+            <header className="max-w-4xl rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-panel backdrop-blur-sm sm:p-8">
               <h2
                 id="faq-heading"
                 className="font-display text-4xl text-text-primary sm:text-5xl"
               >
                 {content.heading}
               </h2>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-text-secondary sm:text-lg">
+                {content.description}
+              </p>
             </header>
 
             <div className="mt-8 space-y-4">
@@ -77,20 +81,25 @@ export function FAQ() {
                         type="button"
                         aria-expanded={isOpen}
                         aria-controls={answerId}
-                        className="flex w-full items-start justify-between gap-6 px-6 py-6 text-left sm:px-7"
+                        className="flex w-full items-start justify-between gap-6 px-6 py-6 text-left sm:px-7 sm:py-7"
                         onClick={() =>
                           setOpenIndex((currentIndex) =>
                             currentIndex === index ? null : index
                           )
                         }
                       >
-                        <span className="flex-1 font-body text-lg font-semibold leading-7 text-text-primary sm:text-[1.15rem]">
-                          {item.question}
+                        <span className="flex flex-1 items-start gap-4 sm:gap-5">
+                          <span className="pt-1 text-[10px] uppercase tracking-[0.3em] text-text-secondary">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span className="font-body text-lg font-semibold leading-7 text-text-primary sm:text-[1.15rem]">
+                            {item.question}
+                          </span>
                         </span>
 
                         <span className="flex shrink-0 items-center gap-3 pt-1">
                           <span className="text-[10px] uppercase tracking-[0.24em] text-text-secondary">
-                            {isOpen ? "Close" : "Open"}
+                            {isOpen ? "Fechar" : "Abrir"}
                           </span>
                           <span
                             aria-hidden="true"
@@ -111,13 +120,10 @@ export function FAQ() {
                       id={answerId}
                       role="region"
                       aria-labelledby={buttonId}
-                      className={`grid overflow-hidden px-6 transition-[grid-template-rows,opacity,padding] duration-300 ease-out sm:px-7 ${
-                        isOpen
-                          ? "grid-rows-[1fr] pb-6 opacity-100 sm:pb-7"
-                          : "grid-rows-[0fr] pb-0 opacity-0"
-                      }`}
+                      hidden={!isOpen}
+                      className="px-6 pb-6 sm:px-7 sm:pb-7"
                     >
-                      <div className="min-h-0 overflow-hidden border-t border-white/10 pt-5">
+                      <div className="border-t border-white/10 pt-5 sm:pt-6">
                         <p className="max-w-3xl font-body text-base leading-8 text-text-secondary">
                           {item.answer}
                         </p>

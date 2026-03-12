@@ -1,0 +1,19 @@
+{
+  "sectionLabel": "Profundidade técnica",
+  "heading": "Base que conecta produto, engenharia e evolução contínua",
+  "description": "Meu trabalho cruza interface, backend, automação e operação com decisões técnicas orientadas a clareza, manutenção e resultado. Em vez de listar tudo, organizo a base pelos domínios que realmente sustentam entrega.",
+  "framing": {
+    "label": "Leitura da seção",
+    "title": "Stack, experiência e estudo aparecem como uma base operacional só.",
+    "items": [
+      "Escolha de tecnologia orientada ao problema, não a hype ou volume de ferramentas.",
+      "Capacidade de navegar entre produto, frontend, backend, dados e infraestrutura sem perder coerência.",
+      "Estudo contínuo usado para ampliar repertório e melhorar decisões de implementação."
+    ]
+  },
+  "domainsLabel": "Domínios em prática",
+  "experienceLabel": "Aplicação recente",
+  "experienceDescription": "Contextos em que essa base técnica já se traduz em software, automações e operação.",
+  "studiesLabel": "Frentes em aprofundamento",
+  "studiesDescription": "Temas que continuam em estudo para ampliar rigor técnico e qualidade de entrega."
+}

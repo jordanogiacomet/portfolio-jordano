@@ -37,6 +37,7 @@ export function Hero() {
   return (
     <section
       id="home"
+      aria-labelledby="home-heading"
       className="relative isolate overflow-hidden border-b border-white/10 bg-hero-radial px-4 pb-16 pt-32 sm:px-6 lg:px-10 lg:pb-24 lg:pt-36"
     >
       <div
@@ -55,7 +56,8 @@ export function Hero() {
               {content.greeting}
             </p>
 
-            <div
+            <h1
+              id="home-heading"
               className="mt-5 space-y-2 text-balance font-display text-5xl leading-[0.92] text-text-primary sm:text-6xl lg:text-[5.75rem]"
               aria-label={`${content.name}, ${content.titleLines.join(" ")}`}
             >
@@ -76,7 +78,7 @@ export function Hero() {
                   </span>
                 );
               })}
-            </div>
+            </h1>
 
             <p
               className="animate-hero-reveal mt-8 max-w-2xl text-base leading-8 text-text-secondary sm:text-lg"

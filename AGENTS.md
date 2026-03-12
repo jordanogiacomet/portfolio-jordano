@@ -1,115 +1,487 @@
-# Ralph Agent Instructions
+# AGENTS.md
 
-You are an autonomous coding agent working on a software project.
+## Operating assumption
 
-## Your Task
+This repository is intended to be worked on by Codex running with high autonomy inside an isolated dev container.
 
-1. Read the PRD at `prd.json` (in the same directory as this file)
-2. Read the progress log at `progress.txt` (check Codebase Patterns section first)
-3. Check you're on the correct branch from PRD `branchName`. If not, check it out or create from main.
-4. Pick the **highest priority** user story where `passes: false`
-5. Implement that single user story
-6. Run quality checks (e.g., typecheck, lint, test - use whatever your project requires)
-7. Update AGENTS.md files if you discover reusable patterns (see below)
-8. If checks pass, commit ALL changes with message: `feat: [Story ID] - [Story Title]`
-9. Update the PRD to set `passes: true` for the completed story
-10. Append your progress to `progress.txt`
+Assume:
+- model: GPT-5.4
+- reasoning effort: xhigh
+- sandbox: danger-full-access
+- approvals: disabled or minimized
 
-## Progress Report Format
+Because execution freedom is high, discipline must come from repo documentation, scoped stories, and honest validation.
 
-APPEND to progress.txt (never replace, always append):
-```
-## [Date/Time] - [Story ID]
-- What was implemented
-- Files changed
-- **Learnings for future iterations:**
-  - Patterns discovered (e.g., "this codebase uses X for Y")
-  - Gotchas encountered (e.g., "don't forget to update Z when changing W")
-  - Useful context (e.g., "the evaluation panel is in component X")
 ---
-```
 
-The learnings section is critical - it helps future iterations avoid repeating mistakes and understand the codebase better.
+## Mission
 
-## Consolidate Patterns
+You are an autonomous coding agent working inside this repository.
 
-If you discover a **reusable pattern** that future iterations should know, add it to the `## Codebase Patterns` section at the TOP of progress.txt (create it if it doesn't exist). This section should consolidate the most important learnings:
+Your job is to move the project forward through small, production-minded increments while preserving the portfolio’s identity and keeping changes easy to review.
 
-```
-## Codebase Patterns
-- Example: Use `sql<number>` template for aggregations
-- Example: Always use `IF NOT EXISTS` for migrations
-- Example: Export types from actions.ts for UI components
-```
+Optimize for:
+- clear scope
+- minimal unnecessary edits
+- visual consistency
+- working code
+- honest validation
+- reliable progress tracking
 
-Only add patterns that are **general and reusable**, not story-specific details.
+---
 
-## Update AGENTS.md Files
+## Repository workflow
 
-Before committing, check if any edited files have learnings worth preserving in nearby AGENTS.md files:
+This repo uses PRD-driven development with story-scoped execution.
 
-1. **Identify directories with edited files** - Look at which directories you modified
-2. **Check for existing AGENTS.md** - Look for AGENTS.md in those directories or parent directories
-3. **Add valuable learnings** - If you discovered something future developers/agents should know:
-   - API patterns or conventions specific to that module
-   - Gotchas or non-obvious requirements
-   - Dependencies between files
-   - Testing approaches for that area
-   - Configuration or environment requirements
+The working documentation system is:
 
-**Examples of good AGENTS.md additions:**
-- "When modifying X, also update Y to keep them in sync"
-- "This module uses pattern Z for all API calls"
-- "Tests require the dev server running on PORT 3000"
-- "Field names must match the template exactly"
+- `PRD.md`
+  - product direction
+  - redesign goals
+  - constraints
+  - definition of done
 
-**Do NOT add:**
-- Story-specific implementation details
-- Temporary debugging notes
-- Information already in progress.txt
+- `brand.md`
+  - visual identity guardrails
+  - tone and composition rules
+  - anti-patterns
+  - hero compatibility rules
 
-Only update AGENTS.md if you have **genuinely reusable knowledge** that would help future work in that directory.
+- `decisions.md`
+  - stable repo-wide decisions
+  - superseding decisions
+  - settled direction that should not be reopened casually
 
-## Quality Requirements
+- `progress.txt`
+  - current state
+  - recent work log
+  - codebase patterns
+  - delivery status
+  - risks and blockers
 
-- ALL commits must pass your project's quality checks (typecheck, lint, test)
-- Do NOT commit broken code
-- Keep changes focused and minimal
-- Follow existing code patterns
+- `stories/`
+  - the unit of execution
+  - one story at a time
+  - each story defines scope, acceptance criteria, likely files, and validation expectations
 
-## Browser Testing (If Available)
+---
 
-For any story that changes UI, verify it works in the browser if you have browser testing tools configured (e.g., via MCP):
+## Read order before any change
 
-1. Navigate to the relevant page
-2. Verify the UI changes work as expected
-3. Take a screenshot if helpful for the progress log
+Before making any change, read these files in this order:
 
-If no browser tools are available, note in your progress report that manual browser verification is needed.
+1. `progress.txt`
+2. `PRD.md`
+3. `brand.md`
+4. `decisions.md`
+5. the selected file inside `stories/`
+6. only then inspect the relevant code
 
-## Stop Condition
+If any of the required root docs are missing or unreadable, stop and report that as a blocker.
 
-After completing a user story, check if ALL stories have `passes: true`.
+---
 
-If ALL stories are complete and passing, reply with:
-<promise>COMPLETE</promise>
+## Sources of truth
 
-If there are still stories with `passes: false`, end your response normally (another iteration will pick up the next story).
+Use each file only for its intended purpose.
 
-## Important
+### `PRD.md`
+Use for:
+- product goals
+- redesign direction
+- non-goals
+- success criteria
+- product definition of done
 
-- Work on ONE story per iteration
-- Commit frequently
-- Keep CI green
-- Read the Codebase Patterns section in progress.txt before starting
+### `brand.md`
+Use for:
+- visual guardrails
+- tone-of-voice guardrails
+- layout and spacing direction
+- anti-patterns to avoid
+- hero compatibility expectations
 
-## Repo-Specific Patterns
+### `decisions.md`
+Use for:
+- settled product/repo decisions
+- language choice if decided
+- structural rules already accepted
+- conflicts between old and new direction
 
-- For cream or light surface cards, switch copy to `text-text-on-light` and use `border-badge-border` with `bg-bg-surface-muted` for tags/chips; the default dark-theme text tokens are only for dark section backgrounds.
-- Editorial content sections should usually keep the established split layout: eyebrow rail on the left and main content column on the right via `lg:grid-cols-[0.32fr_1fr]`, unless a story explicitly calls for a different composition.
-- When a section pairs long-form copy with one supporting visual, keep the shared outer eyebrow rail and build the text/image split as a nested grid inside the main content column so the section still aligns with the rest of the page rhythm.
-- Selected-work sections should avoid uniform gallery grids; lead with one featured split card and place the remaining projects in supporting cards so the module reads like curated case studies.
-- Stack or skills sections should show breadth through categorized cards or compact grouped lists; avoid logo grids and uncontrolled badge clouds so the page keeps its editorial rhythm.
-- Timeline-style sections should keep items ordered most-recent-first in JSON and emphasize the first entry visually instead of introducing extra sort logic or duplicate intro copy.
-- Disclosure/accordion UI should keep its client boundary local to the section and use `aria-expanded`/`aria-controls` with CSS grid-row expansion instead of JS height measurement.
-- Do not run `npm run typecheck` in parallel with `npm run build`; both rely on `.next/types`, and the standalone typecheck is safest after a successful build has generated those files.
+### `progress.txt`
+Use for:
+- current execution state
+- project snapshot
+- recent work history
+- discovered codebase patterns
+- blockers and follow-ups
+
+### story file in `stories/`
+Use for:
+- the exact task to execute now
+- scope boundaries
+- out-of-scope boundaries
+- acceptance criteria
+- likely files
+- validation expectations
+
+### codebase
+Use for:
+- actual implementation details
+- current architecture
+- component boundaries
+- technical constraints
+
+Do not invent goals that are not supported by these sources.
+
+---
+
+## Execution rule
+
+Work on exactly one story at a time.
+
+Default loop:
+
+1. Read `progress.txt`
+2. Read `PRD.md`
+3. Read `brand.md`
+4. Read `decisions.md`
+5. Select the next appropriate story
+6. Read that story
+7. Inspect only the relevant code
+8. Implement only that story
+9. Run the relevant validation
+10. Update `progress.txt`
+11. Update `decisions.md` only if a new stable repo-wide decision was made
+12. Mark the story as done only if acceptance criteria are actually met
+
+Do not bundle unrelated work into the same iteration.
+
+---
+
+## Story selection rules
+
+Pick the next story using this priority order:
+
+1. highest-priority story still marked `todo`
+2. if a story is blocked, do not skip it silently unless the blocker is documented
+3. do not jump ahead to later polish stories while foundational stories remain unresolved
+4. do not create your own replacement story unless the current story is clearly invalid or impossible
+
+If the repo already indicates a “current” or “next” story in `progress.txt`, follow that unless it conflicts with the documented workflow.
+
+---
+
+## Scope discipline
+
+Stay tightly inside the selected story.
+
+Allowed:
+- small supporting refactors required to complete the story
+- local cleanup in touched files
+- minor copy adjustments required by the story
+- tiny structural improvements that reduce implementation risk
+
+Not allowed unless explicitly required:
+- broad rewrites
+- unrelated renaming
+- dependency churn
+- framework upgrades
+- changing multiple sections because they are nearby
+- redesigning the whole page in one pass
+- speculative abstraction work
+- replacing architecture without necessity
+
+Prefer surgical changes over ambitious rewrites.
+
+---
+
+## High-autonomy safety rules
+
+You are operating with broad permissions. Use them carefully.
+
+Never do any of the following unless the story explicitly requires it:
+- delete large groups of files
+- rewrite git history
+- force push
+- remove lockfiles
+- modify secrets or environment files
+- change deployment configuration
+- change CI/CD
+- upgrade framework versions
+- install global tools
+- run destructive shell commands against broad paths
+
+Avoid risky commands such as:
+- `rm -rf` outside clearly targeted paths
+- wide recursive chmod/chown
+- mass find-and-replace across the entire repo
+- destructive git operations
+
+Choose the narrowest safe action.
+
+---
+
+## Product guardrails
+
+This repository is a premium single-page portfolio.
+
+Always preserve the following unless the story explicitly changes them:
+- the core dark premium identity
+- the wine / cream visual direction
+- the sense of technical seriousness
+- the product/editorial feel
+- the strong first impression established by the hero
+
+The redesign goal is:
+- preserve identity
+- protect the hero
+- improve lower sections
+- make the page feel more curated and commercially credible
+- reduce generic portfolio/template feel
+
+Do not interpret “Payload-like” as literal copying.
+Interpret it as:
+- stronger hierarchy
+- more mature composition
+- clearer product-site credibility
+- better structure
+- more intentional below-the-fold design
+
+---
+
+## Hero protection rule
+
+The hero is protected by default.
+
+Do not redesign or substantially alter the hero unless:
+- the current story explicitly targets hero refinement
+- the PRD or a later accepted decision authorizes that scope
+
+Lower-page changes must remain visually compatible with the hero.
+
+The rest of the page must rise toward the hero’s quality level, not drag it down.
+
+---
+
+## Content rules
+
+Visible copy must remain credible and consistent.
+
+Do:
+- keep section titles clear
+- keep CTA language direct
+- keep copy concise and mature
+- maintain the selected public-facing language strategy once decided
+- present technical depth through curation and hierarchy
+
+Do not:
+- invent fake clients
+- invent fake metrics
+- invent fake testimonials
+- invent fake outcomes
+- dump large raw skill walls without structure
+- use filler marketing phrases
+- mix languages casually in production-facing UI
+
+If the language strategy has already been accepted in `decisions.md`, follow it everywhere you touch visible text.
+
+---
+
+## Design rules
+
+When redesigning a section:
+- prefer fewer stronger visual groups
+- improve hierarchy before adding decoration
+- reduce clutter
+- preserve premium restraint
+- keep spacing intentional
+- preserve strong contrast and readability
+- keep mobile composition calm and coherent
+
+Avoid:
+- generic Tailwind template feel
+- too many equal-weight cards
+- badge-wall presentation
+- loud gradients
+- over-animation
+- awkward two-column forms
+- decorative noise
+- layout gimmicks that weaken seriousness
+
+---
+
+## Code style rules
+
+Follow existing codebase patterns first.
+
+General rules:
+- prefer minimal diffs
+- prefer local changes
+- keep components focused
+- do not introduce abstractions too early
+- preserve naming patterns unless there is a strong reason
+- do not move files unless the story clearly benefits
+- avoid speculative future-proofing
+
+If a refactor is necessary, keep it local and document why in `progress.txt`.
+
+---
+
+## Validation requirements
+
+Before running commands, inspect the repo scripts and use the smallest relevant validation set.
+
+Typical categories:
+- lint
+- typecheck
+- build
+- targeted manual UI verification
+
+Validation rules:
+- run the smallest relevant validation first
+- run broader validation only when justified
+- do not claim something is validated unless you actually ran it
+- if a check cannot be run, document that honestly
+
+For UI changes, verify when possible:
+- the changed section on desktop
+- the changed section on mobile
+- hierarchy
+- spacing
+- readability
+- contrast
+- compatibility with the hero and adjacent sections
+
+If browser verification is not possible, record that manual verification remains pending.
+
+---
+
+## Progress log rules
+
+Always append to `progress.txt`.
+Do not replace the whole file unless the task explicitly requires restructuring the document.
+
+Use this format for each new entry:
+
+`## [YYYY-MM-DD HH:MM] - [Story ID or Task Name]`
+- what was changed
+- why it was changed
+- files touched
+- validations run
+- result
+- follow-up notes if any
+
+Also append reusable learnings only when they are likely to matter again.
+
+Do not turn `progress.txt` into a diary.
+
+Keep it operational.
+
+---
+
+## Decisions log rules
+
+Update `decisions.md` only when a new repo-wide decision becomes stable.
+
+Use it for:
+- accepted structural decisions
+- accepted product-direction decisions
+- accepted language decisions
+- accepted workflow decisions
+- explicit superseding decisions
+
+Do not add:
+- temporary implementation notes
+- local section trivia
+- one-off debugging details
+
+If a new decision replaces an old one:
+- add a new entry
+- mark the older one as superseded if appropriate
+
+Do not silently drift away from accepted direction.
+
+---
+
+## Story file rules
+
+Stories are the execution unit.
+
+A story is complete only when:
+- its in-scope work is done
+- its acceptance criteria are satisfied
+- relevant validation was run or honestly documented as pending
+- `progress.txt` was updated
+- any necessary stable decision was recorded in `decisions.md`
+
+Do not mark a story complete just because code changed.
+
+Do not broaden story scope without documenting why.
+
+---
+
+## Documentation maintenance rules
+
+Keep root docs lean and useful.
+
+- `AGENTS.md` = agent operating rules
+- `PRD.md` = product direction
+- `brand.md` = visual and tone guardrails
+- `decisions.md` = stable accepted decisions
+- `progress.txt` = live operational memory
+- `stories/` = execution units
+
+Do not duplicate the same guidance everywhere.
+
+If you discover a reusable repo-wide rule, place it in the narrowest correct document.
+
+---
+
+## Git behavior
+
+If the story is complete, validations are acceptable, and git is available, create a focused commit.
+
+Commit message format:
+
+- `feat: [story-id] short description`
+- `fix: [story-id] short description`
+- `refactor: [story-id] short description`
+- `docs: [story-id] short description`
+
+Do not make drive-by commits for unstable partial work.
+
+Do not create a commit that mixes unrelated stories.
+
+---
+
+## Stop conditions
+
+Stop and report instead of improvising when:
+- required root docs are missing
+- the selected story is ambiguous in a way that changes scope significantly
+- validation fails for reasons outside the story scope
+- the repo is already broken in an unrelated way
+- the story conflicts with an accepted decision
+- the task would require a broad rewrite not authorized by the story
+
+Do not keep making random edits when blocked.
+
+Document blockers clearly.
+
+---
+
+## Completion rule
+
+A story is complete only when:
+- the acceptance criteria are actually met
+- the implementation is consistent with `PRD.md`
+- the implementation is consistent with `brand.md`
+- the implementation does not violate `decisions.md`
+- relevant validation was run or honestly documented
+- `progress.txt` was updated
+
+If all stories are complete, report `COMPLETE`.
+
+Otherwise, leave the repo ready for the next story with clear documentation state.

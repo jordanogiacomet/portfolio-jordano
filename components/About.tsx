@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import aboutContent from "@/data/about.json";
+import processContent from "@/data/process.json";
 
 type AboutContent = {
   sectionLabel: string;
@@ -9,14 +10,27 @@ type AboutContent = {
   profileImage: string;
 };
 
+type ProcessStep = {
+  number: string;
+  title: string;
+  description: string;
+};
+
+type ProcessContent = {
+  sectionLabel: string;
+  heading: string;
+  steps: ProcessStep[];
+};
+
 const content = aboutContent as AboutContent;
+const process = processContent as ProcessContent;
 
 export function About() {
   return (
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="relative border-b border-white/10 px-4 py-20 sm:px-6 lg:px-10"
+      className="page-section"
     >
       <div
         aria-hidden="true"
@@ -68,7 +82,7 @@ export function About() {
                   <div className="relative aspect-[4/5]">
                     <Image
                       src={content.profileImage}
-                      alt="Editorial profile placeholder representing Jordano Giacomet Tomazoni"
+                      alt="Retrato editorial que representa Jordano Giacomet Tomazoni"
                       fill
                       sizes="(min-width: 1280px) 26rem, (min-width: 1024px) 38vw, 100vw"
                       className="object-cover"
@@ -78,6 +92,60 @@ export function About() {
               </div>
             </div>
           </div>
+
+          {process.steps.length > 0 ? (
+            <div
+              id="process"
+              className="rounded-[2.3rem] border border-white/10 bg-white/[0.03] p-6 shadow-panel backdrop-blur-sm sm:p-8 lg:col-start-2"
+            >
+              <div className="grid gap-8 xl:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)] xl:gap-10">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.28em] text-text-secondary">
+                    {process.sectionLabel}
+                  </p>
+                  <h3 className="mt-4 font-display text-[2rem] leading-[1.02] text-text-primary sm:text-[2.35rem]">
+                    {process.heading}
+                  </h3>
+                </div>
+
+                <ol className="grid gap-4 md:grid-cols-3" aria-label={process.sectionLabel}>
+                  {process.steps.map((step, index) => {
+                    const isFeatured = index === 0;
+
+                    return (
+                      <li key={step.number}>
+                        <article
+                          className={`h-full rounded-[1.75rem] border p-5 sm:p-6 ${
+                            isFeatured
+                              ? "border-[#d7c7bc]/35 bg-bg-surface text-text-on-light shadow-[0_24px_80px_rgba(9,2,4,0.18)]"
+                              : "border-white/10 bg-[#18070a]/55 text-text-primary"
+                          }`}
+                        >
+                          <p
+                            className={`text-xs uppercase tracking-[0.3em] ${
+                              isFeatured ? "text-text-on-light/62" : "text-text-secondary/80"
+                            }`}
+                          >
+                            {step.number}
+                          </p>
+                          <h4 className="mt-5 font-display text-[1.7rem] leading-tight sm:text-[1.9rem]">
+                            {step.title}
+                          </h4>
+                          <p
+                            className={`mt-4 text-sm leading-7 sm:text-base ${
+                              isFeatured ? "text-text-on-light/78" : "text-text-secondary"
+                            }`}
+                          >
+                            {step.description}
+                          </p>
+                        </article>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

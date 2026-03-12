@@ -1,284 +1,342 @@
-# Ralph Progress Log
-Started: 2026-03-10 00:00:00
-Last Updated: 2026-03-11 22:41:31 UTC
+# progress.txt
+
+Started: 2026-03-11 00:00 BRT
+Last Updated: 2026-03-12 00:50 UTC
+
+---
 
 ## Codebase Patterns
-- Project lives in `/workspace/` - all paths relative to that
-- All commands must be run from `/workspace/`
-- Portfolio is PRD-driven: `prd.json` is the source of truth for story order, story status (`passes`), branch target, and scope
-- Implement exactly one story per iteration
-- Only set `passes: true` in `prd.json` after implementation is complete and all relevant checks pass
-- Append to `progress.txt`; never rewrite previous history
-- Add reusable patterns here only when they are general enough to help future iterations
-- Keep sections modular; prefer one component per major section instead of very large page files
-- All content should come from JSON files in `data/`, not be duplicated across components
-- Use `next/font` for display/body fonts and expose them as CSS variables for consistent Tailwind usage
-- Theme tokens should be defined centrally and reused consistently across components
-- For cream or light surface cards, switch copy to `text-text-on-light` and use `border-badge-border` plus `bg-bg-surface-muted` for badges to preserve contrast
-- Maintain the dark editorial premium aesthetic: burgundy-dominant backgrounds, cream/light surfaces, strong serif headings, disciplined spacing
-- Projects must be presented as selected work/case-study style cards, not as a generic image gallery
-- For selected-work modules, feature the lead project in a wide split card and keep remaining projects as supporting cards below to preserve the curated case-study feel
-- Stack or skills sections should communicate breadth through categorized cards or grouped lists rather than logo grids or uncontrolled badge clouds
-- Timeline-style sections should keep items ordered most-recent-first in JSON and emphasize the first entry visually instead of introducing extra sort logic or duplicate intro copy
-- Use Framer Motion for section entrances and scroll-driven effects; keep hover states in CSS/Tailwind
-- Respect `prefers-reduced-motion` for all non-essential animations
-- Prefer `transform` and `opacity` for motion; avoid layout-triggering animation properties
-- For disclosure UI, keep the client boundary local to the interactive section and prefer `aria-expanded`/`aria-controls` plus CSS grid-row transitions instead of JS height measurement
-- Editorial content sections should usually reuse the split layout with an eyebrow rail on the left and main content on the right (`lg:grid-cols-[0.32fr_1fr]`) unless the story requires a different composition
-- For narrative sections that combine long-form copy with one supporting visual, keep the shared outer eyebrow rail and create the text/image split as a nested grid inside the main content column
-- Do not run `npm run typecheck` in parallel with `npm run build`; both rely on `.next/types`, and the standalone typecheck is safest after a successful build
-- Before committing, inspect `git status` and avoid including unrelated changes
-- If a story's implementation is already present in `HEAD` while `prd.json` still shows `passes: false`, re-validate the existing code and sync the PRD/progress trail instead of rewriting the same section
-- If checks fail, do not commit; record the failure and blocker in the progress log
-- Do not expand scope beyond the selected story; log follow-up ideas instead of implementing them immediately
+
+- This project is a premium single-page portfolio built with Next.js and should remain primarily single-page unless a future PRD explicitly changes that.
+- The hero section is currently considered a protected strength of the site and should not be changed unless a story explicitly targets hero refinement.
+- Lower-page redesigns must preserve compatibility with the hero in tone, spacing quality, typography feel, and visual sophistication.
+- Prefer small, local, story-scoped edits over broad rewrites.
+- Preserve the core dark / wine / cream visual identity across redesign work.
+- Avoid generic template-style section composition, especially below the hero.
+- Avoid placeholder-feeling production UI copy.
+- Content changes must not invent fake client work, fake metrics, fake testimonials, or fake outcomes.
+- UI improvements should prefer fewer stronger blocks rather than many weak or repetitive sections.
+- Any reusable visual or structural discovery should be appended here only if it will help future iterations.
+
+---
 
 ## Project Snapshot
-- Project: Jordano personal portfolio
-- Primary goal: present Jordano as a premium software engineer / full-stack developer focused on web products, automation, and applied AI
-- Product type: single-page portfolio with commercial positioning and trust-building narrative
-- Visual direction: dark editorial premium, modular sections, strong typography, restrained motion
-- Execution model: one story per iteration, validate, commit, update PRD, append progress
+
+Project:
+- Jordano Portfolio
+
+Current phase:
+- redesign planning
+- PRD-driven restructuring
+- agent-ready repository setup
+
+Current product direction:
+- keep the strong existing hero
+- redesign lower sections into a more mature product-site / editorial portfolio style
+- preserve current identity instead of replacing it
+- optimize the repo for autonomous implementation through small scoped stories
+
+Current working assumption:
+- the site already has a strong first impression
+- the lower half of the page is the main redesign opportunity
+- the goal is refinement and elevation, not a full rebuild
+
+---
 
 ## PRD Sync Notes
-- `prd.json` defines:
-  - branch name
-  - story order
-  - story completion via `passes`
-  - design direction
-  - required content/data structure
-  - acceptance criteria
-- Priority should follow the order of `userStories` unless explicit dependency issues block a story
-- If a story is blocked by missing prerequisite, ambiguity, or environment issue, record it clearly before moving on
-- Design inspiration should guide tone and structure, not literal copying of another portfolio
+
+Primary PRD:
+- `PRD.md`
+
+Current PRD status:
+- initial redesign PRD created
+- redesign focus is defined
+- product direction is clear enough for story-based execution
+
+Important note:
+- current agent instructions may still reference `prd.json`
+- repository docs should be normalized so the source of truth is consistent
+- preferred path: update agent instructions to use `PRD.md` unless a machine-readable `prd.json` is intentionally introduced later
+
+PRD-aligned guardrails:
+- preserve identity
+- protect hero
+- redesign lower sections
+- improve narrative flow
+- increase premium/product-site credibility
+- maintain small scoped implementation units
+
+---
 
 ## Current Delivery Status
-- Stories completed through `US-011`
-- Next highest-priority incomplete story is `US-012 - Contact section`
-- Manual browser QA is still pending for completed UI stories because browser tooling is unavailable in this environment
+
+Overall status:
+- foundation docs in progress
+- implementation not yet aligned to the new redesign workflow
+
+Completed:
+- `AGENTS.md` drafted for Codex high-autonomy usage
+- `PRD.md` drafted for redesign direction
+- project direction clarified: preserve hero, redesign below-the-fold
+
+In progress:
+- repository operating docs
+- story system setup
+- progress tracking foundation
+
+Not started:
+- brand guardrails document
+- decisions log
+- story files
+- lower-section redesign implementation
+- language consistency cleanup
+- final CTA/contact redesign
+- final coherence / polish pass
+
+---
 
 ## Validation Rules
-- Run relevant project-native checks before marking a story complete
-- Typical validation flow should include, when available:
-  - install
-  - lint
-  - build
-  - typecheck
-  - test
-- Baseline local validation for this repo is `npm run lint`, `npm run build`, and `npm run typecheck`
-- Use the ESLint CLI via `npm run lint`; do not reintroduce deprecated `next lint`
-- For UI changes, verify the affected section visually in browser if browser tooling is available
-- If browser verification is not available, note that manual browser verification is required
-- Do not mark a story complete if required checks fail
+
+For any future implementation:
+- inspect available scripts before choosing validation commands
+- run the smallest relevant validation first
+- do not claim validation was completed unless it was actually run
+
+Expected validation categories:
+- lint
+- typecheck
+- build
+- targeted UI/manual review
+
+UI validation expectations:
+- verify the changed section, not just compile success
+- check desktop and mobile behavior for the affected section
+- confirm spacing, hierarchy, readability, and consistency with the hero
+
+Documentation-only changes:
+- no build validation required unless documentation changes affect workflow assumptions that need repo alignment
+
+---
 
 ## Active Risks / Known Issues
-- Branch creation may fail if the repository base branch is not `main`
-- Story order may become ambiguous if later stories implicitly depend on scaffolding or shared tokens not yet created
-- Visual polish work can expand scope if section ownership is not kept strict
-- Motion/performance tradeoffs must be watched carefully because the design depends on premium feel without becoming heavy
+
+- Source-of-truth mismatch currently exists between `AGENTS.md` and `PRD.md` naming expectations.
+- Repo workflow is not fully normalized yet.
+- Without a `brand.md`, future agents may interpret “preserve identity” too loosely.
+- Without `stories/`, implementation scope can drift.
+- Lower-page redesign work risks becoming too broad if stories are not created before coding begins.
+- Language consistency across visible site copy may still be unresolved.
+- If agent autonomy is high, repository discipline must come from docs and progress tracking rather than runtime approvals.
 
 ---
 
-## 2026-03-10 00:00:00 - INIT
-- Initialized progress log for autonomous PRD-driven execution
-- Established baseline codebase patterns, validation expectations, and delivery rules
-- No implementation performed in this entry
-- Files changed:
-  - progress.txt
-- **Learnings for future iterations:**
-  - `prd.json` is the single source of truth for story order and completion
-  - Reusable implementation patterns belong in `## Codebase Patterns`
-  - Story-specific notes should be appended as dated entries, never merged into previous history
+## Immediate Priorities
+
+1. Normalize repo documentation source of truth
+2. Create `brand.md`
+3. Create `decisions.md`
+4. Create first story files for below-the-fold redesign
+5. Update `AGENTS.md` read order if PRD will live in `PRD.md` instead of `prd.json`
+
 ---
 
-## 2026-03-10 23:52:13 UTC - US-001
-- Implemented the Next.js 15 App Router scaffold at the repo root with TypeScript, Tailwind CSS, PostCSS, static export, and placeholder `data/` and `public/images/` directories
-- Added the responsive layout shell: fixed transparent navbar with scroll state, animated mobile menu, semantic anchored sections, and a footer with social and navigation links
-- Applied the PRD theme foundation with burgundy/cream CSS tokens in `app/globals.css`, mirrored them in `tailwind.config.ts`, and loaded Playfair Display plus DM Sans through `next/font` CSS variables
-- Validation run: `npm install --no-fund --no-audit`, `npm run lint`, `npm run typecheck`, `npm run build`
-- Current status: `US-001` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `.gitignore`, `.eslintignore`, `.eslintrc.json`, `package.json`, `package-lock.json`, `tsconfig.json`, `next-env.d.ts`, `next.config.ts`, `postcss.config.mjs`, `tailwind.config.ts`
-  - `app/layout.tsx`, `app/page.tsx`, `app/globals.css`
-  - `components/Navbar.tsx`, `components/Footer.tsx`, `components/site-links.ts`
-  - `data/.gitkeep`, `public/images/.gitkeep`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - The actual app root is `/workspace`; earlier bootstrap notes that pointed to `/workspace/jordano-portfolio/` were incorrect
-  - The scaffold already provides anchor IDs for `#home`, `#about`, `#projects`, and `#contact`, so later section stories should attach to those IDs instead of creating competing anchors
-- The nav/footer chrome is centralized through `components/site-links.ts`; update that shared file if global navigation labels or URLs change
-- Keep `app/page.tsx` as a composition shell; each major section should live in `components/` and import its own matching JSON payload from `data/`
-- Local SVG placeholders in `public/images/` work well with the existing static export setup because `next.config.ts` already enables `images.unoptimized`
+## Recommended Story Order
 
-## 2026-03-11 00:07:39 UTC - US-002
-- Implemented a data-driven hero section with Jordano's greeting, multi-line editorial heading, supporting copy, dual CTAs, a framed visual placeholder, and four highlight cards
-- Added `data/hero.json` as the source of truth for hero copy, CTA targets, highlight content, and placeholder visual metadata
-- Replaced the scaffold hero in `app/page.tsx`, added subtle CSS-only entrance animation with reduced-motion fallback, and introduced a local SVG placeholder in `public/images/`
-- Validation run: `npm run lint`, `npm run typecheck`, `npm run build`
-- Current status: `US-002` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `app/globals.css`, `app/page.tsx`
-  - `components/Hero.tsx`
-  - `data/hero.json`
-  - `public/images/hero-placeholder.svg`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - The page shell now expects section modules to own their data import and markup, which keeps `app/page.tsx` thin as more PRD stories land
-  - For placeholder visuals, a local SVG plus `next/image` is enough to preserve layout fidelity without introducing remote asset configuration
----
-## 2026-03-11 00:22:10 UTC - US-003
-- Implemented a dedicated services section with editorial heading copy, four commercial offer cards, and value/technology tags rendered entirely from `data/services.json`
-- Replaced the temporary scaffold after the hero with the new `Services` component while leaving later placeholder sections intact for future stories
-- Validation run: `npm run lint`, `npm run typecheck`, `npm run build`
-- Current status: `US-003` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `AGENTS.md`
-  - `app/page.tsx`
-  - `components/Services.tsx`
-  - `data/services.json`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - Light-surface cards need `text-text-on-light` copy plus muted cream badge styling to preserve contrast against the dark overall page theme
-  - New section stories can slot into `app/page.tsx` as standalone imports without forcing unfinished placeholder sections to be rewritten early
----
-## 2026-03-11 00:28:01 UTC - US-004
-- Implemented a dedicated proof section with one featured editorial stat card, three supporting stat cards, and a signal badge rail rendered entirely from `data/proof.json`
-- Wired the new section into `app/page.tsx` directly after services so the credibility block lands before the unfinished About and Projects placeholders
-- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
-- Current status: `US-004` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `AGENTS.md`
-  - `app/page.tsx`
-  - `components/Proof.tsx`
-  - `data/proof.json`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - Reusing the shared editorial split grid keeps new sections visually aligned with earlier modules without forcing a generic page template
-  - When a PRD-defined data file is missing from `data/`, create that file from the PRD payload first so the section can stay data-driven from the start
-  - `tsconfig.json` includes `.next/types`, so local validation must not parallelize `npm run build` and `npm run typecheck`
-  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
----
-## 2026-03-11 00:45:42 UTC - US-005
-- Implemented a dedicated About section with the shared editorial rail, a large headline, three bio paragraphs, and a supporting profile placeholder image sourced from `data/about.json`
-- Replaced the temporary About placeholder in `app/page.tsx` with the new `About` component and added a matching local SVG asset in `public/images/`
-- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
-- Current status: `US-005` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `AGENTS.md`
-  - `app/page.tsx`
-  - `components/About.tsx`
-  - `data/about.json`
-  - `public/images/profile-placeholder.svg`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - Narrative sections that pair long-form copy with a single supporting visual should keep the shared outer eyebrow rail and use a nested grid inside the main column to preserve the page rhythm
-  - If a PRD image placeholder points to an asset format that does not exist yet, switching the data payload to a local SVG placeholder keeps the section lightweight and export-friendly
-  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
----
-## 2026-03-11 00:52:24 UTC - US-006
-- Implemented a dedicated Process section with the shared editorial split layout, a data-driven heading, and three framed process cards for discovery, architecture, and implementation
-- Replaced the temporary gap after About in `app/page.tsx` with the new `Process` component and added `data/process.json` from the PRD as the source of truth for the step content
-- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
-- Current status: `US-006` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `app/page.tsx`
-  - `components/Process.tsx`
-  - `data/process.json`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - When a section keeps the shared editorial rail but its PRD payload does not include a dedicated eyebrow label, a concise data-derived rail label can preserve the layout without inventing new authored copy
-  - Process-style sections read more clearly when each step gets explicit card framing instead of collapsing the sequence into plain paragraphs
-  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
----
-## 2026-03-11 00:58:53 UTC - US-007
-- Implemented a dedicated Projects section with a featured case-study card, two supporting project cards, local placeholder visuals, and data-driven content sourced from `data/projects.json`
-- Added a reusable `ProjectCard` component and replaced the temporary projects placeholder in `app/page.tsx` with the new `Projects` module
-- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
-- Current status: `US-007` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `AGENTS.md`
-  - `app/page.tsx`
-  - `components/ProjectCard.tsx`
-  - `components/Projects.tsx`
-  - `data/projects.json`
-  - `public/images/project-placeholder-1.svg`
-  - `public/images/project-placeholder-2.svg`
-  - `public/images/project-placeholder-3.svg`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - Selected-work sections land better when one project gets a wide split layout and the rest support it from a secondary grid, instead of giving every card equal weight
-  - Keeping project assets as local SVG placeholders preserves the static export flow and gives the cards consistent editorial framing until real visuals are available
-  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
----
-## 2026-03-11 22:21:33 UTC - US-008
-- Implemented a dedicated Stack section with a featured editorial summary card and four categorized domain cards rendered entirely from `data/stack.json`
-- Wired the new section into `app/page.tsx` after Projects so the breadth and expertise narrative lands before the unfinished contact placeholder
-- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
-- Current status: `US-008` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `AGENTS.md`
-  - `app/page.tsx`
-  - `components/Stack.tsx`
-  - `data/stack.json`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - Stack or skills sections read better as categorized cards with compact grouped lists than as logo-heavy grids, which preserves the editorial tone and mobile readability
-  - When a section payload only provides a heading plus structured items, derive hierarchy from counts and grouping rather than inventing extra marketing copy
-  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
----
-## 2026-03-11 22:27:40 UTC - US-009
-- Implemented a dedicated Experience section with a connected timeline rail, a featured current-role card, and supporting stacked entry cards rendered entirely from `data/experience.json`
-- Added reusable `Experience` and `ExperienceEntry` components, then wired the new section into `app/page.tsx` after Stack to preserve story order
-- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
-- Current status: `US-009` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `AGENTS.md`
-  - `app/page.tsx`
-  - `components/Experience.tsx`
-  - `components/ExperienceEntry.tsx`
-  - `data/experience.json`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - Experience or timeline modules work best when the JSON order already reflects recency, letting the first entry carry the visual emphasis without extra sort logic or duplicate intro copy
-  - A vertical rail with offset cards keeps chronology readable on desktop while still degrading cleanly to stacked cards on mobile
-  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
+### Story 000 - repo-doc-normalization
+Goal:
+- align `AGENTS.md` with the actual documentation structure being adopted
+
+Acceptance criteria:
+- source-of-truth file names are consistent
+- read order is coherent
+- agent does not depend on files that do not exist
+
+### Story 001 - brand-guardrails
+Goal:
+- define visual identity constraints clearly enough to protect future redesign work
+
+Acceptance criteria:
+- colors, type direction, spacing feel, tone, and anti-patterns are documented
+- hero compatibility rules are explicit
+- future agents can redesign lower sections without visually drifting
+
+### Story 002 - decisions-log-foundation
+Goal:
+- create an ADR-style lightweight decision file for stable repo-wide decisions
+
+Acceptance criteria:
+- major product and redesign decisions are recorded
+- future agents do not reopen settled direction repeatedly
+
+### Story 003 - weakest-lower-section-redesign
+Goal:
+- redesign the weakest below-the-fold section using the new design direction
+
+Acceptance criteria:
+- section feels materially more premium
+- section matches hero quality more closely
+- no identity loss
+- no unrelated broad rewrites
+
+### Story 004 - selected-work-upgrade
+Goal:
+- evolve projects/work presentation into stronger curated proof
+
+Acceptance criteria:
+- projects feel more like selected work or mini case studies
+- hierarchy and composition improve
+- section feels commercially credible
+
+### Story 005 - final-cta-contact-redesign
+Goal:
+- make the final contact area feel intentional and production-ready
+
+Acceptance criteria:
+- contact section no longer feels like an afterthought
+- visual tone stays premium and calm
+- CTA language is clear and credible
+
 ---
 
-## 2026-03-11 22:34:47 UTC - US-010
-- Validated the already-present Studies section implementation in `HEAD`, then synced the story bookkeeping after confirming the section passes the repo validation flow
-- Confirmed the module uses the shared editorial rail, a restrained header/count treatment, and an ordered two-column list of learning areas sourced from `data/studies.json`
-- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
-- Current status: `US-010` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - If code for the next story already exists in the branch, validate that exact implementation before updating `passes` so the PRD stays tied to working code rather than assumptions
-  - Flat list sections read as curated editorial content when the items are ordered and lightly framed, instead of being scattered into unstructured badges or paragraphs
-  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
+## Current Blockers
+
+No hard technical blocker identified yet.
+
+Soft blocker:
+- repo documentation needs normalization before autonomous coding work scales safely
+
 ---
-## 2026-03-11 22:41:31 UTC - US-011
-- Implemented a dedicated FAQ section with a single-open accordion, editorial framing, explicit open/close state treatment, and smooth CSS-driven expansion sourced entirely from `data/faq.json`
-- Wired the new `FAQ` component into `app/page.tsx` ahead of the contact placeholder so the single-page story order stays aligned with the PRD
-- Validation run: `npm run lint`, `npm run build`, `npm run typecheck`
-- Current status: `US-011` is complete and passing locally
-- Blockers / risks: browser verification was not available in this environment, so manual visual QA is still recommended
-- Files changed:
-  - `AGENTS.md`
-  - `app/page.tsx`
-  - `components/FAQ.tsx`
-  - `data/faq.json`
-  - `prd.json`, `progress.txt`
-- **Learnings for future iterations:**
-  - Disclosure interactions fit this codebase best when the client boundary stays local to the section and the expansion animation uses CSS grid rows instead of measured heights
-  - Accessible accordion controls should expose both visible state text and `aria-expanded`/`aria-controls` so the interaction remains clear without relying on motion alone
-  - Browser tooling is still unavailable here, so UI stories should continue logging manual visual QA as a follow-up requirement
+
+## Notes for Future Iterations
+
+- Do not start large UI redesign work before story files exist.
+- Do not let “Payload-like” be interpreted as copying Payload literally.
+- The correct direction is style maturity, structure, and product-site credibility while preserving the original palette and tone.
+- Protect the hero by default.
+- Redesign energy should focus below the fold first.
+
 ---
+
+## Recent Work Log
+
+## [2026-03-11 23:56 UTC] - Story 004 - services-section-redesign
+- redesigned the services section into a curated capability block with a `pt-BR` section label, a strategic framing panel, and a ranked vertical service list instead of a generic four-card grid
+- this was changed to make the first below-the-fold offer block feel more editorial, more compatible with the hero, and less like a template features section
+- files touched: `components/Services.tsx`, `data/services.json`, `stories/004-services-section-redesign.md`, `progress.txt`
+- validations run: `npx eslint components/Services.tsx`; `npm run typecheck`; `npm run build`; attempted browser validation with `npx playwright screenshot`, but Chromium could not start because `libnspr4.so` is unavailable in the container and WebKit was not installed
+- result: Story 004 acceptance criteria met in code; the services section now has clearer hierarchy, stronger curation, `pt-BR` consistency in touched copy, and responsive structure that compiles cleanly
+- follow-up notes: manual desktop/mobile visual review is still recommended once a browser-capable environment is available; Story 006 - `technical-depth-section-redesign` remains the next recommended story because Story 005 is already complete
+
+## [2026-03-11 23:30 UTC] - Story 003 - below-the-fold-structure-review
+- reviewed the live below-the-fold sequence in `app/page.tsx` and the current section components to define a narrower narrative architecture for later redesign stories
+- this was changed to remove ambiguity before section-level UI work and to keep later stories aligned with the PRD, brand guardrails, and accepted design decisions
+- files touched: `stories/003-below-the-fold-structure-review.md`, `decisions.md`, `progress.txt`
+- validations run: manual review of the current section flow against `PRD.md`, `brand.md`, and `decisions.md`
+- result: Story 003 acceptance criteria met; the target flow is now `Services -> Selected Work/Proof -> About + Process -> Technical Depth -> FAQ -> Contact`
+- follow-up notes: `Proof` should no longer be treated as an isolated long-term section, and Story 006 should approach `Process`, `Stack`, `Experience`, and `Studies` as one related redesign problem; Story 004 remains the next recommended story
+
+## [2026-03-11 16:25 UTC] - Story 002 - language-consistency-strategy
+- chose Brazilian Portuguese (`pt-BR`) as the primary public-facing language for the portfolio
+- this was changed to remove ambiguity for future UI stories and to keep the site's voice aligned with the copy that already dominates the current implementation
+- files touched: `decisions.md`, `brand.md`, `PRD.md`, `stories/002-language-consistency-strategy.md`, `progress.txt`
+- validations run: manual review of updated docs; `rg -n "pt-BR|DEC-021|Superseded by|Language strategy|Language application" decisions.md brand.md PRD.md stories/002-language-consistency-strategy.md`
+- result: Story 002 acceptance criteria met; future stories should normalize mixed public-facing labels and placeholder copy to `pt-BR`
+- follow-up notes: likely affected implementation areas include `data/*.json`, `components/Footer.tsx`, `components/Navbar.tsx`, `app/layout.tsx`, and the placeholder contact block in `app/page.tsx`; Story 003 remains the next recommended story
+
+## [2026-03-11 23:22] - Story 001 - brand-guardrails-foundation
+- refined `brand.md` into a more operational guardrails document by tightening heading structure and adding explicit hero-compatibility and below-the-fold composition rules
+- this was changed so future section redesign stories have clearer constraints for preserving the existing identity and avoiding template drift
+- files touched: `brand.md`, `stories/001-brand-guardrails-foundation.md`
+- validations run: manual review of `brand.md`; `rg -n "^## Color direction|^## Typography direction|^## Spacing and rhythm|^### Hero compatibility rules|^### Below-the-fold sections|^### Composition rules|^## Anti-patterns" brand.md`; `test -f AGENTS.md && test -f PRD.md && test -f brand.md && test -f decisions.md`
+- result: Story 001 acceptance criteria met; no repo-wide decision update was required
+- follow-up notes: Story 002 should resolve the primary public-facing language so later UI stories can normalize visible copy without ambiguity
+## [2026-03-11 16:18] - Story 000 - repo-doc-normalization
+- normalized root-level agent instructions by replacing the outdated `CLAUDE.md` workflow with the repo's current `progress.txt` -> `PRD.md` -> `brand.md` -> `decisions.md` -> `stories/` flow
+- removed conflicting assumptions about `prd.json`, branch-based story selection, and PRD mutation so future agents follow one documentation system
+- files touched: `CLAUDE.md`, `stories/000-repo-doc-normalization.md`
+- validations run: searched root docs for stale workflow references; verified required root docs exist; manually reviewed the read order and execution flow for consistency
+- result: Story 000 completed; root-level documentation instructions are now coherent and executable
+- follow-up notes: Story 001 - `brand-guardrails-foundation` remains the next recommended story
+
+## [2026-03-11 00:00] - documentation-foundation
+- drafted `AGENTS.md` for high-autonomy Codex usage in dev container context
+- drafted `PRD.md` for portfolio redesign direction
+- established the redesign thesis: preserve identity, protect hero, improve lower sections
+- identified a documentation naming mismatch between agent instructions and PRD source naming
+- created initial `progress.txt` foundation for future iterations
+
+Files touched:
+- `AGENTS.md`
+- `PRD.md`
+- `progress.txt`
+
+Validations run:
+- documentation consistency review only
+
+Result:
+- partial documentation foundation established
+- repo not yet fully normalized
+
+Follow-up:
+- create `brand.md`
+- create `decisions.md`
+- align `AGENTS.md` with chosen PRD file naming
+
+## [2026-03-11 23:44] - Story 005 - selected-work-redesign
+- redesigned the work section into a `Trabalho selecionado` block with a clearer editorial header, a proof/curation sidebar, stronger project framing, and `pt-BR` labels across the touched UI and accessibility strings
+- this was changed to make selected work the main proof surface, remove placeholder-feeling project CTAs, and align the page flow with the accepted `Services -> Selected Work/Proof -> ...` narrative
+- files touched: `app/page.tsx`, `components/ProjectCard.tsx`, `components/Projects.tsx`, `data/projects.json`, `stories/005-selected-work-redesign.md`, `progress.txt`
+- validations run: `npm run lint`; `npm run typecheck`; `npm run build`; attempted browser validation via `npx playwright screenshot` after serving `out/`, but Chromium could not start because `libnspr4.so` is unavailable in the container
+- result: Story 005 acceptance criteria met in code; selected work now sits directly after `Services`, absorbs standalone proof framing, and compiles cleanly
+- follow-up notes: manual desktop/mobile visual review is still recommended once a browser-capable environment is available; Story 006 - `technical-depth-section-redesign` is the next recommended story
+
+## [2026-03-12 00:07 UTC] - Story 006 - technical-depth-section-redesign
+- combined `Process` into the `About` section and replaced the separate `Stack`, `Experience`, and `Studies` stops with one consolidated `TechnicalDepth` block
+- this was changed to align the page with the accepted `About + Process -> Technical Depth` flow and replace repeated two-column shells with a more curated credibility section
+- files touched: `app/page.tsx`, `components/About.tsx`, `components/TechnicalDepth.tsx`, `data/about.json`, `data/process.json`, `data/technical-depth.json`, `stories/006-technical-depth-section-redesign.md`, `progress.txt`
+- validations run: `npx eslint app/page.tsx components/About.tsx components/TechnicalDepth.tsx`; `npm run typecheck`; `npm run build`; attempted browser validation against `out/` with `npx playwright screenshot http://127.0.0.1:4173 /tmp/story-006.png`, but Chromium could not start because `libnspr4.so` is unavailable in the container
+- result: Story 006 acceptance criteria met in code; the middle-page credibility area now groups process, domains, applied experience, and ongoing study into a clearer and more editorial technical-depth sequence
+- follow-up notes: manual desktop/mobile visual review is still recommended once a browser-capable environment is available; Story 007 - `final-cta-contact-redesign` is the next recommended story
+
+## [2026-03-12 00:19 UTC] - Story 007 - final-cta-contact-redesign
+- replaced the placeholder contact block with a dedicated `Contact` section that uses calmer `pt-BR` CTA framing, a stronger closing layout, and real public contact channels
+- this was changed to turn the page ending into a credible conversion surface and remove the placeholder contact/footer behavior that weakened the close of the narrative
+- files touched: `app/page.tsx`, `components/Contact.tsx`, `components/Footer.tsx`, `components/Navbar.tsx`, `components/site-links.ts`, `data/contact.json`, `stories/007-final-cta-contact-redesign.md`, `progress.txt`
+- validations run: `npx eslint app/page.tsx components/Contact.tsx components/Footer.tsx components/Navbar.tsx components/site-links.ts`; `npm run typecheck`; `npm run build`; attempted browser verification with `python3 -m http.server 4173 -d out` plus `npx playwright screenshot --device="Desktop Chrome HiDPI" http://127.0.0.1:4173 /tmp/story-007-desktop.png`, but Chromium could not start because `libnspr4.so` is unavailable in the container
+- result: Story 007 acceptance criteria met in code; the final section now closes with a clearer contact path, public e-mail/LinkedIn/GitHub channels, and local footer/nav copy that no longer points to placeholder links
+- follow-up notes: manual desktop/mobile visual review is still recommended once a browser-capable environment is available; Story 008 - `footer-polish` is the next recommended story
+
+## [2026-03-12 00:30 UTC] - Story 008 - footer-polish
+- refined `Footer` into a calmer closing surface with a stronger editorial intro, dedicated footer navigation, and direct contact links instead of generic social pills and placeholder copy
+- this was changed to make the page ending feel deliberate and better integrated with the redesigned contact section without bloating the footer
+- files touched: `components/Footer.tsx`, `components/site-links.ts`, `stories/008-footer-polish.md`, `progress.txt`
+- validations run: `npx eslint components/Footer.tsx components/site-links.ts`; `npm run typecheck`; `npm run build` (succeeded on second run after one intermittent export failure during `/404` export); attempted browser verification with `npx playwright screenshot --device="Desktop Chrome HiDPI" http://127.0.0.1:4173 /tmp/story-008-desktop.png`, but Chromium could not start because `libnspr4.so` is unavailable in the container; `curl -s http://127.0.0.1:3001 | rg -o -N "Encerramento|Contato direto|github\\.com/jordanogiacomet|in/jordano-giacomet-tomazoni-aba346184|Jordano Giacomet Tomazoni"`; `curl -s http://127.0.0.1:3001 | rg -o -N "All rights reserved|Todos os direitos reservados|Portfolio shell prepared|Email"`
+- result: Story 008 acceptance criteria met in code; the footer now closes with consistent `pt-BR` language, clearer direct-contact affordances, and a more intentional visual ending
+- follow-up notes: manual desktop/mobile visual review is still recommended once a browser-capable environment is available; Story 009 - `visual-coherence-pass` is the next recommended story
+
+## [2026-03-12 00:38 UTC] - Story 009 - visual-coherence-pass
+- tightened the page-wide rhythm with a shared `.page-section` wrapper, aligned anchor offsets under the fixed nav, and reordered shared navigation so the top-level scroll path matches the redesigned narrative
+- this was changed to make the page read more like one composed experience, reduce end-of-page hierarchy drift, and clean up the remaining `pt-BR` mismatch in the touched FAQ/layout surfaces
+- files touched: `app/globals.css`, `app/layout.tsx`, `components/About.tsx`, `components/Contact.tsx`, `components/FAQ.tsx`, `components/Projects.tsx`, `components/Services.tsx`, `components/TechnicalDepth.tsx`, `components/site-links.ts`, `data/faq.json`, `stories/009-visual-coherence-pass.md`, `progress.txt`
+- validations run: `npm run lint`; `npm run typecheck`; `npm run build`
+- result: Story 009 acceptance criteria met in code; spacing rhythm is more consistent across the redesigned sections, the FAQ/contact ending now carries clearer hierarchy, and touched user-facing metadata/copy is aligned with the accepted `pt-BR` strategy
+- follow-up notes: manual desktop/mobile visual review is still pending because no browser-capable tooling is available in the container; Story 010 - `performance-accessibility-pass` is the next recommended story
+
+## [2026-03-12 00:50] - Story 010 - Performance and Accessibility Pass
+- added a shared keyboard-focus treatment plus a skip link so navigation and CTA surfaces expose visible focus states without changing the site’s visual direction
+- promoted the hero title to a semantic `h1` and kept the page structure aligned around section `h2` headings
+- prevented the closed mobile navigation from remaining exposed to screen readers and keyboard tab order
+- raised low-contrast muted labels on the active light-surface cards used by `Services`, `Selected Work`, `About/Process`, `Technical Depth`, and `Contact`
+- files touched: `app/globals.css`, `app/layout.tsx`, `app/page.tsx`, `components/Hero.tsx`, `components/Navbar.tsx`, `components/About.tsx`, `components/Services.tsx`, `components/ProjectCard.tsx`, `components/TechnicalDepth.tsx`, `components/Contact.tsx`
+- validations run: `npm run lint`; `npm run typecheck`; `npm run build`
+- result: static validation passed and no build-time regression was introduced; manual desktop/mobile browser verification is still pending
+- follow-up notes: attempted Playwright-based screenshot review, but Chromium could not launch in this container because `libnspr4.so` is missing and sudo access is unavailable to install the required system libraries; Story 010 remains the next recommended story so the desktop/mobile browser pass can be closed in a browser-capable environment
+
+## [2026-03-12 01:05 UTC] - Story 010 - performance-accessibility-pass
+- corrected the FAQ accordion so collapsed answers now render with `hidden`, preventing visually collapsed content from staying exposed in the accessibility tree
+- added `Escape` handling for the mobile navigation and increased the touch/focus target size of the navbar, CTA, project-action, and footer links that were still on the small side
+- added `-webkit-text-size-adjust: 100%` to preserve mobile text sizing and kept the existing skip-link to `#main-content` intact in the exported runtime HTML
+- files touched: `app/globals.css`, `components/Navbar.tsx`, `components/ProjectCard.tsx`, `components/FAQ.tsx`, `components/Contact.tsx`, `components/Footer.tsx`, `stories/010-performance-accessibility-pass.md`, `progress.txt`
+- validations run: `npm run lint`; `npm run typecheck`; `npm run build`; image-asset size check via `node`; contrast spot-check via `node`; served `out/` locally with `npx --yes serve@latest out -l 3100`; runtime DOM verification via `node`/`curl` confirming the skip link, `#main-content` target, `min-h-11` nav/footer targets, and `hidden` on closed FAQ panels
+- result: Story 010 is complete in code; route size remained `10.6 kB` with `113 kB` first-load JS, the sampled SVG placeholders remain tiny (`1.1-1.7 kB`), and the runtime-exported markup reflects the accessibility fixes without introducing a build regression
+- follow-up notes: screenshot-based desktop/mobile browser review was attempted with Playwright but remains blocked in this container because no launchable browser binary/system dependencies are available; all tracked stories are now complete

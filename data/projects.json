@@ -1,37 +1,55 @@
 {
-  "sectionLabel": "Projects",
-  "heading": "Projetos em destaque",
-  "description": "Alguns dos projetos e frentes que melhor representam minha forma de pensar e construir software.",
+  "sectionLabel": "Trabalho selecionado",
+  "heading": "Projetos escolhidos para mostrar profundidade técnica e critério de entrega.",
+  "description": "Não é uma lista completa. É um recorte de trabalhos que combinam produto, arquitetura, integração e execução com clareza.",
+  "curation": {
+    "label": "O que esta seleção evidencia",
+    "title": "Cada projeto entra aqui por mostrar mais de uma camada do trabalho.",
+    "items": [
+      "Arquitetura aplicada a operação real, não só estudo isolado.",
+      "Integrações, automação e processamento de dados com estrutura.",
+      "Interfaces com direção visual e posicionamento comercial."
+    ]
+  },
   "items": [
     {
       "title": "Validator & Markdown Reporter",
-      "description": "Ecossistema para validacao de dados, ingestao CSV/XLSX e geracao de relatorios dinamicos em Markdown/PDF.",
-      "tags": ["FastAPI", "Python", "Templates", "Relatorios"],
-      "image": "/images/project-placeholder-1.svg",
-      "links": {
-        "live": "#",
-        "github": "#"
-      }
+      "category": "Dados operacionais e relatórios",
+      "description": "Fluxo para validar entradas, ingerir CSV/XLSX e transformar dados operacionais em relatórios prontos para leitura, revisão e exportação.",
+      "role": "Do desenho das regras ao pipeline de processamento e à renderização final dos documentos.",
+      "highlights": [
+        "Validação e tratamento de dados heterogêneos",
+        "Geração de relatórios em Markdown e PDF",
+        "Estrutura pensada para repetibilidade operacional"
+      ],
+      "tags": ["FastAPI", "Python", "Ingestão de dados", "Relatórios"],
+      "image": "/images/project-placeholder-1.svg"
     },
     {
-      "title": "Pipeline com Kafka / NiFi / Microservices",
-      "description": "Arquitetura orientada a eventos para integracao entre servicos, orquestracao de fluxos e processamento operacional.",
-      "tags": ["Kafka", "NiFi", "Microservices", "Infra"],
-      "image": "/images/project-placeholder-2.svg",
-      "links": {
-        "live": "#",
-        "github": "#"
-      }
+      "title": "Pipeline com Kafka, NiFi e microsserviços",
+      "category": "Integrações e eventos",
+      "description": "Arquitetura orientada a eventos para conectar serviços, orquestrar fluxos críticos e distribuir processamento entre etapas diferentes da operação.",
+      "role": "Foco em desenho de fluxo, confiabilidade e separação clara de responsabilidades entre serviços.",
+      "highlights": [
+        "Orquestração de integrações com múltiplos pontos de entrada",
+        "Processamento assíncrono para cargas operacionais",
+        "Base técnica para observabilidade e evolução do fluxo"
+      ],
+      "tags": ["Kafka", "NiFi", "Microsserviços", "Arquitetura"],
+      "image": "/images/project-placeholder-2.svg"
     },
     {
-      "title": "Portfolio & Presenca Comercial",
-      "description": "Base para vender servicos de sites, landing pages, automacoes e IA aplicada com posicionamento premium.",
-      "tags": ["Next.js", "Design System", "Conversao"],
-      "image": "/images/project-placeholder-3.svg",
-      "links": {
-        "live": "#",
-        "github": "#"
-      }
+      "title": "Portfólio com presença comercial",
+      "category": "Presença digital e conversão",
+      "description": "Site autoral pensado para comunicar profundidade técnica, organizar a oferta e transformar o portfólio em uma superfície real de contato.",
+      "role": "Combina direção visual, narrativa de produto e implementação frontend com foco em posicionamento.",
+      "highlights": [
+        "Hierarquia editorial para apresentar trabalho com mais critério",
+        "Clareza de oferta sem depender de frases infladas",
+        "Execução visual alinhada a performance e legibilidade"
+      ],
+      "tags": ["Next.js", "Design System", "Conversão", "Conteúdo"],
+      "image": "/images/project-placeholder-3.svg"
     }
   ]
 }

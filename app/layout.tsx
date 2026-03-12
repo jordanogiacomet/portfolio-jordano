@@ -14,8 +14,9 @@ const bodyFont = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Jordano Portfolio",
-  description: "Premium single-page portfolio for Jordano Giacomet Tomazoni."
+  title: "Jordano | Engenheiro de software e construtor de produtos",
+  description:
+    "Portfólio pessoal com trabalho selecionado, profundidade técnica e contato direto."
 };
 
 type RootLayoutProps = Readonly<{
@@ -24,8 +25,13 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${displayFont.variable} ${bodyFont.variable}`}>
-      <body>{children}</body>
+    <html lang="pt-BR" className={`${displayFont.variable} ${bodyFont.variable}`}>
+      <body>
+        <a href="#main-content" className="skip-link">
+          Pular para o conteúdo
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

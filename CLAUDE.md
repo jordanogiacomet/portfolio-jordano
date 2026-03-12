@@ -1,104 +1,60 @@
 # Ralph Agent Instructions
 
-You are an autonomous coding agent working on a software project.
+Use the repository documentation system as the source of truth for every iteration:
 
-## Your Task
+1. `progress.txt`
+2. `PRD.md`
+3. `brand.md`
+4. `decisions.md`
+5. the next relevant story in `stories/`
 
-1. Read the PRD at `prd.json` (in the same directory as this file)
-2. Read the progress log at `progress.txt` (check Codebase Patterns section first)
-3. Check you're on the correct branch from PRD `branchName`. If not, check it out or create from main.
-4. Pick the **highest priority** user story where `passes: false`
-5. Implement that single user story
-6. Run quality checks (e.g., typecheck, lint, test - use whatever your project requires)
-7. Update CLAUDE.md files if you discover reusable patterns (see below)
-8. If checks pass, commit ALL changes with message: `feat: [Story ID] - [Story Title]`
-9. Update the PRD to set `passes: true` for the completed story
-10. Append your progress to `progress.txt`
+## Execution Flow
 
-## Progress Report Format
+1. Read the required docs in the order above.
+2. Select the highest-priority story still marked `todo`, unless `progress.txt` explicitly sets a current or next story.
+3. Read the selected story before inspecting code.
+4. Inspect only the code relevant to that story.
+5. Implement only that story.
+6. Run the smallest relevant validation for the change.
+7. Append a progress entry to `progress.txt`.
+8. Update `decisions.md` only when a new stable repo-wide decision is made.
+9. Mark the story `done` only when its acceptance criteria are actually met.
+10. If the story is complete and validation is acceptable, create a focused commit.
 
-APPEND to progress.txt (never replace, always append):
-```
-## [Date/Time] - [Story ID]
-- What was implemented
-- Files changed
-- **Learnings for future iterations:**
-  - Patterns discovered (e.g., "this codebase uses X for Y")
-  - Gotchas encountered (e.g., "don't forget to update Z when changing W")
-  - Useful context (e.g., "the evaluation panel is in component X")
----
-```
+## Operating Rules
 
-The learnings section is critical - it helps future iterations avoid repeating mistakes and understand the codebase better.
+- Work on exactly one story per iteration.
+- Preserve the current dark premium identity and wine / cream visual direction.
+- Do not redesign the hero unless the story explicitly allows it.
+- Prefer minimal diffs and local changes.
+- Do not invent fake proof, fake metrics, fake testimonials, or fake outcomes.
+- Keep visible copy consistent with the chosen language strategy.
+- Be honest about validation status and pending manual review.
 
-## Consolidate Patterns
+## Stop Conditions
 
-If you discover a **reusable pattern** that future iterations should know, add it to the `## Codebase Patterns` section at the TOP of progress.txt (create it if it doesn't exist). This section should consolidate the most important learnings:
+Stop and report instead of improvising when:
 
-```
-## Codebase Patterns
-- Example: Use `sql<number>` template for aggregations
-- Example: Always use `IF NOT EXISTS` for migrations
-- Example: Export types from actions.ts for UI components
-```
+- a required root doc is missing or unreadable
+- the selected story is materially ambiguous
+- the task conflicts with an accepted decision in `decisions.md`
+- validation fails for reasons outside the story scope
+- the work would require an unauthorized broad rewrite
 
-Only add patterns that are **general and reusable**, not story-specific details.
+## Progress Entry Format
 
-## Update CLAUDE.md Files
+Append entries to `progress.txt` using:
 
-Before committing, check if any edited files have learnings worth preserving in nearby CLAUDE.md files:
+`## [YYYY-MM-DD HH:MM] - [Story ID or Task Name]`
+- what was changed
+- why it was changed
+- files touched
+- validations run
+- result
+- follow-up notes if any
 
-1. **Identify directories with edited files** - Look at which directories you modified
-2. **Check for existing CLAUDE.md** - Look for CLAUDE.md in those directories or parent directories
-3. **Add valuable learnings** - If you discovered something future developers/agents should know:
-   - API patterns or conventions specific to that module
-   - Gotchas or non-obvious requirements
-   - Dependencies between files
-   - Testing approaches for that area
-   - Configuration or environment requirements
+## Completion Rule
 
-**Examples of good CLAUDE.md additions:**
-- "When modifying X, also update Y to keep them in sync"
-- "This module uses pattern Z for all API calls"
-- "Tests require the dev server running on PORT 3000"
-- "Field names must match the template exactly"
+If all stories are complete and no tracked work remains, respond with:
 
-**Do NOT add:**
-- Story-specific implementation details
-- Temporary debugging notes
-- Information already in progress.txt
-
-Only update CLAUDE.md if you have **genuinely reusable knowledge** that would help future work in that directory.
-
-## Quality Requirements
-
-- ALL commits must pass your project's quality checks (typecheck, lint, test)
-- Do NOT commit broken code
-- Keep changes focused and minimal
-- Follow existing code patterns
-
-## Browser Testing (If Available)
-
-For any story that changes UI, verify it works in the browser if you have browser testing tools configured (e.g., via MCP):
-
-1. Navigate to the relevant page
-2. Verify the UI changes work as expected
-3. Take a screenshot if helpful for the progress log
-
-If no browser tools are available, note in your progress report that manual browser verification is needed.
-
-## Stop Condition
-
-After completing a user story, check if ALL stories have `passes: true`.
-
-If ALL stories are complete and passing, reply with:
-<promise>COMPLETE</promise>
-
-If there are still stories with `passes: false`, end your response normally (another iteration will pick up the next story).
-
-## Important
-
-- Work on ONE story per iteration
-- Commit frequently
-- Keep CI green
-- Read the Codebase Patterns section in progress.txt before starting
+`COMPLETE`
