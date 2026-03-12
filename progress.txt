@@ -1,7 +1,7 @@
 # progress.txt
 
 Started: 2026-03-11 00:00 BRT
-Last Updated: 2026-03-12 01:49 UTC
+Last Updated: 2026-03-12 02:15 UTC
 
 ---
 
@@ -387,3 +387,11 @@ next recommended story: 014-about-process-compaction
 - follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser is available in this container; Story 015 - `technical-depth-compaction` is the next recommended story
 
 next recommended story: 015-technical-depth-compaction
+
+## [2026-03-12 02:12 UTC] - Story 015 - technical-depth-compaction
+- compacted the technical-depth section by bringing the heading ahead of the support panel on small screens, tightening local section rhythm variables, and reducing the interior spacing of the cream domains block
+- this was changed to keep the section authoritative while removing repeated vertical mass that made the technical-depth area feel taller than the amount of information justified
+- files touched: `components/TechnicalDepth.tsx`, `stories/015-technical-depth-compaction.md`, `progress.txt`
+- validations run: `npx eslint components/TechnicalDepth.tsx`; `npm run typecheck`; `npm run build`
+- result: Story 015 acceptance criteria met in code; the technical-depth section now starts earlier on mobile, the cream domain surface is materially denser, and the experience/studies cards keep their authority without the previous excess height
+- follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser is available in this container; Story 016 - `contact-height-calibration` is the next recommended story
