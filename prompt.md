@@ -3,6 +3,8 @@
 You are running inside the project repository as an autonomous coding agent.
 
 Follow the repository instructions in `AGENTS.md` exactly.
+This file is an execution wrapper only. If it conflicts with `AGENTS.md`, `PRD.md`, `decisions.md`, `progress.txt`, or the selected story, those primary docs win.
+
 Use the repo documentation system as your source of truth:
 
 1. `progress.txt`

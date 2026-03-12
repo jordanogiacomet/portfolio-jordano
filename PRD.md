@@ -8,13 +8,21 @@
 
 ## Version
 
-`0.2`
+`0.3`
 
 ---
 
 ## Status
 
-`redesign-planning`
+`implemented-initial-redesign-pass`
+
+---
+
+## Implementation state
+
+- tracked stories `000` through `017` completed on `2026-03-12`
+- `PRD.md` remains the primary product-definition file for future iterations
+- future work should start from new story files, not from legacy orchestration metadata
 
 ---
 
@@ -223,6 +231,37 @@ The redesign must preserve the original identity.
 ## Design direction
 
 The redesign should move toward a **product-site / editorial portfolio hybrid**.
+
+## Spacing and rhythm refinement
+
+After the first major redesign pass, the next priority is not large structural change but rhythm calibration.
+
+The portfolio should no longer use one uniform section cadence for every major block.
+
+### Goals
+
+- create clearer contrast between expansive sections and compact sections
+- reduce mechanical repetition between below-the-fold sections
+- improve the relationship between section headers and their first strong content block
+- reduce unnecessary vertical dead space
+- preserve premium breathing room without making the page feel padded by default
+
+### Rhythm principles
+
+- not every section should share the same vertical padding
+- section introductions should sit closer to their first meaningful content block
+- framing sidebars should support the main narrative without dominating height
+- large cream surfaces should feel intentional, not oversized
+- the final contact section should feel strong but not excessively tall
+
+### Execution direction
+
+Introduce a tiered section rhythm system, such as:
+- compact
+- standard
+- expansive
+
+Then apply it intentionally across the page based on narrative role rather than using one universal section spacing rule.
 
 ### Visual principles
 
@@ -541,13 +580,13 @@ This PRD version does not require:
 
 ## Open questions
 
-These questions may be resolved in later stories or decisions:
+The initial redesign pass resolved the main structural questions through accepted decisions and tracked stories:
 
-- final language choice for all visible content
-- exact grouping of mid-page sections
-- whether studies/experience remain separate or are merged into a stronger capability narrative
-- whether contact should remain simple or become slightly more editorial
-- whether project cards should evolve into mini case studies
+- public-facing language: `pt-BR` primary (`DEC-021`)
+- below-the-fold flow: `Services -> Selected Work/Proof -> About + Process -> Technical Depth -> FAQ -> Contact` (`DEC-022`)
+- section rhythm calibration, selected-work curation, technical-depth consolidation, and contact refinement were completed through stories `005` to `016`
+
+Future open questions should be added only when a new tracked iteration begins.
 
 ---
 

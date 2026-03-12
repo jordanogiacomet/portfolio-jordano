@@ -67,6 +67,20 @@ The working documentation system is:
 
 ---
 
+## Compatibility wrappers
+
+Some root-level files may remain for runner compatibility:
+
+- `CLAUDE.md`
+- `prompt.md`
+- `prd.json`
+
+These files are secondary.
+They may mirror or summarize the workflow, but they must not override `AGENTS.md`, `PRD.md`, `brand.md`, `decisions.md`, `progress.txt`, or `stories/`.
+If a compatibility wrapper conflicts with the primary docs, follow the primary docs and sync the wrapper in the next appropriate documentation story.
+
+---
+
 ## Read order before any change
 
 Before making any change, read these files in this order:

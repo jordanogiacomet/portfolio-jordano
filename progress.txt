@@ -1,7 +1,7 @@
 # progress.txt
 
 Started: 2026-03-11 00:00 BRT
-Last Updated: 2026-03-12 02:15 UTC
+Last Updated: 2026-03-12 02:30 UTC
 
 ---
 
@@ -26,15 +26,15 @@ Project:
 - Jordano Portfolio
 
 Current phase:
-- redesign planning
-- PRD-driven restructuring
-- agent-ready repository setup
+- initial redesign pass completed
+- repo documentation normalized
+- ready for the next story-driven iteration
 
 Current product direction:
-- keep the strong existing hero
-- redesign lower sections into a more mature product-site / editorial portfolio style
-- preserve current identity instead of replacing it
-- optimize the repo for autonomous implementation through small scoped stories
+- preserve the shipped hero and below-the-fold redesign
+- maintain the dark premium product/editorial identity
+- use new stories for future improvements instead of reopening settled structure casually
+- keep the repo easy for autonomous agents to operate through small scoped stories
 
 Current working assumption:
 - the site already has a strong first impression
@@ -49,14 +49,14 @@ Primary PRD:
 - `PRD.md`
 
 Current PRD status:
-- initial redesign PRD created
-- redesign focus is defined
-- product direction is clear enough for story-based execution
+- initial redesign pass completed through stories `000` to `017`
+- `PRD.md` remains the primary product-definition file
+- wrapper files now defer to the root doc system instead of acting as parallel sources of truth
 
 Important note:
-- current agent instructions may still reference `prd.json`
-- repository docs should be normalized so the source of truth is consistent
-- preferred path: update agent instructions to use `PRD.md` unless a machine-readable `prd.json` is intentionally introduced later
+- `prd.json` remains only as secondary orchestration metadata
+- `CLAUDE.md` and `prompt.md` are compatibility wrappers that defer to `AGENTS.md`
+- future workflow and product updates should land in the primary root docs first
 
 PRD-aligned guardrails:
 - preserve identity
@@ -71,27 +71,19 @@ PRD-aligned guardrails:
 ## Current Delivery Status
 
 Overall status:
-- foundation docs in progress
-- implementation not yet aligned to the new redesign workflow
+- initial redesign and repo-doc normalization complete
+- no active story remains in the current backlog
 
 Completed:
-- `AGENTS.md` drafted for Codex high-autonomy usage
-- `PRD.md` drafted for redesign direction
-- project direction clarified: preserve hero, redesign below-the-fold
+- root doc system normalized around `progress.txt` -> `PRD.md` -> `brand.md` -> `decisions.md` -> `stories/`
+- below-the-fold redesign implemented through tracked stories
+- language strategy, narrative structure, rhythm calibration, coherence, and doc sync completed
 
 In progress:
-- repository operating docs
-- story system setup
-- progress tracking foundation
+- none
 
 Not started:
-- brand guardrails document
-- decisions log
-- story files
-- lower-section redesign implementation
-- language consistency cleanup
-- final CTA/contact redesign
-- final coherence / polish pass
+- no additional tracked work
 
 ---
 
@@ -120,27 +112,25 @@ Documentation-only changes:
 
 ## Active Risks / Known Issues
 
-- Source-of-truth mismatch currently exists between `AGENTS.md` and `PRD.md` naming expectations.
-- Repo workflow is not fully normalized yet.
-- Without a `brand.md`, future agents may interpret “preserve identity” too loosely.
-- Without `stories/`, implementation scope can drift.
-- Lower-page redesign work risks becoming too broad if stories are not created before coding begins.
-- Language consistency across visible site copy may still be unresolved.
-- If agent autonomy is high, repository discipline must come from docs and progress tracking rather than runtime approvals.
+- Manual desktop/mobile browser review is still pending in a browser-capable environment because previous container checks could not launch a browser binary.
+- Compatibility wrappers should remain secondary to the primary doc system unless a future decision explicitly restores another source of truth.
+- High-autonomy work still depends on disciplined story scoping and honest validation logging.
 
 ---
 
 ## Immediate Priorities
 
-1. Normalize repo documentation source of truth
-2. Create `brand.md`
-3. Create `decisions.md`
-4. Create first story files for below-the-fold redesign
-5. Update `AGENTS.md` read order if PRD will live in `PRD.md` instead of `prd.json`
+1. No active stories remain; create a new story before additional work.
+2. Run manual desktop/mobile browser review in a browser-capable environment if visual QA is needed.
+3. Keep compatibility wrapper files synchronized with the authoritative root docs if external tooling continues to use them.
 
 ---
 
-## Recommended Story Order
+## Original Story Order (Completed Initial Pass)
+
+Historical note:
+- the sequence below reflects the initial redesign plan and is retained only as execution history
+- use new story files for any future work instead of treating this section as an active backlog
 
 ### Story 000 - repo-doc-normalization
 Goal:
@@ -200,20 +190,21 @@ Acceptance criteria:
 
 ## Current Blockers
 
-No hard technical blocker identified yet.
+No active blocker identified.
 
-Soft blocker:
-- repo documentation needs normalization before autonomous coding work scales safely
+Pending external validation:
+- manual browser verification still requires an environment with a launchable browser.
 
 ---
 
 ## Notes for Future Iterations
 
-- Do not start large UI redesign work before story files exist.
+- Open a new story before any additional implementation work.
 - Do not let “Payload-like” be interpreted as copying Payload literally.
 - The correct direction is style maturity, structure, and product-site credibility while preserving the original palette and tone.
 - Protect the hero by default.
 - Redesign energy should focus below the fold first.
+- Treat `CLAUDE.md`, `prompt.md`, and `prd.json` as compatibility layers, not as primary product or workflow sources.
 
 ---
 
@@ -407,3 +398,13 @@ next recommended story: 016-contact-height-calibration
 - follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser binary is available in this container; Story 017 - `repo-doc-sync` is the next recommended story
 
 next recommended story: 017-repo-doc-sync
+
+## [2026-03-12 02:30 UTC] - Story 017 - repo-doc-sync
+- normalized root-level documentation and orchestration wrappers so `AGENTS.md`, `PRD.md`, `brand.md`, `decisions.md`, `progress.txt`, and `stories/` are now the explicit primary doc system
+- clarified the compatibility-only role of `CLAUDE.md`, `prompt.md`, and `prd.json`, and synced stale root status notes in `PRD.md` and `progress.txt` so the repo no longer reads like it is still in the planning phase
+- files touched: `AGENTS.md`, `CLAUDE.md`, `prompt.md`, `prd.json`, `PRD.md`, `decisions.md`, `progress.txt`, `stories/017-repo-doc-sync.md`
+- validations run: manual coherence review of the root doc chain; `node -e "JSON.parse(require('fs').readFileSync('prd.json', 'utf8'))"`; `rg -n "Compatibility note|compatibility wrapper|productSourceOfTruth|workflowSourceOfTruth|implemented-initial-redesign-pass|DEC-027|Original Story Order \\(Completed Initial Pass\\)|no active story remains" AGENTS.md CLAUDE.md prompt.md prd.json PRD.md decisions.md progress.txt stories/017-repo-doc-sync.md`
+- result: Story 017 acceptance criteria met; the root doc system is now coherent, `PRD.md` remains clearly primary, and the remaining legacy files are documented as secondary wrappers instead of parallel sources of truth
+- follow-up notes: no active story remains in the current backlog; manual browser-based UI review is still optional work for a browser-capable environment, not an open story blocker
+
+next recommended story: none - backlog complete

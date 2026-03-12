@@ -1,4 +1,11 @@
 {
+  "fileRole": "legacy-orchestration-metadata",
+  "productSourceOfTruth": "PRD.md",
+  "workflowSourceOfTruth": "AGENTS.md",
+  "notes": [
+    "Compatibility metadata only. Do not treat this file as the primary product-definition source.",
+    "When this file differs from the root docs, AGENTS.md, PRD.md, decisions.md, progress.txt, and stories/ win."
+  ],
   "projectName": "jordano-portfolio",
   "branchName": "ralph/jordano-portfolio",
   "description": "Personal portfolio website for Jordano Giacomet Tomazoni — software engineer and full-stack developer focused on web products, automation, and applied AI. Single-page scrolling site built with Next.js (App Router) and Tailwind CSS. Dark editorial premium aesthetic inspired by luxury portfolio layouts with burgundy tones, cream contrast, strong typography, modular cards, and high perceived sophistication. Content hardcoded via JSON files.",

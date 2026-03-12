@@ -1,5 +1,10 @@
 # Ralph Agent Instructions
 
+Compatibility note:
+- `AGENTS.md` is the authoritative workflow file for this repository.
+- `PRD.md` is the authoritative product-definition file.
+- This file is a runner compatibility wrapper and must not introduce conflicting source-of-truth rules.
+
 Use the repository documentation system as the source of truth for every iteration:
 
 1. `progress.txt`

@@ -237,6 +237,52 @@ Each entry should use this structure:
 - **Reason:** The current page spreads capability, proof, and technical-depth signals across too many adjacent sections, which weakens hierarchy and breaks narrative momentum after the hero.
 - **Consequences:** Future redesign stories should keep `Services` as the opening offer block, move work earlier as the primary proof surface, absorb standalone proof signals into that work presentation where appropriate, combine `About` with `Process`, and consolidate `Stack`, `Experience`, and `Studies` into one technical-depth block before the closing FAQ/contact sequence.
 
+
+### DEC-023
+- **Date:** 2026-03-11
+- **Status:** accepted
+- **Decision:** The next redesign pass prioritizes rhythm and spacing calibration over new visual language changes.
+- **Reason:** The first redesign iteration materially improved structure and identity preservation, but the main remaining weakness is section cadence and visual mass distribution.
+- **Consequences:** Upcoming stories should focus on spacing, compression, density control, and section-to-section rhythm before any new broad redesign work.
+
+---
+
+### DEC-024
+- **Date:** 2026-03-11
+- **Status:** accepted
+- **Decision:** The portfolio should use differentiated section cadence instead of one uniform vertical rhythm for all sections.
+- **Reason:** A single repeated section rhythm makes below-the-fold sections feel too similar even when their content roles differ.
+- **Consequences:** Future implementation should introduce compact, standard, and expansive section spacing modes and apply them intentionally.
+
+---
+
+### DEC-025
+- **Date:** 2026-03-11
+- **Status:** accepted
+- **Decision:** The next iteration should compress large below-the-fold headers so meaningful content starts earlier.
+- **Reason:** Some sections currently spend too much vertical space on introduction before the first strong visual/content block.
+- **Consequences:** Services, Selected Work, Technical Depth, and Contact should be reviewed for header-to-content distance and unnecessary dead space.
+
+---
+
+### DEC-026
+- **Date:** 2026-03-11
+- **Status:** superseded
+- **Decision:** Repo documentation should be normalized after the next visual pass so `PRD.md` remains the product source of truth and legacy orchestration files stop conflicting with accepted workflow decisions.
+- **Reason:** The repo still contains legacy files and naming patterns that no longer match the documented workflow.
+- **Consequences:** A later story should align root-level docs and remove or de-emphasize outdated files where appropriate.
+- **Superseded by:** DEC-027
+
+---
+
+### DEC-027
+- **Date:** 2026-03-12
+- **Status:** accepted
+- **Decision:** `AGENTS.md`, `PRD.md`, `brand.md`, `decisions.md`, `progress.txt`, and `stories/` are the authoritative repo docs; `CLAUDE.md`, `prompt.md`, and `prd.json` remain compatibility wrappers only.
+- **Reason:** External runners may still read legacy root files, but allowing them to act as parallel sources of truth creates ambiguity after the redesign pass.
+- **Consequences:** Compatibility wrappers must explicitly defer to the primary docs, and future workflow or product updates should be made in the authoritative docs first.
+- **Supersedes:** DEC-026
+
 ---
 
 ## Superseding decisions
