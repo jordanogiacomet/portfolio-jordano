@@ -365,3 +365,14 @@ next recommended story: 012-services-density-balance
 - follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser is available in this container; Story 013 - `selected-work-header-compression` is the next recommended story
 
 next recommended story: 013-selected-work-header-compression
+
+## [2026-03-12 01:57 UTC] - Story 013 - selected-work-header-compression
+- compressed the selected-work intro by tightening the section's local top/layout/flow spacing and reducing the gap between the header cluster and the featured project
+- moved the section label into the header on small screens while preserving the desktop editorial label column, so mobile starts the section earlier without changing the desktop structure
+- softened and compacted the curation panel with smaller spacing, calmer surface treatment, and tighter list rhythm so it stays useful without delaying the featured project
+- files touched: `components/Projects.tsx`, `stories/013-selected-work-header-compression.md`, `progress.txt`
+- validations run: `npx eslint components/Projects.tsx`; `npm run typecheck`; `npm run build`
+- result: Story 013 acceptance criteria met in code; the selected-work section now reaches the featured project sooner, the intro cluster reads as one tighter unit, and the section still preserves its editorial framing
+- follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser is available in this container; Story 014 - `about-process-compaction` is the next recommended story
+
+next recommended story: 014-about-process-compaction
