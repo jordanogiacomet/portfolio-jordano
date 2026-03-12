@@ -395,3 +395,15 @@ next recommended story: 015-technical-depth-compaction
 - validations run: `npx eslint components/TechnicalDepth.tsx`; `npm run typecheck`; `npm run build`
 - result: Story 015 acceptance criteria met in code; the technical-depth section now starts earlier on mobile, the cream domain surface is materially denser, and the experience/studies cards keep their authority without the previous excess height
 - follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser is available in this container; Story 016 - `contact-height-calibration` is the next recommended story
+
+next recommended story: 016-contact-height-calibration
+
+## [2026-03-12 02:23 UTC] - Story 016 - contact-height-calibration
+- calibrated the contact section with tighter local section rhythm, smaller decorative mass, and reduced inner card padding so the page closes with less dead space
+- this was changed to keep the closing CTA premium and clear while reducing the oversized feel in the cream shell, the right guidance panel, and the spacing before the lower contact cards
+- files touched: `components/Contact.tsx`, `stories/016-contact-height-calibration.md`, `progress.txt`
+- validations run: `npx eslint components/Contact.tsx`; `npm run typecheck`; `npm run build`; export sanity check via `rg -n --fixed-strings "style\":{\"--section-padding-top\":\"clamp(4.15rem, 6.4vw, 4.95rem)\"" out/index.txt`; export sanity check via `rg -n --fixed-strings "page-section-flow grid gap-3 border-t border-[#2b0a0f]/10 pt-5" components/Contact.tsx out/index.html`
+- result: Story 016 acceptance criteria met in code; the guidance panel now sizes to its content instead of stretching, the CTA block and contact cards sit closer together, and the final section is materially more compact without changing contact strategy
+- follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser binary is available in this container; Story 017 - `repo-doc-sync` is the next recommended story
+
+next recommended story: 017-repo-doc-sync
