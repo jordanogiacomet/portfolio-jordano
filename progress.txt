@@ -376,3 +376,14 @@ next recommended story: 013-selected-work-header-compression
 - follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser is available in this container; Story 014 - `about-process-compaction` is the next recommended story
 
 next recommended story: 014-about-process-compaction
+
+## [2026-03-12 02:05 UTC] - Story 014 - about-process-compaction
+- tightened the about section's local rhythm variables and reduced the internal gaps between the biography copy, portrait block, and process panel so the area starts and resolves faster without changing its narrative role
+- narrowed and softened the portrait card so it supports the biography instead of contributing extra visual mass, especially when the section stacks on smaller screens
+- compacted the process container and step cards with smaller padding, tighter gaps, and calmer type scale so the process reads as part of the same editorial block instead of a second oversized section
+- files touched: `components/About.tsx`, `stories/014-about-process-compaction.md`, `progress.txt`
+- validations run: `npx eslint components/About.tsx`; `npm run typecheck`; `npm run build`; export sanity checks via `rg -n --fixed-strings "4.2rem,6.5vw,4.95rem" .next/static out`, `rg -n --fixed-strings "Engenharia, produto e execução no mesmo lugar" .next/static out`, and `rg -n --fixed-strings "Um processo enxuto para construir com clareza" .next/static out`
+- result: Story 014 acceptance criteria met in code; the about/process area is materially shorter, the process cards feel less oversized, and the section reads as one more coherent narrative block
+- follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser is available in this container; Story 015 - `technical-depth-compaction` is the next recommended story
+
+next recommended story: 015-technical-depth-compaction
