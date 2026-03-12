@@ -1,7 +1,7 @@
 # progress.txt
 
 Started: 2026-03-11 00:00 BRT
-Last Updated: 2026-03-12 00:50 UTC
+Last Updated: 2026-03-12 01:49 UTC
 
 ---
 
@@ -353,3 +353,15 @@ next recommended story: 011-section-rhythm-system
 - follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser binary is available in this container; Story 012 - `services-density-balance` is the next recommended story
 
 next recommended story: 012-services-density-balance
+
+## [2026-03-12 01:49 UTC] - Story 012 - services-density-balance
+- reduced the services section's opening mass by locally tightening its top padding, layout gap, and intro-to-card flow spacing while keeping the shared rhythm system intact
+- reordered the section on small screens so the main heading and service cards land before the support panel, making the offer start earlier without changing the desktop editorial structure
+- softened the left framing panel with lighter surface treatment, smaller spacing, and a narrower desktop column so it supports the cards instead of competing with them
+- lightly compacted service-card spacing to keep the section calmer and shorter without changing content strategy or the overall premium tone
+- files touched: `components/Services.tsx`, `stories/012-services-density-balance.md`, `progress.txt`
+- validations run: `npx eslint components/Services.tsx`; `npm run typecheck`; `npm run build` (first attempt failed during `Collecting page data` with `Cannot find module for page: /_document`, second immediate retry succeeded); export sanity check via `rg -n --fixed-strings "4.1rem,6.5vw,5rem" .next/static out`
+- result: Story 012 acceptance criteria met in code; the services section now starts earlier, the framing panel carries less visual weight, and the section compiles cleanly after the successful build retry
+- follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser is available in this container; Story 013 - `selected-work-header-compression` is the next recommended story
+
+next recommended story: 013-selected-work-header-compression
