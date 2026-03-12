@@ -69,8 +69,47 @@ body {
 
 .page-section {
   position: relative;
+  --section-padding-top: clamp(4.75rem, 7.5vw, 5.75rem);
+  --section-padding-bottom: clamp(5rem, 8vw, 6rem);
+  --section-layout-gap: clamp(2rem, 4vw, 2.5rem);
+  --section-layout-gap-lg: clamp(2.75rem, 3vw, 3rem);
+  --section-flow-gap: clamp(2.5rem, 5vw, 3rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 5rem 1rem;
+  padding-block-start: var(--section-padding-top);
+  padding-block-end: var(--section-padding-bottom);
+  padding-inline: 1rem;
+}
+
+.page-section--standard {
+  --section-padding-top: clamp(4.75rem, 7.5vw, 5.75rem);
+  --section-padding-bottom: clamp(5rem, 8vw, 6rem);
+  --section-layout-gap: clamp(2rem, 4vw, 2.5rem);
+  --section-layout-gap-lg: clamp(2.75rem, 3vw, 3rem);
+  --section-flow-gap: clamp(2.5rem, 5vw, 3rem);
+}
+
+.page-section--compact {
+  --section-padding-top: clamp(3.75rem, 6vw, 4.5rem);
+  --section-padding-bottom: clamp(4rem, 6.5vw, 4.75rem);
+  --section-layout-gap: clamp(1.75rem, 3.5vw, 2.125rem);
+  --section-layout-gap-lg: clamp(2.5rem, 2.75vw, 2.75rem);
+  --section-flow-gap: clamp(1.75rem, 3.25vw, 2.25rem);
+}
+
+.page-section--expansive {
+  --section-padding-top: clamp(5.5rem, 9vw, 6.5rem);
+  --section-padding-bottom: clamp(5.75rem, 9.5vw, 7rem);
+  --section-layout-gap: clamp(2.25rem, 4.5vw, 2.75rem);
+  --section-layout-gap-lg: clamp(3rem, 3.25vw, 3.5rem);
+  --section-flow-gap: clamp(2.75rem, 5vw, 3.5rem);
+}
+
+.page-section-layout {
+  gap: var(--section-layout-gap);
+}
+
+.page-section-flow {
+  margin-top: var(--section-flow-gap);
 }
 
 main section[id] {
@@ -129,7 +168,10 @@ a {
 
 @media (min-width: 1024px) {
   .page-section {
-    padding-block: 6rem;
     padding-inline: 2.5rem;
+  }
+
+  .page-section-layout {
+    gap: var(--section-layout-gap-lg);
   }
 }

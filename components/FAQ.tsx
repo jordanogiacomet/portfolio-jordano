@@ -30,7 +30,7 @@ export function FAQ() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="page-section"
+      className="page-section page-section--compact"
     >
       <div
         aria-hidden="true"
@@ -42,7 +42,7 @@ export function FAQ() {
       />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.32fr_1fr] lg:gap-12">
+        <div className="page-section-layout grid lg:grid-cols-[0.32fr_1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">FAQ</p>
           </div>
@@ -60,7 +60,7 @@ export function FAQ() {
               </p>
             </header>
 
-            <div className="mt-8 space-y-4">
+            <div className="page-section-flow space-y-4">
               {content.items.map((item, index) => {
                 const isOpen = openIndex === index;
                 const answerId = `faq-answer-${index}`;

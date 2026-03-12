@@ -28,7 +28,7 @@ export function Services() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="page-section"
+      className="page-section page-section--standard"
     >
       <div
         aria-hidden="true"
@@ -41,7 +41,7 @@ export function Services() {
       />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.4fr_1fr] lg:gap-12">
+        <div className="page-section-layout grid lg:grid-cols-[0.4fr_1fr]">
           <div className="self-start lg:sticky lg:top-28">
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
@@ -87,7 +87,7 @@ export function Services() {
               </p>
             </header>
 
-            <div className="mt-12 space-y-4">
+            <div className="page-section-flow space-y-4">
               {content.items.map((item, index) => (
                 <article
                   key={item.title}

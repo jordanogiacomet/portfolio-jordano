@@ -75,7 +75,7 @@ export function TechnicalDepth() {
     <section
       id="technical-depth"
       aria-labelledby="technical-depth-heading"
-      className="page-section"
+      className="page-section page-section--expansive"
     >
       <div
         aria-hidden="true"
@@ -87,7 +87,7 @@ export function TechnicalDepth() {
       />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.32fr_1fr] lg:gap-12">
+        <div className="page-section-layout grid lg:grid-cols-[0.32fr_1fr]">
           <div className="self-start lg:sticky lg:top-28">
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
@@ -133,7 +133,7 @@ export function TechnicalDepth() {
               </p>
             </header>
 
-            <div className="mt-12 space-y-5">
+            <div className="page-section-flow space-y-5">
               {stack.categories.length > 0 ? (
                 <article
                   id="stack"

@@ -43,7 +43,7 @@ export function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="page-section"
+      className="page-section page-section--standard"
     >
       <div
         aria-hidden="true"
@@ -55,7 +55,7 @@ export function Contact() {
       />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.32fr_1fr] lg:gap-12">
+        <div className="page-section-layout grid lg:grid-cols-[0.32fr_1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
@@ -134,7 +134,7 @@ export function Contact() {
                 </aside>
               </div>
 
-              <div className="mt-12 grid gap-4 border-t border-[#2b0a0f]/10 pt-6 md:grid-cols-3 lg:gap-5">
+              <div className="page-section-flow grid gap-4 border-t border-[#2b0a0f]/10 pt-6 md:grid-cols-3 lg:gap-5">
                 {contactLinks.map((link) => (
                   <a
                     key={link.id}

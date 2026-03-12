@@ -30,7 +30,7 @@ export function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="page-section"
+      className="page-section page-section--standard"
     >
       <div
         aria-hidden="true"
@@ -42,7 +42,7 @@ export function About() {
       />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-8 lg:grid-cols-[0.32fr_1fr] lg:gap-12">
+        <div className="page-section-layout grid lg:grid-cols-[0.32fr_1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
@@ -60,7 +60,7 @@ export function About() {
                 </h2>
               </header>
 
-              <div className="mt-8 space-y-5">
+              <div className="page-section-flow space-y-5">
                 {content.bio.map((paragraph) => (
                   <p
                     key={paragraph}

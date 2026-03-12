@@ -340,3 +340,16 @@ Follow-up:
 - validations run: `npm run lint`; `npm run typecheck`; `npm run build`; image-asset size check via `node`; contrast spot-check via `node`; served `out/` locally with `npx --yes serve@latest out -l 3100`; runtime DOM verification via `node`/`curl` confirming the skip link, `#main-content` target, `min-h-11` nav/footer targets, and `hidden` on closed FAQ panels
 - result: Story 010 is complete in code; route size remained `10.6 kB` with `113 kB` first-load JS, the sampled SVG placeholders remain tiny (`1.1-1.7 kB`), and the runtime-exported markup reflects the accessibility fixes without introducing a build regression
 - follow-up notes: screenshot-based desktop/mobile browser review was attempted with Playwright but remains blocked in this container because no launchable browser binary/system dependencies are available; all tracked stories are now complete
+
+
+next recommended story: 011-section-rhythm-system
+
+## [2026-03-12 01:41 UTC] - Story 011 - section-rhythm-system
+- introduced reusable `page-section--compact`, `page-section--standard`, and `page-section--expansive` cadence tiers plus shared `page-section-layout` and `page-section-flow` helpers in `app/globals.css`
+- applied the rhythm system to `Services`, `Selected Work`, `About`, `Technical Depth`, `FAQ`, and `Contact` so the below-the-fold sequence no longer reads with one repeated section cadence
+- files touched: `app/globals.css`, `components/Services.tsx`, `components/Projects.tsx`, `components/About.tsx`, `components/TechnicalDepth.tsx`, `components/FAQ.tsx`, `components/Contact.tsx`, `stories/011-section-rhythm-system.md`, `progress.txt`
+- validations run: `npm run lint`; `npm run typecheck`; `npm run build`; served `out/` locally with `npx --yes serve@latest out -l 3101`; `curl -s http://127.0.0.1:3101 | rg -o -N "page-section--standard|page-section--compact|page-section--expansive|page-section-flow|page-section-layout"`
+- result: Story 011 acceptance criteria met in code; the page now uses compact cadence for `Selected Work` and `FAQ`, standard cadence for `Services`, `About`, and `Contact`, and an expansive cadence for `Technical Depth`
+- follow-up notes: manual desktop/mobile browser review is still pending because no launchable browser binary is available in this container; Story 012 - `services-density-balance` is the next recommended story
+
+next recommended story: 012-services-density-balance
