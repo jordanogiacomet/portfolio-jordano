@@ -3,19 +3,23 @@
   "heading": "Áreas de domínio e estudo",
   "categories": [
     {
-      "name": "Web",
+      "name": "Interface e produto",
+      "description": "Experiências web com estrutura para evoluir sem perder clareza de interface, conteúdo e manutenção.",
       "items": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Payload CMS"]
     },
     {
-      "name": "Backend",
+      "name": "Backend e automação",
+      "description": "Serviços, integrações e regras que sustentam operação interna e fluxos menos manuais.",
       "items": ["Python", "FastAPI", "Go", "Rust", "APIs", "Workers"]
     },
     {
-      "name": "Data & IA",
+      "name": "Dados e IA aplicada",
+      "description": "Dados, modelos e pipelines usados com critério quando ajudam análise, geração e apoio operacional.",
       "items": ["Pandas", "LLMs", "RAG", "LangChain", "Agentes", "Templates"]
     },
     {
-      "name": "Infra",
+      "name": "Infraestrutura e entrega",
+      "description": "Ambientes, containers e práticas de entrega para colocar software no ar com previsibilidade.",
       "items": ["Docker", "Kubernetes", "Kafka", "NiFi", "CI/CD", "Linux"]
     }
   ]

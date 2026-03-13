@@ -1,19 +1,21 @@
 {
   "sectionLabel": "Profundidade técnica",
-  "heading": "Base que conecta produto, engenharia e evolução contínua",
-  "description": "Meu trabalho cruza interface, backend, automação e operação com decisões técnicas orientadas a clareza, manutenção e resultado. Em vez de listar tudo, organizo a base pelos domínios que realmente sustentam entrega.",
+  "heading": "Profundidade técnica útil quando o produto exige mais de uma camada",
+  "description": "A ideia aqui não é listar ferramentas. É mostrar onde essa base entra: produtos com regras reais, integrações entre sistemas, automações internas e decisões que precisam continuar sustentáveis depois do lançamento.",
   "framing": {
-    "label": "Leitura da seção",
-    "title": "Stack, experiência e estudo aparecem como uma base operacional só.",
+    "label": "Quando isso faz diferença",
+    "title": "Mais valor quando interface, regra, automação e operação precisam funcionar juntas.",
+    "description": "Essa base ajuda a atravessar as partes do produto que normalmente perdem coerência quando cada camada é tratada de forma isolada.",
     "items": [
-      "Escolha de tecnologia orientada ao problema, não a hype ou volume de ferramentas.",
-      "Capacidade de navegar entre produto, frontend, backend, dados e infraestrutura sem perder coerência.",
-      "Estudo contínuo usado para ampliar repertório e melhorar decisões de implementação."
+      "Produtos que precisam sair da boa interface e chegar a integrações, regras de negócio e operação real.",
+      "Automações e fluxos internos que pedem software, dados e infraestrutura trabalhando no mesmo sentido.",
+      "Decisões técnicas que precisam continuar legíveis e sustentáveis depois da primeira entrega."
     ]
   },
-  "domainsLabel": "Domínios em prática",
-  "experienceLabel": "Aplicação recente",
-  "experienceDescription": "Contextos em que essa base técnica já se traduz em software, automações e operação.",
-  "studiesLabel": "Frentes em aprofundamento",
-  "studiesDescription": "Temas que continuam em estudo para ampliar rigor técnico e qualidade de entrega."
+  "domainsLabel": "Frentes que sustentam a entrega",
+  "domainsDescription": "Quatro frentes em que a profundidade técnica aparece com mais frequência no trabalho e deixa de ser só repertório.",
+  "experienceLabel": "Contextos recentes",
+  "experienceDescription": "Onde essa base já entrou para conectar software, operação e automação em contextos reais.",
+  "studiesLabel": "Evolução contínua",
+  "studiesDescription": "Estudo direcionado aos temas que ampliam rigor arquitetural, entendimento de sistemas e qualidade de execução."
 }

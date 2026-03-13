@@ -1,7 +1,7 @@
 # progress.txt
 
 Started: 2026-03-11 00:00 BRT
-Last Updated: 2026-03-13 00:54 UTC
+Last Updated: 2026-03-13 01:08 UTC
 
 ---
 
@@ -19,6 +19,7 @@ Last Updated: 2026-03-13 00:54 UTC
 - Negative space must support hierarchy, readability, and composition rather than create empty-feeling sections.
 - Support panels, side columns, and secondary surfaces should remain only when they materially improve clarity, proof, or conversion.
 - Visually refined but commercially ambiguous sections should be treated as product problems, not acceptable polish.
+- Technical-depth content should explain where engineering breadth becomes useful in delivery before it enumerates domains, tools, or study areas.
 - Any reusable visual or structural discovery should be appended here only if it will help future iterations.
 
 ---
@@ -54,7 +55,7 @@ Primary PRD:
 Current PRD status:
 - initial redesign pass completed through stories `000` to `017`
 - `PRD.md` remains the primary product-definition file
-- the active refinement pass is now implemented through Story `019`
+- the active refinement pass is now implemented through Story `020`
 - wrapper files continue to defer to the root doc system instead of acting as parallel sources of truth
 
 Important note:
@@ -85,13 +86,13 @@ Completed:
 - language strategy, narrative structure, rhythm calibration, coherence, accessibility, and doc sync completed
 - Story 018 - `contact-section-clarity-rework` implemented in code with automated validation logged
 - Story 019 - `header-polish` implemented in code with automated validation logged
+- Story 020 - `technical-depth-purpose-rework` implemented in code with automated validation logged
 
 In progress:
 - manual browser validation for recent UI stories in a browser-capable environment
-- authoring the next refinement story for technical-depth purpose/commercial clarity
+- next refinement story definition after Story 020
 
 Not started:
-- technical-depth rethink
 - page density calibration
 
 ---
@@ -126,16 +127,16 @@ Documentation-only changes:
 - High-autonomy work still depends on disciplined story scoping and honest validation logging.
 - The updated contact section still needs real-screen browser verification to confirm contrast, spacing, CTA clarity, desktop balance, and mobile stacking after Story 018.
 - The updated header still needs real-screen browser verification to confirm desktop hierarchy, mobile menu clarity, active states, and focus visibility after Story 019.
+- The updated technical-depth section still needs real-screen browser verification to confirm hierarchy, surface balance, desktop composition, and mobile stacking after Story 020.
 - Some below-the-fold sections still appear more sparse than intentional, with inactive lateral space reducing perceived compositional quality.
-- The current technical-depth section may still be structurally valid in code but weak in buyer-facing purpose and commercial clarity.
 
 ---
 
 ## Immediate Priorities
 
-1. Run manual desktop/mobile browser review for Stories 018 and 019 in a browser-capable environment.
-2. Author the next story for technical-depth purpose/commercial clarity.
-3. Review page density calibration in a dedicated later story.
+1. Run manual desktop/mobile browser review for Stories 018, 019, and 020 in a browser-capable environment.
+2. Author the next page-density calibration story.
+3. Review below-the-fold spacing and inactive lateral space in that scoped follow-up.
 
 ---
 
@@ -454,3 +455,22 @@ next recommended story: 019-header-polish
 - follow-up notes: the next recommended story is to author a technical-depth-purpose refinement story after browser review is available
 
 next recommended story: author technical-depth-purpose refinement story
+
+## [2026-03-12 21:20 UTC] - technical-depth-purpose-rework planning
+- reviewed the current technical-depth section as the most concerning remaining below-the-fold area because it still reads more like a broad credibility inventory than a clearly useful buyer-facing section
+- this was changed to define the next implementation target before UI work begins, so the next story improves section purpose, commercial clarity, and compositional usefulness without widening scope into a full-page rewrite
+- files touched: `stories/020-technical-depth-purpose-rework.md`, `progress.txt`
+- validations run: manual planning review only
+- result: Story 020 is now defined as the next implementation target
+- follow-up notes: implementation has not started yet; later stories may still review page density and contact clarity after the technical-depth section is reframed
+
+## [2026-03-13 01:08 UTC] - Story 020 - technical-depth-purpose-rework
+- reframed the technical-depth section around buyer-facing purpose with a clearer heading, a direct explanation of where the breadth matters, and a mobile-visible purpose panel that appears before the technical fronts
+- recast the cream surface from stat-led inventory into four delivery-oriented fronts with descriptive copy so the section explains how interface, backend, data, and infrastructure support real work
+- kept the applied-experience and ongoing-study blocks in place, but retuned their framing to reinforce real contexts and continuous rigor without inventing proof
+- files touched: `components/TechnicalDepth.tsx`, `data/stack.json`, `data/technical-depth.json`, `stories/020-technical-depth-purpose-rework.md`, `progress.txt`
+- validations run: `npx eslint components/TechnicalDepth.tsx`; `npm run typecheck`; `npm run build`; `which chromium-browser || which chromium || which google-chrome || which google-chrome-stable || which firefox`; export sanity checks via `rg -n --fixed-strings "Profundidade técnica útil quando o produto exige mais de uma camada" out components/TechnicalDepth.tsx` and `rg -n --fixed-strings "Frentes que sustentam a entrega" out components/TechnicalDepth.tsx`
+- result: Story 020 acceptance criteria met in code; the technical-depth section now explains where the depth becomes useful before it lists technical fronts, so the section reads as a clearer credibility surface instead of a broad inventory
+- follow-up notes: no browser binary is available in this container, so real desktop/mobile review remains pending; the next recommended story is to author the page-density calibration follow-up
+
+next recommended story: author page-density-calibration story
