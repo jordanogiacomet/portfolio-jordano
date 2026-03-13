@@ -5,6 +5,7 @@ import technicalDepthContent from "@/data/technical-depth.json";
 
 type StackCategory = {
   name: string;
+  description?: string;
   items: string[];
 };
 
@@ -34,9 +35,11 @@ type TechnicalDepthContent = {
   framing: {
     label: string;
     title: string;
+    description: string;
     items: string[];
   };
   domainsLabel: string;
+  domainsDescription: string;
   experienceLabel: string;
   experienceDescription: string;
   studiesLabel: string;
@@ -48,6 +51,47 @@ const experience = experienceContent as ExperienceContent;
 const studies = studiesContent as StudiesContent;
 const content = technicalDepthContent as TechnicalDepthContent;
 
+function FramingCard({
+  framing,
+  className = ""
+}: {
+  framing: TechnicalDepthContent["framing"];
+  className?: string;
+}) {
+  return (
+    <aside
+      className={`rounded-[1.9rem] border border-white/10 bg-white/[0.03] p-5 shadow-panel backdrop-blur-sm sm:p-6 ${className}`.trim()}
+    >
+      <p className="text-[11px] uppercase tracking-[0.3em] text-text-secondary/85">
+        {framing.label}
+      </p>
+      <p className="mt-3 font-display text-[1.55rem] leading-[1.08] text-text-primary sm:text-[1.75rem]">
+        {framing.title}
+      </p>
+      <p className="mt-3 text-sm leading-6 text-text-secondary sm:text-[0.95rem] sm:leading-7">
+        {framing.description}
+      </p>
+
+      <ul className="mt-5 space-y-3.5" aria-label={framing.label}>
+        {framing.items.map((item) => (
+          <li
+            key={item}
+            className="flex items-start gap-3 border-t border-white/10 pt-3.5 first:border-t-0 first:pt-0"
+          >
+            <span
+              aria-hidden="true"
+              className="mt-2.5 h-1.5 w-1.5 rounded-full bg-text-primary/80"
+            />
+            <span className="text-sm leading-6 text-text-secondary sm:text-[0.95rem] sm:leading-7">
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
+}
+
 export function TechnicalDepth() {
   const hasContent =
     stack.categories.length > 0 || experience.items.length > 0 || studies.items.length > 0;
@@ -55,21 +99,6 @@ export function TechnicalDepth() {
   if (!hasContent) {
     return null;
   }
-
-  const summaryStats = [
-    {
-      value: String(stack.categories.length).padStart(2, "0"),
-      label: "domínios"
-    },
-    {
-      value: String(experience.items.length).padStart(2, "0"),
-      label: "contextos"
-    },
-    {
-      value: String(studies.items.length).padStart(2, "0"),
-      label: "frentes"
-    }
-  ];
 
   return (
     <section
@@ -88,39 +117,14 @@ export function TechnicalDepth() {
 
       <div className="relative mx-auto max-w-7xl">
         <div className="page-section-layout grid items-start lg:grid-cols-[0.32fr_1fr]">
-          <div className="order-2 self-start lg:order-1 lg:sticky lg:top-28">
-            <p className="hidden text-sm uppercase tracking-[0.28em] text-text-secondary lg:block">
+          <div className="hidden self-start lg:block lg:sticky lg:top-28">
+            <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
             </p>
-
-            <aside className="mt-4 max-w-sm rounded-[1.9rem] border border-white/10 bg-white/[0.03] p-5 shadow-panel backdrop-blur-sm sm:mt-5 sm:p-6">
-              <p className="text-[11px] uppercase tracking-[0.3em] text-text-secondary/85">
-                {content.framing.label}
-              </p>
-              <p className="mt-3 font-display text-[1.55rem] leading-[1.08] text-text-primary sm:text-[1.75rem]">
-                {content.framing.title}
-              </p>
-
-              <ul className="mt-5 space-y-3.5" aria-label={content.framing.label}>
-                {content.framing.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 border-t border-white/10 pt-3.5 first:border-t-0 first:pt-0"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="mt-2.5 h-1.5 w-1.5 rounded-full bg-text-primary/80"
-                    />
-                    <span className="text-sm leading-6 text-text-secondary sm:text-[0.95rem] sm:leading-7">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </aside>
+            <FramingCard framing={content.framing} className="mt-4 max-w-sm sm:mt-5" />
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div>
             <header className="max-w-[42rem]">
               <p className="text-sm uppercase tracking-[0.28em] text-text-secondary lg:hidden">
                 {content.sectionLabel}
@@ -136,7 +140,9 @@ export function TechnicalDepth() {
               </p>
             </header>
 
-            <div className="page-section-flow space-y-4 sm:space-y-5">
+            <div className="page-section-flow space-y-5 sm:space-y-6">
+              <FramingCard framing={content.framing} className="lg:hidden" />
+
               {stack.categories.length > 0 ? (
                 <article
                   id="stack"
@@ -147,33 +153,23 @@ export function TechnicalDepth() {
                     className="absolute right-0 top-0 h-40 w-40 rounded-full bg-accent/10 blur-3xl"
                   />
 
-                  <div className="relative grid gap-8 xl:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)]">
-                    <div>
+                  <div className="relative grid gap-8 xl:grid-cols-[minmax(0,0.38fr)_minmax(0,1fr)] xl:gap-10">
+                    <div className="max-w-sm">
                       <p className="text-xs uppercase tracking-[0.32em] text-text-on-light/62">
                         {content.domainsLabel}
                       </p>
-
-                      <div className="mt-6 grid grid-cols-3 gap-3 border-t border-text-on-light/12 pt-5">
-                        {summaryStats.map((stat) => (
-                          <div key={stat.label}>
-                            <p className="font-display text-[2.35rem] leading-none sm:text-[2.55rem]">
-                              {stat.value}
-                            </p>
-                            <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-text-on-light/62 sm:text-[11px] sm:tracking-[0.24em]">
-                              {stat.label}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
+                      <p className="mt-4 text-sm leading-6 text-text-on-light/76 sm:text-[0.98rem] sm:leading-7">
+                        {content.domainsDescription}
+                      </p>
                     </div>
 
-                    <div className="grid gap-3">
+                    <div className="grid gap-3.5">
                       {stack.categories.map((category, index) => (
                         <article
                           key={category.name}
-                          className="border-t border-text-on-light/12 pt-3 first:border-t-0 first:pt-0"
+                          className="rounded-[1.6rem] border border-text-on-light/12 bg-[#f8f1e7]/55 p-4 first:border-text-on-light/12 sm:p-5"
                         >
-                          <div className="flex flex-col gap-2.5 md:flex-row md:items-start md:justify-between">
+                          <div className="grid gap-4 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,1fr)] lg:gap-6">
                             <div>
                               <p className="text-xs uppercase tracking-[0.28em] text-text-on-light/62">
                                 {String(index + 1).padStart(2, "0")}
@@ -181,15 +177,22 @@ export function TechnicalDepth() {
                               <h3 className="mt-2.5 font-display text-[1.85rem] leading-[1.02] sm:text-[2rem]">
                                 {category.name}
                               </h3>
+                              {category.description ? (
+                                <p className="mt-3 max-w-md text-sm leading-6 text-text-on-light/74 sm:text-[0.98rem] sm:leading-7">
+                                  {category.description}
+                                </p>
+                              ) : null}
                             </div>
 
-                            <p className="text-xs uppercase tracking-[0.22em] text-text-on-light/62">
-                              {category.items.length} temas
-                            </p>
+                            <div className="border-t border-text-on-light/12 pt-4 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
+                              <p className="text-[10px] uppercase tracking-[0.22em] text-text-on-light/62 sm:text-[11px] sm:tracking-[0.24em]">
+                                Tecnologias e bases
+                              </p>
+                              <p className="mt-2.5 text-sm leading-6 text-text-on-light/78 sm:text-[0.98rem] sm:leading-7">
+                                {category.items.join(" · ")}
+                              </p>
+                            </div>
                           </div>
-                          <p className="mt-3 max-w-3xl text-sm leading-6 text-text-on-light/78 sm:text-[0.98rem] sm:leading-7">
-                            {category.items.join(" · ")}
-                          </p>
                         </article>
                       ))}
                     </div>

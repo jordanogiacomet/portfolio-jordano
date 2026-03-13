@@ -35,10 +35,6 @@ export function Services() {
         className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.08),_transparent_70%)]"
       />
 
-      <div
-        aria-hidden="true"
-        className="absolute left-[10%] top-28 h-48 w-48 rounded-full bg-accent/10 blur-3xl"
-      />
 
       <div className="relative mx-auto max-w-7xl">
         <div className="page-section-layout grid items-start lg:grid-cols-[minmax(0,0.36fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,0.33fr)_minmax(0,1fr)]">

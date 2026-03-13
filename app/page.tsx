@@ -18,7 +18,6 @@ export default function HomePage() {
         <Services />
         <Projects />
         <About />
-        <TechnicalDepth />
         <FAQ />
         <Contact />
       </main>

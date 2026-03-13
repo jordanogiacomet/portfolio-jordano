@@ -23,10 +23,7 @@ export function Experience() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.06),_transparent_72%)]"
       />
-      <div
-        aria-hidden="true"
-        className="absolute right-[12%] top-28 h-56 w-56 rounded-full bg-accent/10 blur-3xl"
-      />
+      
 
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[0.32fr_1fr] lg:gap-12">
