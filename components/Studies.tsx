@@ -23,10 +23,6 @@ export function Studies() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.05),_transparent_72%)]"
       />
-      <div
-        aria-hidden="true"
-        className="absolute left-[10%] top-24 h-52 w-52 rounded-full bg-accent/10 blur-3xl"
-      />
 
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[0.32fr_1fr] lg:gap-12">

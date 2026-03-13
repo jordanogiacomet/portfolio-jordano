@@ -44,10 +44,7 @@ export function Hero() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(circle_at_top_left,_rgba(243,235,221,0.16),_transparent_42%)]"
       />
-      <div
-        aria-hidden="true"
-        className="absolute right-[-8rem] top-24 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
-      />
+      
 
       <div className="relative mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_30rem] lg:items-end lg:gap-14">
