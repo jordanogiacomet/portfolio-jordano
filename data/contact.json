@@ -1,19 +1,19 @@
 {
   "sectionLabel": "Contato",
-  "heading": "Se existe um produto, operação ou presença digital precisando de mais estrutura, vamos conversar.",
-  "description": "Prefiro conversas objetivas, com contexto, gargalo principal e o que precisa sair do papel ou entrar em produção.",
-  "primaryCtaText": "Enviar e-mail",
+  "heading": "Se existe um produto, operação ou presença digital precisando de mais estrutura, clareza ou execução, a conversa pode começar aqui.",
+  "description": "Prefiro um ponto de partida objetivo: contexto, bloqueio principal e o recorte que precisa sair do papel ou entrar em produção.",
+  "primaryCtaText": "Enviar contexto por e-mail",
   "primaryLinkId": "email",
-  "secondaryCtaText": "Abrir LinkedIn",
+  "secondaryCtaText": "Conectar no LinkedIn",
   "secondaryLinkId": "linkedin",
   "guidance": {
-    "label": "Melhor ponto de partida",
-    "title": "Chegar com essas três peças acelera a conversa.",
+    "label": "Para começar bem",
+    "title": "Três pontos já deixam a conversa mais útil.",
     "items": [
       "o contexto do produto, operação ou site",
       "onde está o bloqueio mais crítico agora",
       "qual recorte faz sentido validar primeiro"
     ]
   },
-  "closingNote": "Se fizer sentido, a conversa segue com escopo inicial, prioridades e próximos passos claros."
+  "closingNote": "Com isso em mãos, fica mais simples alinhar escopo inicial, prioridades e próximos passos sem transformar o contato em um processo confuso."
 }

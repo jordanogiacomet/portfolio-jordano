@@ -1,7 +1,7 @@
 # progress.txt
 
 Started: 2026-03-11 00:00 BRT
-Last Updated: 2026-03-12 02:30 UTC
+Last Updated: 2026-03-13 00:36 UTC
 
 ---
 
@@ -16,6 +16,9 @@ Last Updated: 2026-03-12 02:30 UTC
 - Avoid placeholder-feeling production UI copy.
 - Content changes must not invent fake client work, fake metrics, fake testimonials, or fake outcomes.
 - UI improvements should prefer fewer stronger blocks rather than many weak or repetitive sections.
+- Negative space must support hierarchy, readability, and composition rather than create empty-feeling sections.
+- Support panels, side columns, and secondary surfaces should remain only when they materially improve clarity, proof, or conversion.
+- Visually refined but commercially ambiguous sections should be treated as product problems, not acceptable polish.
 - Any reusable visual or structural discovery should be appended here only if it will help future iterations.
 
 ---
@@ -28,18 +31,18 @@ Project:
 Current phase:
 - initial redesign pass completed
 - repo documentation normalized
-- ready for the next story-driven iteration
+- second refinement iteration opened
 
 Current product direction:
-- preserve the shipped hero and below-the-fold redesign
-- maintain the dark premium product/editorial identity
-- use new stories for future improvements instead of reopening settled structure casually
-- keep the repo easy for autonomous agents to operate through small scoped stories
+- preserve the shipped hero and core dark premium identity
+- refine lower-page sections for stronger commercial clarity
+- reduce empty-feeling layout patterns and weak support structures
+- improve readability, section purpose, and conversion confidence through new scoped stories
 
 Current working assumption:
 - the site already has a strong first impression
-- the lower half of the page is the main redesign opportunity
-- the goal is refinement and elevation, not a full rebuild
+- the main remaining issues are below-the-fold clarity, density balance, contrast, and section usefulness
+- the goal is refinement and stronger selling clarity, not a full rebuild
 
 ---
 
@@ -51,7 +54,8 @@ Primary PRD:
 Current PRD status:
 - initial redesign pass completed through stories `000` to `017`
 - `PRD.md` remains the primary product-definition file
-- wrapper files now defer to the root doc system instead of acting as parallel sources of truth
+- a new refinement pass is documented through root-doc updates and Story `018`
+- wrapper files continue to defer to the root doc system instead of acting as parallel sources of truth
 
 Important note:
 - `prd.json` remains only as secondary orchestration metadata
@@ -64,6 +68,7 @@ PRD-aligned guardrails:
 - redesign lower sections
 - improve narrative flow
 - increase premium/product-site credibility
+- improve commercial clarity and conversion readiness
 - maintain small scoped implementation units
 
 ---
@@ -72,18 +77,22 @@ PRD-aligned guardrails:
 
 Overall status:
 - initial redesign and repo-doc normalization complete
-- no active story remains in the current backlog
+- new refinement iteration started
 
 Completed:
 - root doc system normalized around `progress.txt` -> `PRD.md` -> `brand.md` -> `decisions.md` -> `stories/`
 - below-the-fold redesign implemented through tracked stories
-- language strategy, narrative structure, rhythm calibration, coherence, and doc sync completed
+- language strategy, narrative structure, rhythm calibration, coherence, accessibility, and doc sync completed
+- Story 018 - `contact-section-clarity-rework` implemented in code with automated validation logged
 
 In progress:
-- none
+- Story 019 planning: `header-polish`
+- root docs being updated to reflect the next refinement pass (`brand.md`, `PRD.md`, and `decisions.md`)
 
 Not started:
-- no additional tracked work
+- Story 019 - `header-polish` (authored, implementation not started)
+- technical-depth rethink
+- page density calibration
 
 ---
 
@@ -103,7 +112,7 @@ Expected validation categories:
 UI validation expectations:
 - verify the changed section, not just compile success
 - check desktop and mobile behavior for the affected section
-- confirm spacing, hierarchy, readability, and consistency with the hero
+- confirm spacing, hierarchy, readability, contrast, and consistency with the hero
 
 Documentation-only changes:
 - no build validation required unless documentation changes affect workflow assumptions that need repo alignment
@@ -112,17 +121,21 @@ Documentation-only changes:
 
 ## Active Risks / Known Issues
 
-- Manual desktop/mobile browser review is still pending in a browser-capable environment because previous container checks could not launch a browser binary.
+- Manual desktop/mobile browser review is still pending in a browser-capable environment because Playwright Chromium fails on missing `libnspr4.so`, and Playwright Firefox still lacks required GTK/X11/audio system libraries in this container.
 - Compatibility wrappers should remain secondary to the primary doc system unless a future decision explicitly restores another source of truth.
 - High-autonomy work still depends on disciplined story scoping and honest validation logging.
+- The updated contact section still needs real-screen browser verification to confirm contrast, spacing, CTA clarity, desktop balance, and mobile stacking after Story 018.
+- Some below-the-fold sections still appear more sparse than intentional, with inactive lateral space reducing perceived compositional quality.
+- The current technical-depth section may still be structurally valid in code but weak in buyer-facing purpose and commercial clarity.
 
 ---
 
 ## Immediate Priorities
 
-1. No active stories remain; create a new story before additional work.
-2. Run manual desktop/mobile browser review in a browser-capable environment if visual QA is needed.
-3. Keep compatibility wrapper files synchronized with the authoritative root docs if external tooling continues to use them.
+1. Execute Story 019 - `header-polish`.
+2. Run manual desktop/mobile browser review for Story 018 - `contact-section-clarity-rework` in a browser-capable environment.
+3. Review technical-depth purpose in a dedicated later story.
+4. Review page density calibration in a dedicated later story.
 
 ---
 
@@ -205,10 +218,21 @@ Pending external validation:
 - Protect the hero by default.
 - Redesign energy should focus below the fold first.
 - Treat `CLAUDE.md`, `prompt.md`, and `prd.json` as compatibility layers, not as primary product or workflow sources.
+- Do not confuse premium spacing with empty composition; negative space must earn its place.
+- Support panels and side columns should be kept only when they materially improve clarity, proof, or conversion.
+- Visually refined but commercially ambiguous sections should be treated as product problems, not acceptable polish.
 
 ---
 
 ## Recent Work Log
+
+## [2026-03-12 21:10 UTC] - refinement-pass planning and doc recalibration
+- reviewed the live portfolio after the initial redesign pass and identified recurring issues in contact clarity, header presence, support-panel readability, empty-feeling lateral space, and the buyer-facing usefulness of the technical-depth section
+- this was changed to recalibrate the next iteration before new UI work begins, so future stories optimize for commercial clarity, readable contrast, and purposeful composition rather than abstract editorial minimalism
+- files touched: `brand.md`, `PRD.md`, `decisions.md`, `progress.txt`, `stories/018-contact-section-clarity-rework.md`
+- validations run: manual documentation review only
+- result: the next refinement pass is now documented more explicitly, and Story 018 is defined as the next implementation target
+- follow-up notes: implementation has not started yet; manual browser-based validation remains valuable once a browser-capable environment is available
 
 ## [2026-03-11 23:56 UTC] - Story 004 - services-section-redesign
 - redesigned the services section into a curated capability block with a `pt-BR` section label, a strategic framing panel, and a ranked vertical service list instead of a generic four-card grid
@@ -241,6 +265,7 @@ Pending external validation:
 - validations run: manual review of `brand.md`; `rg -n "^## Color direction|^## Typography direction|^## Spacing and rhythm|^### Hero compatibility rules|^### Below-the-fold sections|^### Composition rules|^## Anti-patterns" brand.md`; `test -f AGENTS.md && test -f PRD.md && test -f brand.md && test -f decisions.md`
 - result: Story 001 acceptance criteria met; no repo-wide decision update was required
 - follow-up notes: Story 002 should resolve the primary public-facing language so later UI stories can normalize visible copy without ambiguity
+
 ## [2026-03-11 16:18] - Story 000 - repo-doc-normalization
 - normalized root-level agent instructions by replacing the outdated `CLAUDE.md` workflow with the repo's current `progress.txt` -> `PRD.md` -> `brand.md` -> `decisions.md` -> `stories/` flow
 - removed conflicting assumptions about `prd.json`, branch-based story selection, and PRD mutation so future agents follow one documentation system
@@ -332,7 +357,6 @@ Follow-up:
 - result: Story 010 is complete in code; route size remained `10.6 kB` with `113 kB` first-load JS, the sampled SVG placeholders remain tiny (`1.1-1.7 kB`), and the runtime-exported markup reflects the accessibility fixes without introducing a build regression
 - follow-up notes: screenshot-based desktop/mobile browser review was attempted with Playwright but remains blocked in this container because no launchable browser binary/system dependencies are available; all tracked stories are now complete
 
-
 next recommended story: 011-section-rhythm-system
 
 ## [2026-03-12 01:41 UTC] - Story 011 - section-rhythm-system
@@ -407,4 +431,15 @@ next recommended story: 017-repo-doc-sync
 - result: Story 017 acceptance criteria met; the root doc system is now coherent, `PRD.md` remains clearly primary, and the remaining legacy files are documented as secondary wrappers instead of parallel sources of truth
 - follow-up notes: no active story remains in the current backlog; manual browser-based UI review is still optional work for a browser-capable environment, not an open story blocker
 
-next recommended story: none - backlog complete
+next recommended story: 018-contact-section-clarity-rework
+
+## [2026-03-12 23:59 UTC] - Story 018 - contact-section-clarity-rework
+- reworked the final contact section so the CTA, next-step framing, and support content now sit inside one tighter closing composition instead of a split panel plus duplicated lower card grid
+- replaced the weaker auxiliary treatment with a clearer two-part support column: a higher-contrast guidance panel and a direct contact-channel list that makes the closing surface more useful and commercially explicit
+- strengthened the PT-BR CTA copy and reduced local section spacing so the page closes with less empty space and a more deliberate hierarchy
+- files touched: `components/Contact.tsx`, `data/contact.json`, `stories/018-contact-section-clarity-rework.md`, `progress.txt`
+- validations run: `npx eslint /workspace/components/Contact.tsx`; `npm run typecheck`; `npm run build`; browser availability check via `which chromium-browser || which chromium || which google-chrome || which google-chrome-stable`
+- result: Story 018 acceptance criteria met in code; automated validation passed; no browser binary is available in this container, so manual desktop/mobile review remains pending
+- follow-up notes: verify the updated contact section in a real browser before opening the next UI story; the next recommended story is to author and execute a scoped header-polish story
+
+next recommended story: 019-header-polish
