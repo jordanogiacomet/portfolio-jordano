@@ -25,11 +25,11 @@ const primaryLink = contactLinks.find((link) => link.id === content.primaryLinkI
 const secondaryLink = contactLinks.find((link) => link.id === content.secondaryLinkId);
 
 const sectionStyle = {
-  "--section-padding-top": "clamp(4.15rem, 6.4vw, 4.95rem)",
-  "--section-padding-bottom": "clamp(4.4rem, 6.9vw, 5.25rem)",
-  "--section-layout-gap": "clamp(1.5rem, 3vw, 1.9rem)",
-  "--section-layout-gap-lg": "clamp(2.2rem, 2.7vw, 2.55rem)",
-  "--section-flow-gap": "clamp(1.6rem, 2.8vw, 2rem)"
+  "--section-padding-top": "clamp(3.8rem, 6.1vw, 4.45rem)",
+  "--section-padding-bottom": "clamp(3.95rem, 6.4vw, 4.7rem)",
+  "--section-layout-gap": "clamp(1.35rem, 2.8vw, 1.7rem)",
+  "--section-layout-gap-lg": "clamp(2rem, 2.6vw, 2.3rem)",
+  "--section-flow-gap": "clamp(1.45rem, 2.6vw, 1.8rem)"
 } as CSSProperties;
 
 function getLinkAttributes(href: string) {
@@ -52,7 +52,7 @@ export function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="page-section page-section--standard"
+      className="page-section page-section--compact"
       style={sectionStyle}
     >
       <div
@@ -65,7 +65,7 @@ export function Contact() {
       />
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="page-section-layout grid lg:grid-cols-[0.32fr_1fr]">
+        <div className="page-section-layout grid items-start lg:grid-cols-[0.26fr_1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
@@ -79,90 +79,108 @@ export function Contact() {
             />
 
             <div className="relative p-6 sm:p-8 lg:p-9">
-              <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(18rem,0.72fr)] xl:items-start xl:gap-9">
-                <div>
+              <div className="grid gap-6 xl:grid-cols-[minmax(0,1.06fr)_minmax(18rem,0.8fr)] xl:items-start xl:gap-7">
+                <div className="max-w-3xl">
                   <p className="text-xs uppercase tracking-[0.3em] text-text-on-light/62">
-                    Canal direto
+                    Conversa inicial
                   </p>
 
                   <h2
                     id="contact-heading"
-                    className="mt-4 max-w-3xl font-display text-[2.55rem] leading-[0.95] sm:text-[3.2rem] lg:text-[3.85rem]"
+                    className="mt-4 max-w-3xl font-display text-[2.45rem] leading-[0.96] sm:text-[3rem] lg:text-[3.55rem]"
                   >
                     {content.heading}
                   </h2>
 
-                  <p className="mt-5 max-w-2xl text-base leading-7 text-text-on-light/78 sm:text-[1.05rem]">
+                  <p className="mt-5 max-w-2xl text-base leading-7 text-text-on-light/78 sm:text-[1.02rem] sm:leading-8">
                     {content.description}
                   </p>
 
-                  <div className="mt-7 flex flex-col gap-2.5 sm:flex-row">
+                  <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                     <a
                       href={primaryLink.href}
-                      className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#1f090d] px-6 py-3 text-sm font-medium text-text-primary transition-transform duration-200 hover:-translate-y-0.5"
+                      className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#1f090d] px-6 py-3 text-sm font-medium text-text-primary shadow-[0_16px_36px_rgba(31,9,13,0.18)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#23080d]"
                     >
                       {content.primaryCtaText}
                     </a>
 
                     <a
                       href={secondaryLink.href}
-                      className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#2b0a0f]/15 px-6 py-3 text-sm font-medium text-text-on-light transition-colors duration-200 hover:bg-[#2b0a0f]/5"
+                      className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#2b0a0f]/15 bg-white/35 px-6 py-3 text-sm font-medium text-text-on-light transition-colors duration-200 hover:bg-white/55 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#23080d]"
                       {...getLinkAttributes(secondaryLink.href)}
                     >
                       {content.secondaryCtaText}
                     </a>
                   </div>
 
-                  <p className="mt-5 max-w-2xl text-sm leading-[1.7rem] text-text-on-light/62">
-                    {content.closingNote}
-                  </p>
+                  <div className="mt-6 rounded-[1.55rem] border border-[#2b0a0f]/10 bg-white/52 px-4 py-4 shadow-[0_18px_50px_rgba(31,9,13,0.08)] sm:px-5">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-text-on-light/60">
+                      Próximo passo
+                    </p>
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-text-on-light/78 sm:text-[0.98rem] sm:leading-7">
+                      {content.closingNote}
+                    </p>
+                  </div>
                 </div>
 
-                <aside className="self-start rounded-[1.8rem] border border-white/10 bg-[#23080d]/98 p-5 text-text-primary shadow-[0_18px_60px_rgba(9,2,4,0.16)] sm:p-6">
-                  <p className="text-xs uppercase tracking-[0.28em] text-text-secondary">
-                    {content.guidance.label}
-                  </p>
-                  <h3 className="mt-3 font-display text-[1.6rem] leading-[1.04] sm:text-[1.95rem]">
-                    {content.guidance.title}
-                  </h3>
+                <aside className="grid gap-4">
+                  <div className="rounded-[1.8rem] border border-white/10 bg-[#23080d]/98 p-5 text-text-primary shadow-[0_18px_60px_rgba(9,2,4,0.16)] sm:p-6">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-text-secondary/88">
+                      {content.guidance.label}
+                    </p>
+                    <h3 className="mt-3 font-display text-[1.55rem] leading-[1.06] sm:text-[1.8rem]">
+                      {content.guidance.title}
+                    </h3>
 
-                  <ol className="mt-5 space-y-3" aria-label={content.guidance.label}>
-                    {content.guidance.items.map((item, index) => (
-                      <li
-                        key={item}
-                        className="flex gap-3 border-t border-white/10 pt-3 first:border-t-0 first:pt-0"
-                      >
-                        <span className="pt-1 text-[11px] uppercase tracking-[0.3em] text-text-secondary">
-                          0{index + 1}
-                        </span>
-                        <p className="text-sm leading-6 text-text-secondary sm:text-[0.97rem]">
-                          {item}
-                        </p>
-                      </li>
-                    ))}
-                  </ol>
+                    <ul className="mt-5 space-y-3.5" aria-label={content.guidance.label}>
+                      {content.guidance.items.map((item) => (
+                        <li
+                          key={item}
+                          className="flex gap-3 border-t border-white/10 pt-3.5 first:border-t-0 first:pt-0"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="mt-2.5 h-1.5 w-1.5 rounded-full bg-text-primary/82"
+                          />
+                          <p className="text-sm leading-6 text-text-primary/82 sm:text-[0.97rem] sm:leading-7">
+                            {item}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="rounded-[1.8rem] border border-[#2b0a0f]/10 bg-white/45 p-5 text-text-on-light shadow-[0_18px_50px_rgba(31,9,13,0.08)] sm:p-6">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-text-on-light/60">
+                      Canais diretos
+                    </p>
+
+                    <ul className="mt-4 space-y-3.5" aria-label="Canais diretos">
+                      {contactLinks.map((link) => (
+                        <li
+                          key={link.id}
+                          className="border-t border-[#2b0a0f]/10 pt-3.5 first:border-t-0 first:pt-0"
+                        >
+                          <a
+                            href={link.href}
+                            className="group block rounded-[1rem] transition-transform duration-200 hover:translate-x-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#23080d]"
+                            {...getLinkAttributes(link.href)}
+                          >
+                            <p className="text-[10px] uppercase tracking-[0.28em] text-text-on-light/62">
+                              {link.label}
+                            </p>
+                            <p className="mt-1 break-words text-[1rem] font-semibold leading-6 text-text-on-light [overflow-wrap:anywhere]">
+                              {link.value}
+                            </p>
+                            <p className="mt-1 text-sm leading-6 text-text-on-light/74 transition-colors duration-200 group-hover:text-text-on-light/82">
+                              {link.description}
+                            </p>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </aside>
-              </div>
-
-              <div className="page-section-flow grid gap-3 border-t border-[#2b0a0f]/10 pt-5 md:grid-cols-3 lg:gap-4">
-                {contactLinks.map((link) => (
-                  <a
-                    key={link.id}
-                    href={link.href}
-                    className="h-full rounded-[1.45rem] border border-[#2b0a0f]/10 bg-white/45 px-5 py-4 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white/55 sm:px-5 sm:py-5"
-                    {...getLinkAttributes(link.href)}
-                  >
-                    <p className="text-[10px] uppercase tracking-[0.28em] text-text-on-light/62">
-                      {link.label}
-                    </p>
-                    <p className="mt-3 break-words text-[1.05rem] font-semibold leading-6 text-text-on-light sm:text-[1.1rem]">
-                      {link.value}
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-text-on-light/72">
-                      {link.description}
-                    </p>
-                  </a>
-                ))}
               </div>
             </div>
           </div>

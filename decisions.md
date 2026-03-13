@@ -285,6 +285,13 @@ Each entry should use this structure:
 
 ---
 
+### DEC-028
+- **Date:** 2026-03-12
+- **Status:** accepted
+- **Decision:** Below-the-fold refinement must prioritize commercial clarity, functional readability, and purposeful composition over abstract editorial minimalism.
+- **Reason:** The current portfolio direction remains premium, restrained, and editorial, but some lower sections became too sparse, too subtle, or too conceptually abstract to support clear selling and trustworthy reading.
+- **Consequences:** Future stories should treat low-contrast support panels, empty lateral space without compositional payoff, and technically framed sections with weak buyer-facing purpose as problems to fix. Sections may be simplified, densified, reframed, or removed when clarity and conversion improve as a result.
+
 ## Superseding decisions
 
 When a decision is replaced, add a new entry and mark the old one as `superseded`.

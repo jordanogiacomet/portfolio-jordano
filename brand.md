@@ -2,7 +2,7 @@
 
 ## Brand purpose
 
-This portfolio should present Jordano as a **serious technical builder** with strong execution ability, product thinking, and visual taste.
+This portfolio should present Jordano as a **serious technical builder** with strong execution ability, product thinking, visual taste, and commercial clarity.
 
 The brand should communicate:
 
@@ -13,6 +13,7 @@ The brand should communicate:
 - seriousness
 - restraint
 - high-agency execution
+- buyer-facing usefulness
 
 The site should not feel like a generic developer template or an overdesigned agency clone.
 
@@ -31,6 +32,7 @@ A visitor should feel:
 - “this person has taste”
 - “this person can turn ideas into production”
 - “this person is deliberate, not improvised”
+- “this person understands how technical work supports real business needs”
 
 ### Emotional tone
 
@@ -72,6 +74,7 @@ Use these as directional keywords for design and copy decisions:
 - product-minded
 - modern
 - credible
+- commercially clear
 
 ---
 
@@ -79,7 +82,24 @@ Use these as directional keywords for design and copy decisions:
 
 Jordano is a software engineer and product-minded builder who creates serious digital experiences with technical depth, strong structure, and careful execution.
 
-The portfolio should communicate this through composition and clarity, not through exaggerated claims.
+The portfolio should communicate this through composition, clarity, and proof, not through exaggerated claims.
+
+---
+
+## Commercial clarity
+
+The portfolio is not only a taste signal; it is also a commercial decision surface.
+
+Design and content should help a potential client quickly understand:
+
+- what Jordano builds
+- what kinds of problems he solves
+- where his technical depth is most useful
+- how to start a conversation
+
+Avoid sections that are visually refined but commercially ambiguous.
+
+When visual abstraction and commercial clarity conflict, clarity should win.
 
 ---
 
@@ -323,6 +343,19 @@ Each section should have a reason to exist and a distinct role in the page narra
 - dense walls of equal text
 - layouts that look “component-generated” instead of designed
 
+### Section purpose clarity
+
+Each section must communicate a clearly legible purpose to a first-time visitor.
+
+A section should not exist mainly to:
+
+- look sophisticated
+- hold abstract positioning language
+- repeat signals already established elsewhere
+- present loosely grouped technical information without a clear buyer-facing role
+
+If a section cannot be explained in one sentence as part of the page narrative, it should be simplified, merged, or removed.
+
 ---
 
 ## Spacing and rhythm
@@ -357,6 +390,21 @@ That means:
 
 This rhythm is critical to avoiding template feel.
 
+### Negative space discipline
+
+Negative space should create focus, hierarchy, and compositional calm.
+
+It must not:
+
+- leave large inactive areas with no structural payoff
+- push meaningful content into an unnecessarily narrow column
+- make sections feel unfinished or underfilled
+- exist only to simulate premium minimalism
+
+High-quality spacing should support the content’s role on the page.
+
+If a section feels empty without becoming clearer, the spacing is too loose.
+
 ---
 
 ## Surface system
@@ -380,6 +428,18 @@ Surfaces should feel restrained and premium.
 - visual clutter from nested containers
 
 Cards should exist because they improve comprehension, not because every item needs a box.
+
+### Secondary panel readability
+
+Support panels, side notes, and secondary cards must remain clearly readable.
+
+Avoid:
+
+- low-contrast text on tinted light surfaces
+- washed-out support blocks that feel decorative rather than useful
+- subtle tonal differences that disappear on real screens
+
+Secondary content may be quieter than the main focal point, but it must never feel faded, ghosted, or visually unresolved.
 
 ---
 
@@ -503,6 +563,19 @@ These are the main opportunity area.
 - move from broad positioning near the top toward more concrete proof lower on the page
 - transitions between sections should feel deliberate, not like unrelated blocks stacked together
 
+### Commercial interpretation rule
+
+Below-the-fold refinement should not become abstraction for its own sake.
+
+A section may feel editorial, but it still needs to help the visitor understand:
+
+- what is being offered
+- why it matters
+- why Jordano is credible
+- what to do next
+
+Avoid elegant layouts that delay understanding without increasing perceived value.
+
 ---
 
 ### Contact / final CTA
@@ -523,6 +596,26 @@ The closing section should feel calm, premium, and real.
 - awkward layout experiments
 - overbuilt forms
 - generic “let’s build something amazing” filler
+
+### Contact section rules
+
+The contact area must be immediately readable and action-oriented.
+
+It should make clear:
+
+- why someone should reach out
+- what kind of conversation is useful
+- which channel to use
+- what kind of next step is expected
+
+Support content inside the closing section must help conversion, not weaken it.
+
+Avoid:
+
+- low-contrast support cards
+- decorative side panels with little practical value
+- oversized empty areas around the CTA
+- conceptual copy that feels unfinished
 
 ---
 
@@ -563,6 +656,22 @@ Avoid:
 - inflated claims
 - fake impact language
 
+### Technical depth presentation
+
+Technical depth should support trust, not become an inventory exercise.
+
+Prefer:
+- clear framing
+- a small number of strong technical themes
+- visible relevance to real delivery
+- explanation of where the depth is useful
+
+Avoid:
+- sections that read like accumulated study notes
+- repeated “stack / experience / studies” signals with no clear distinction
+- broad technical lists without buyer-facing meaning
+- abstract expertise displays that do not support the page narrative
+
 ---
 
 ## Accessibility guardrails
@@ -585,6 +694,12 @@ Premium aesthetics cannot come at the expense of usability.
 - visually hidden important actions
 - motion that makes reading harder
 
+### Readability priority
+
+Subtlety is allowed, but legibility is non-negotiable.
+
+If a panel, label, metadata block, or support card becomes difficult to read on a normal screen, the styling is too quiet and should be strengthened.
+
 ---
 
 ## Responsive brand behavior
@@ -594,6 +709,7 @@ The brand must survive responsive adaptation.
 ### On mobile
 
 The site should still feel:
+
 - premium
 - intentional
 - readable
@@ -629,6 +745,10 @@ Do not introduce:
 - fake prestige signals
 - placeholder-feeling final sections
 - obvious template repetition
+- low-contrast support panels that look elegant but fail in real use
+- large empty side areas with no compositional payoff
+- sections that feel intelligent in tone but unclear in purpose
+- editorial framing that weakens selling clarity
 
 ---
 
@@ -643,6 +763,9 @@ Before accepting any visual or content change, check whether it satisfies these 
 5. Does this avoid generic template feel?
 6. Does this help present Jordano as a serious builder?
 7. Is this more deliberate than what existed before?
+8. Does this improve commercial understanding?
+9. Is the negative space helping composition rather than creating emptiness?
+10. Would a first-time visitor understand why this section exists?
 
 If the answer to several of these is no, the change should be rejected or revised.
 
@@ -659,9 +782,10 @@ The brand is being expressed correctly when the portfolio feels:
 - mature rather than performative
 - distinctive without being loud
 - strong enough to support professional trust
+- clear enough to support commercial trust
 
 ---
 
 ## One-line brand directive
 
-**Preserve the dark premium identity, protect the hero’s sophistication, and make every lower section feel curated, credible, and intentionally designed.**
+**Preserve the dark premium identity, protect the hero’s sophistication, and make every lower section feel curated, credible, commercially clear, and intentionally designed.**

@@ -8,7 +8,7 @@
 
 ## Version
 
-`0.3`
+`0.4`
 
 ---
 
@@ -60,6 +60,9 @@ However, lower sections still feel less mature than the hero in terms of:
 - premium perception
 - consistency of language
 - conversion readiness
+- section usefulness
+- readability in secondary surfaces
+- density calibration
 
 The redesign should not start from scratch.
 
@@ -95,7 +98,7 @@ Today, the portfolio has a strong identity at the top but becomes less convincin
 This creates a mismatch:
 
 - the hero promises a premium, high-level professional presence
-- some lower sections feel more generic, unfinished, or structurally weaker
+- some lower sections feel more generic, unfinished, visually over-spaced, commercially ambiguous, or structurally weaker
 
 As a result, the site risks underselling the overall perception of Jordano’s capability.
 
@@ -116,6 +119,7 @@ Redesign the portfolio so that the entire page sustains the same quality bar as 
 - Make the site feel more commercially trustworthy
 - Improve the ability of the portfolio to support freelance and professional opportunities
 - Present capability in a way that feels curated rather than dumped
+- Improve clarity of offer and confidence in the final conversion path
 
 ### Product goals
 
@@ -123,8 +127,9 @@ Redesign the portfolio so that the entire page sustains the same quality bar as 
 - Preserve the current hero unless a future story explicitly targets it
 - Redesign lower sections with stronger hierarchy and cleaner composition
 - Improve content structure and narrative flow
-- Make the final CTA/contact area feel intentional and credible
+- Make the final CTA/contact area feel intentional, legible, and credible
 - Reduce placeholder or weak-feeling sections
+- Reduce elegant-but-empty layout patterns
 - Support incremental agent-driven execution through small stories
 
 ### UX goals
@@ -135,6 +140,26 @@ Redesign the portfolio so that the entire page sustains the same quality bar as 
 - Reduce visual repetition
 - Make each section feel necessary
 - Avoid dead weight content
+- Avoid empty space without compositional value
+- Keep support panels and secondary surfaces readable on real screens
+
+---
+
+## Commercial clarity
+
+The portfolio must not only signal taste and technical quality; it must also help visitors make a fast hiring decision.
+
+Future iterations should improve:
+
+- clarity of offer
+- proof readability
+- conversion readiness
+- section usefulness
+- confidence in the final CTA
+
+Visually refined but commercially ambiguous sections should be treated as product problems, not as acceptable polish.
+
+When visual abstraction and commercial clarity conflict, clarity should win.
 
 ---
 
@@ -152,6 +177,11 @@ The redesign should **not**:
 - turn the site into a blog platform
 - overcomplicate the site with unnecessary pages or features
 - chase novelty at the expense of clarity
+- add a backend server or database in this iteration
+- add CMS integration in this iteration
+- add authentication or user accounts
+- add payment processing
+- add analytics-heavy implementation unless explicitly scoped later
 
 ---
 
@@ -162,10 +192,12 @@ The ideal final portfolio should feel like this:
 > “This person is technical, serious, visually sharp, and capable of shipping high-quality products.”
 
 It should suggest:
+
 - confidence without excess
 - elegance without fragility
 - modernity without trend-chasing
 - technicality without clutter
+- commercial clarity without aggressive selling
 
 ---
 
@@ -200,6 +232,8 @@ Visitors need to quickly understand:
 
 They should not need to decode the site.
 
+They should not have to interpret overly abstract sections to understand the offer.
+
 ---
 
 ## Brand and identity constraints
@@ -225,6 +259,8 @@ The redesign must preserve the original identity.
 - visually loud cards with weak content
 - awkward layout decisions that reduce elegance
 - obvious placeholder feeling
+- low-contrast subtlety that harms usability
+- sparse layouts that feel empty instead of premium
 
 ---
 
@@ -254,9 +290,21 @@ The portfolio should no longer use one uniform section cadence for every major b
 - large cream surfaces should feel intentional, not oversized
 - the final contact section should feel strong but not excessively tall
 
+### Additional rhythm guardrail
+
+Breathing room should support hierarchy and compositional calm, but it must not create large inactive areas with weak informational payoff.
+
+Future refinements should reduce:
+
+- oversized lateral empty space
+- support columns that contribute little value
+- section height that exceeds the amount of meaningful content
+- layouts that feel sparse instead of intentional
+
 ### Execution direction
 
 Introduce a tiered section rhythm system, such as:
+
 - compact
 - standard
 - expansive
@@ -276,10 +324,13 @@ Then apply it intentionally across the page based on narrative role rather than 
 ### Structural principles
 
 - every section must have a job
+- every section must have a clear visitor-facing purpose
 - sections must feel connected
 - lower-page sections must not feel like leftovers
 - capability should be shown through curation, not overload
 - contact should feel like a natural culmination, not an afterthought
+- sections that feel conceptually elegant but hard to justify should be simplified, merged, reframed, or removed
+- no section should survive only because it looks refined
 
 ---
 
@@ -296,6 +347,7 @@ The site should communicate capability through curation.
 - clean section headings
 - language consistency
 - clear CTA language
+- commercially useful framing
 
 ### Language application
 
@@ -321,6 +373,7 @@ English may remain only for proper nouns, technology names, and established indu
 - filler copy
 - mixed language without intent
 - placeholder text in production-facing sections
+- abstract wording that weakens understanding of the offer
 
 ---
 
@@ -380,16 +433,22 @@ Guidance:
 - reduce fragmentation
 - combine weak or overlapping sections where helpful
 - prioritize composition quality over number of sections
+- avoid sections that are visually impressive but functionally vague
+- reduce support structures that create width or height without enough informational value
 
 ### Final CTA / contact
 
 Status:
-- likely underpowered relative to the hero
+- implemented in the initial redesign pass
+- still a likely refinement target in future iterations
 
 Guidance:
 - must feel intentional
 - should support real professional contact
 - should look premium without becoming flashy
+- must remain clearly legible on real screens
+- should avoid low-contrast support panels and oversized empty areas
+- should close the page with confidence, not conceptual ambiguity
 
 ---
 
@@ -424,10 +483,16 @@ The page should feel like a sequence of intentional arguments, not isolated bloc
 Each section should have clear importance and visual weight.
 
 ### UX-4: no visibly weak sections
-No section should feel obviously placeholder, generic, or structurally underdeveloped.
+No section should feel obviously placeholder, generic, structurally underdeveloped, or conceptually unclear.
 
 ### UX-5: responsive coherence
 The redesign must remain clean across desktop and mobile.
+
+### UX-6: purposeful spacing
+Negative space should support composition and readability rather than create emptiness.
+
+### UX-7: readable secondary surfaces
+Side panels, support blocks, and secondary cards must remain clearly legible and visibly useful.
 
 ---
 
@@ -444,6 +509,9 @@ Copy should feel concise, adult, and professional.
 
 ### CR-4: curated technical presentation
 Technical depth should be shown with structure and intent, not dumped raw.
+
+### CR-5: commercially useful wording
+Major sections should help the visitor understand offer, relevance, and next action without relying on abstract interpretation.
 
 ---
 
@@ -463,6 +531,12 @@ The final result should not look like a generic portfolio starter.
 
 ### VR-5: restrained motion
 Animation, if used, must support polish and hierarchy rather than spectacle.
+
+### VR-6: maintain readable contrast
+Premium styling must not reduce readability in panels, metadata, side notes, or CTA surfaces.
+
+### VR-7: avoid empty editorialism
+Editorial composition should not create large inactive areas without narrative or structural payoff.
 
 ---
 
@@ -493,6 +567,8 @@ The redesign is successful when:
 - content feels curated and intentional
 - the contact area feels real and professionally usable
 - the site better supports professional and freelance positioning
+- sections feel clearly purposeful instead of conceptually vague
+- the page uses space intentionally instead of feeling padded
 - implementation happened through clean, scoped incremental stories
 
 ---
@@ -508,6 +584,8 @@ The redesign should be considered unsuccessful if:
 - the site starts feeling like a generic template
 - the codebase becomes harder to operate for small future iterations
 - the redesign adds noise rather than clarity
+- polished sections still feel hard to understand or weak to convert
+- spacing makes the site feel empty rather than premium
 
 ---
 
@@ -516,6 +594,7 @@ The redesign should be considered unsuccessful if:
 This project should be executed through **small agent-friendly stories**.
 
 Each story should:
+
 - target one section or one tightly related improvement area
 - have clear acceptance criteria
 - avoid unrelated side work
@@ -532,11 +611,20 @@ Recommended sequencing:
 7. run final visual coherence pass
 8. run performance/accessibility cleanup pass
 
+Future iterations may continue with narrower refinement stories focused on:
+
+- conversion clarity
+- layout density calibration
+- section-purpose cleanup
+- support-panel readability
+- navigation/header polish
+
 ---
 
 ## Story design principles
 
 Stories should be:
+
 - small
 - local
 - testable
@@ -544,6 +632,7 @@ Stories should be:
 - easy for an autonomous agent to complete in one pass
 
 Stories should not:
+
 - span the entire site
 - mix many unrelated goals
 - require hidden assumptions
@@ -575,6 +664,7 @@ This PRD version does not require:
 - prefer refinement over reinvention
 - keep the repo friendly to autonomous coding workflows
 - prioritize execution quality over feature count
+- prioritize clarity over abstraction when the two conflict
 
 ---
 
@@ -587,6 +677,13 @@ The initial redesign pass resolved the main structural questions through accepte
 - section rhythm calibration, selected-work curation, technical-depth consolidation, and contact refinement were completed through stories `005` to `016`
 
 Future open questions should be added only when a new tracked iteration begins.
+
+Possible next-iteration review areas include:
+
+- whether the final contact section is commercially strong enough
+- whether the technical-depth section still justifies its current role
+- whether the header/navigation needs stronger brand presence
+- whether some below-the-fold layouts still carry too much inactive space
 
 ---
 
@@ -602,8 +699,10 @@ This redesign initiative is done when:
 - the work has been implemented through tracked stories
 - the repo remains clean for future iterations
 
+For future refinement passes, a section should not be considered done if it is visually polished but still weak in clarity, legibility, or conversion usefulness.
+
 ---
 
 ## One-line product directive
 
-**Preserve the identity, protect the hero, and redesign the rest of the portfolio until it feels like a serious premium product-facing site rather than a promising draft.**
+**Preserve the identity, protect the hero, and redesign the rest of the portfolio until it feels like a serious premium product-facing site that is visually deliberate, commercially clear, and ready to support real opportunities.**
