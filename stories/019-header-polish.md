@@ -1,7 +1,7 @@
 # Story 019 - Header Polish
 
 ## Status
-`todo`
+`done`
 
 ## Objective
 Refine the site header so it feels more intentional, more premium, and more aligned with the visual quality of the hero and the rest of the portfolio.

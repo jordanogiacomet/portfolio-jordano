@@ -1,7 +1,7 @@
 # progress.txt
 
 Started: 2026-03-11 00:00 BRT
-Last Updated: 2026-03-13 00:36 UTC
+Last Updated: 2026-03-13 00:54 UTC
 
 ---
 
@@ -54,7 +54,7 @@ Primary PRD:
 Current PRD status:
 - initial redesign pass completed through stories `000` to `017`
 - `PRD.md` remains the primary product-definition file
-- a new refinement pass is documented through root-doc updates and Story `018`
+- the active refinement pass is now implemented through Story `019`
 - wrapper files continue to defer to the root doc system instead of acting as parallel sources of truth
 
 Important note:
@@ -84,13 +84,13 @@ Completed:
 - below-the-fold redesign implemented through tracked stories
 - language strategy, narrative structure, rhythm calibration, coherence, accessibility, and doc sync completed
 - Story 018 - `contact-section-clarity-rework` implemented in code with automated validation logged
+- Story 019 - `header-polish` implemented in code with automated validation logged
 
 In progress:
-- Story 019 planning: `header-polish`
-- root docs being updated to reflect the next refinement pass (`brand.md`, `PRD.md`, and `decisions.md`)
+- manual browser validation for recent UI stories in a browser-capable environment
+- authoring the next refinement story for technical-depth purpose/commercial clarity
 
 Not started:
-- Story 019 - `header-polish` (authored, implementation not started)
 - technical-depth rethink
 - page density calibration
 
@@ -125,6 +125,7 @@ Documentation-only changes:
 - Compatibility wrappers should remain secondary to the primary doc system unless a future decision explicitly restores another source of truth.
 - High-autonomy work still depends on disciplined story scoping and honest validation logging.
 - The updated contact section still needs real-screen browser verification to confirm contrast, spacing, CTA clarity, desktop balance, and mobile stacking after Story 018.
+- The updated header still needs real-screen browser verification to confirm desktop hierarchy, mobile menu clarity, active states, and focus visibility after Story 019.
 - Some below-the-fold sections still appear more sparse than intentional, with inactive lateral space reducing perceived compositional quality.
 - The current technical-depth section may still be structurally valid in code but weak in buyer-facing purpose and commercial clarity.
 
@@ -132,10 +133,9 @@ Documentation-only changes:
 
 ## Immediate Priorities
 
-1. Execute Story 019 - `header-polish`.
-2. Run manual desktop/mobile browser review for Story 018 - `contact-section-clarity-rework` in a browser-capable environment.
-3. Review technical-depth purpose in a dedicated later story.
-4. Review page density calibration in a dedicated later story.
+1. Run manual desktop/mobile browser review for Stories 018 and 019 in a browser-capable environment.
+2. Author the next story for technical-depth purpose/commercial clarity.
+3. Review page density calibration in a dedicated later story.
 
 ---
 
@@ -443,3 +443,14 @@ next recommended story: 018-contact-section-clarity-rework
 - follow-up notes: verify the updated contact section in a real browser before opening the next UI story; the next recommended story is to author and execute a scoped header-polish story
 
 next recommended story: 019-header-polish
+
+## [2026-03-13 00:54 UTC] - Story 019 - header-polish
+- refined the fixed header into a stronger brand surface with a two-tier lockup, a calmer segmented desktop navigation, and a clearer standalone contact CTA without changing the site information architecture
+- added active-section tracking for the single-page anchors, stronger hover/focus treatments, and a more deliberate mobile menu so the header feels less generic while staying compatible with the protected hero
+- added mobile scroll locking while the menu is open to keep the interaction clearer on small screens
+- files touched: `components/Navbar.tsx`, `stories/019-header-polish.md`, `progress.txt`
+- validations run: `npx eslint components/Navbar.tsx`; `npm run build`; `npm run typecheck` (initial pre-build run failed because `.next/types` artifacts were missing in the current container state; rerun passed after the successful build); `which chromium-browser || which chromium || which google-chrome || which google-chrome-stable || which firefox`
+- result: Story 019 acceptance criteria met in code; automated validation passed and no browser binary is available in this container, so manual desktop/mobile review remains pending
+- follow-up notes: the next recommended story is to author a technical-depth-purpose refinement story after browser review is available
+
+next recommended story: author technical-depth-purpose refinement story
