@@ -123,7 +123,7 @@ export function Navbar() {
                   Engenharia de software
                 </span>
                 <span className="font-display text-[1.15rem] uppercase tracking-[0.2em] text-text-primary transition-colors duration-200 group-hover:text-bg-surface sm:text-[1.22rem]">
-                  Jordano
+                  Jordano Giacomet Tomazoni
                 </span>
               </span>
             </span>

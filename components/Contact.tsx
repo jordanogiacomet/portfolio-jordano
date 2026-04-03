@@ -56,7 +56,7 @@ export function Contact() {
       style={sectionStyle}
     >
       <div className="relative mx-auto max-w-7xl">
-        <div className="page-section-layout grid items-start lg:grid-cols-[0.26fr_1fr]">
+        <div className="page-section-layout grid items-start lg:grid-cols-[1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
@@ -110,8 +110,8 @@ export function Contact() {
                   </div>
                 </div>
 
-                <aside className="grid gap-4">
-                  <div className="rounded-[1.8rem] border border-[#2b0a0f]/10 bg-white/45 p-5 text-text-on-light shadow-[0_18px_50px_rgba(31,9,13,0.08)] sm:p-6">
+                <aside className="grid gap-4 self-center">
+                  <div className="rounded-[1.8rem] border border-[#2b0a0f]/10 bg-white/45 p-5 text-text-on-light shadow-[0_18px_50px_rgba(31,9,13,0.08)] sm:p-6 self-center">
                     <p className="text-[11px] uppercase tracking-[0.28em] text-text-on-light/60">
                       Canais diretos
                     </p>
