@@ -13,32 +13,6 @@
   },
   "items": [
     {
-      "title": "Validator & Markdown Reporter",
-      "category": "Dados operacionais e relatórios",
-      "description": "Fluxo para validar entradas, ingerir CSV/XLSX e transformar dados operacionais em relatórios prontos para leitura, revisão e exportação.",
-      "role": "Do desenho das regras ao pipeline de processamento e à renderização final dos documentos.",
-      "highlights": [
-        "Validação e tratamento de dados heterogêneos",
-        "Geração de relatórios em Markdown e PDF",
-        "Estrutura pensada para repetibilidade operacional"
-      ],
-      "tags": ["FastAPI", "Python", "Ingestão de dados", "Relatórios"],
-      "image": "/images/project-placeholder-1.svg"
-    },
-    {
-      "title": "Pipeline com Kafka, NiFi e microsserviços",
-      "category": "Integrações e eventos",
-      "description": "Arquitetura orientada a eventos para conectar serviços, orquestrar fluxos críticos e distribuir processamento entre etapas diferentes da operação.",
-      "role": "Foco em desenho de fluxo, confiabilidade e separação clara de responsabilidades entre serviços.",
-      "highlights": [
-        "Orquestração de integrações com múltiplos pontos de entrada",
-        "Processamento assíncrono para cargas operacionais",
-        "Base técnica para observabilidade e evolução do fluxo"
-      ],
-      "tags": ["Kafka", "NiFi", "Microsserviços", "Arquitetura"],
-      "image": "/images/project-placeholder-2.svg"
-    },
-    {
       "title": "Portfólio com presença comercial",
       "category": "Presença digital e conversão",
       "description": "Site autoral pensado para comunicar profundidade técnica, organizar a oferta e transformar o portfólio em uma superfície real de contato.",
@@ -49,7 +23,33 @@
         "Execução visual alinhada a performance e legibilidade"
       ],
       "tags": ["Next.js", "Design System", "Conversão", "Conteúdo"],
-      "image": "/images/project-placeholder-3.svg"
+      "image": "/images/project-placeholder-1.png"
+    },
+    {
+      "title": "Specwright",
+      "category": "Ferramentas e automação de desenvolvimento",
+      "description": "Inicializador de projetos orientado a PRD que transforma uma ideia em um repositório executável — com arquitetura derivada, stories enriquecidas e bundles prontos para agentes de código como Codex.",
+      "role": "Criação completa: da detecção de archetype ao pipeline de geração, scaffold, execução paralela e CLI.",
+      "highlights": [
+        "Detecção automática de archetype e seleção de stack padrão",
+        "Geração de PRD, arquitetura, domain model e stories com metadados de execução",
+        "Bundle paralelo para Codex e OpenClaw com rastreamento story a story"
+      ],
+      "tags": ["Python", "CLI", "AI Agents", "Scaffold", "Arquitetura"],
+      "image": "/images/project-placeholder-1.svg"
+    },
+    {
+      "title": "ERPMeioAmbienteAPI",
+      "category": "Backend e sistemas de gestão",
+      "description": "API RESTful para gestão ambiental — cobre clientes, coletas, funcionários e produtos com autenticação JWT e controle de acesso por função.",
+      "role": "Criação completa da API: modelagem, autenticação, autorização por roles e documentação via Swagger.",
+      "highlights": [
+        "Autenticação e autorização com JWT e controle por roles (Admin, Funcionario, Cliente)",
+        "Endpoints segmentados por perfil de acesso com separação clara de responsabilidades",
+        "Documentação integrada via Swagger e logging nativo do ASP.NET Core"
+      ],
+      "tags": ["C#", ".NET 8", "MySQL", "JWT", "REST"],
+      "image": "/images/project-placeholder-2.svg"
     }
   ]
 }

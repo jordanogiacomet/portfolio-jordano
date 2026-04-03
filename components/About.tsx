@@ -32,10 +32,6 @@ export function About() {
       aria-labelledby="about-heading"
       className="page-section page-section--standard [--section-padding-top:clamp(4.2rem,6.5vw,4.95rem)] [--section-padding-bottom:clamp(4.55rem,7vw,5.35rem)] [--section-layout-gap:clamp(1.4rem,2.9vw,1.85rem)] [--section-layout-gap-lg:clamp(2rem,2.35vw,2.25rem)] [--section-flow-gap:clamp(1.7rem,3vw,2.1rem)]"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-44 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.07),_transparent_72%)]"
-      />
 
       <div className="relative mx-auto max-w-7xl">
         <div className="page-section-layout grid lg:grid-cols-[0.32fr_1fr]">

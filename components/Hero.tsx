@@ -40,10 +40,6 @@ export function Hero() {
       aria-labelledby="home-heading"
       className="relative isolate overflow-hidden border-b border-white/10 bg-hero-radial px-4 pb-16 pt-32 sm:px-6 lg:px-10 lg:pb-24 lg:pt-36"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(circle_at_top_left,_rgba(243,235,221,0.16),_transparent_42%)]"
-      />
       
 
       <div className="relative mx-auto max-w-7xl">
@@ -119,7 +115,7 @@ export function Hero() {
                 />
               </div>
 
-              <div className="absolute inset-x-0 bottom-0 border-t border-white/10 bg-gradient-to-t from-[#160609] via-[#160609f0] to-transparent px-6 pb-6 pt-16">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#160609] via-[#160609f0] to-transparent px-6 pb-6 pt-16">
                 <p className="text-xs uppercase tracking-[0.3em] text-text-secondary">
                   {content.visual.eyebrow}
                 </p>

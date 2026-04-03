@@ -20,7 +20,7 @@ export const contactLinks = [
     id: "linkedin",
     href: "https://www.linkedin.com/in/jordano-giacomet-tomazoni-aba346184/",
     label: "LinkedIn",
-    value: "in/jordano-giacomet-tomazoni-aba346184",
+    value: "https://www.linkedin.com/in/jordano-giacomet-tomazoni-aba346184",
     description: "Bom para iniciar uma conversa profissional e manter o contato ativo."
   },
   {

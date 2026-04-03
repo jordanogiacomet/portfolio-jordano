@@ -55,12 +55,6 @@ export function Contact() {
       className="page-section page-section--compact"
       style={sectionStyle}
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-36 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.07),_transparent_72%)]"
-      />
-      
-
       <div className="relative mx-auto max-w-7xl">
         <div className="page-section-layout grid items-start lg:grid-cols-[0.26fr_1fr]">
           <div>
@@ -70,10 +64,6 @@ export function Contact() {
           </div>
 
           <div className="relative overflow-hidden rounded-[2.35rem] border border-[#d7c7bc]/24 bg-[linear-gradient(135deg,#f3ebdd_0%,#ead9cb_55%,#e0ccbc_100%)] text-text-on-light shadow-[0_28px_96px_rgba(8,2,4,0.24)]">
-            <div
-              aria-hidden="true"
-              className="absolute inset-y-0 right-[-12%] w-[32rem] rounded-full bg-[radial-gradient(circle,_rgba(142,35,54,0.16),_transparent_72%)]"
-            />
 
             <div className="relative p-6 sm:p-8 lg:p-9">
               <div className="grid gap-6 xl:grid-cols-[minmax(0,1.06fr)_minmax(18rem,0.8fr)] xl:items-start xl:gap-7">
@@ -121,32 +111,6 @@ export function Contact() {
                 </div>
 
                 <aside className="grid gap-4">
-                  <div className="rounded-[1.8rem] border border-white/10 bg-[#23080d]/98 p-5 text-text-primary shadow-[0_18px_60px_rgba(9,2,4,0.16)] sm:p-6">
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-text-secondary/88">
-                      {content.guidance.label}
-                    </p>
-                    <h3 className="mt-3 font-display text-[1.55rem] leading-[1.06] sm:text-[1.8rem]">
-                      {content.guidance.title}
-                    </h3>
-
-                    <ul className="mt-5 space-y-3.5" aria-label={content.guidance.label}>
-                      {content.guidance.items.map((item) => (
-                        <li
-                          key={item}
-                          className="flex gap-3 border-t border-white/10 pt-3.5 first:border-t-0 first:pt-0"
-                        >
-                          <span
-                            aria-hidden="true"
-                            className="mt-2.5 h-1.5 w-1.5 rounded-full bg-text-primary/82"
-                          />
-                          <p className="text-sm leading-6 text-text-primary/82 sm:text-[0.97rem] sm:leading-7">
-                            {item}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
                   <div className="rounded-[1.8rem] border border-[#2b0a0f]/10 bg-white/45 p-5 text-text-on-light shadow-[0_18px_50px_rgba(31,9,13,0.08)] sm:p-6">
                     <p className="text-[11px] uppercase tracking-[0.28em] text-text-on-light/60">
                       Canais diretos
