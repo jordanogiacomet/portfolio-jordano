@@ -36,7 +36,7 @@
         "Bundle paralelo para Codex e OpenClaw com rastreamento story a story"
       ],
       "tags": ["Python", "CLI", "AI Agents", "Scaffold", "Arquitetura"],
-      "image": "/images/project-placeholder-1.svg"
+      "image": "/images/project-placeholder-2.png"
     },
     {
       "title": "ERPMeioAmbienteAPI",
@@ -49,7 +49,7 @@
         "Documentação integrada via Swagger e logging nativo do ASP.NET Core"
       ],
       "tags": ["C#", ".NET 8", "MySQL", "JWT", "REST"],
-      "image": "/images/project-placeholder-2.svg"
+      "image": "/images/project-placeholder-3.png"
     }
   ]
 }

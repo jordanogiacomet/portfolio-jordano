@@ -31,7 +31,7 @@ export function Projects() {
      
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="page-section-layout grid items-start lg:grid-cols-[0.32fr_1fr]">
+        <div className="page-section-layout grid items-start lg:grid-cols-[1fr]">
           <div className="hidden lg:block">
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
