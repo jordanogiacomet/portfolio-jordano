@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
 
 import "./globals.css";
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           Pular para o conteúdo
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
