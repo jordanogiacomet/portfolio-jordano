@@ -19,10 +19,6 @@ export function Experience() {
       aria-labelledby="experience-heading"
       className="relative border-b border-white/10 px-4 py-20 sm:px-6 lg:px-10"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.06),_transparent_72%)]"
-      />
       
 
       <div className="relative mx-auto max-w-7xl">

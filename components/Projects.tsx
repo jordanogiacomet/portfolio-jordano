@@ -28,10 +28,7 @@ export function Projects() {
       aria-labelledby="projects-heading"
       className="page-section page-section--compact [--section-padding-top:clamp(3.3rem,5.2vw,4rem)] [--section-layout-gap:clamp(1.25rem,2.75vw,1.75rem)] [--section-layout-gap-lg:clamp(2rem,2.5vw,2.3rem)] [--section-flow-gap:clamp(1.35rem,2.4vw,1.8rem)]"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.08),_transparent_72%)]"
-      />
+     
 
       <div className="relative mx-auto max-w-7xl">
         <div className="page-section-layout grid items-start lg:grid-cols-[0.32fr_1fr]">

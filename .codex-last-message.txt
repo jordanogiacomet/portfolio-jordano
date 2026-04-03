@@ -1,7 +1,0 @@
-- story worked on: Story 020 `technical-depth-purpose-rework`
-- completed: yes
-- key files changed: [TechnicalDepth.tsx](/workspace/components/TechnicalDepth.tsx), [technical-depth.json](/workspace/data/technical-depth.json), [stack.json](/workspace/data/stack.json), [progress.txt](/workspace/progress.txt), [020-technical-depth-purpose-rework.md](/workspace/stories/020-technical-depth-purpose-rework.md)
-- validation run: `npx eslint components/TechnicalDepth.tsx`; `npm run typecheck`; `npm run build`; `which chromium-browser || which chromium || which google-chrome || which google-chrome-stable || which firefox`; export sanity checks against `out/`. No browser binary is available in this container, so manual desktop/mobile review is still pending.
-- next recommended story: author the page-density calibration story
-
-Focused commit created: `feat: 020 technical depth purpose rework` (`33d69be`).

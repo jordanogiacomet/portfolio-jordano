@@ -30,15 +30,12 @@ export function Services() {
       aria-labelledby="services-heading"
       className="page-section page-section--standard [--section-padding-top:clamp(4.1rem,6.5vw,5rem)] [--section-layout-gap:clamp(1.5rem,3vw,2rem)] [--section-layout-gap-lg:clamp(2.25rem,2.5vw,2.5rem)] [--section-flow-gap:clamp(1.9rem,3.5vw,2.35rem)]"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.08),_transparent_70%)]"
-      />
+     
 
 
       <div className="relative mx-auto max-w-7xl">
         <div className="page-section-layout grid items-start lg:grid-cols-[minmax(0,0.36fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,0.33fr)_minmax(0,1fr)]">
-          <div className="order-2 self-start lg:order-1 lg:sticky lg:top-24">
+          <div className="order-2 self-start lg:order-1 lg:sticky lg:top-24 self-center">
             <p className="text-sm uppercase tracking-[0.28em] text-text-secondary">
               {content.sectionLabel}
             </p>

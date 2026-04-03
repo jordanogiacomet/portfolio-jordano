@@ -32,11 +32,6 @@ export function FAQ() {
       aria-labelledby="faq-heading"
       className="page-section page-section--compact"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-44 bg-[radial-gradient(circle_at_top,_rgba(243,235,221,0.06),_transparent_72%)]"
-      />
-
       <div className="relative mx-auto max-w-7xl">
         <div className="page-section-layout grid lg:grid-cols-[0.32fr_1fr]">
           <div>
